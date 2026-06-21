@@ -141,7 +141,7 @@
         .card-title { font-size: 1.6rem; margin: 0 0 10px 0; font-weight: 800; color: #fff; letter-spacing: 1px;}
         .card-desc { color: #ccc; font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 300;}
 
-        /* --- MODALS (Upgraded Glassmorphism) --- */
+        /* --- MODALS (Glassmorphism) --- */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.75); z-index: 2000; backdrop-filter: blur(25px);
@@ -166,7 +166,7 @@
         }
         .close-btn:hover { color: #fff; background: #ff3366; transform: rotate(90deg); box-shadow: 0 0 15px rgba(255,51,102,0.5); }
 
-        /* --- SMART FILE MANAGER UI (Upgraded) --- */
+        /* --- SMART FILE MANAGER UI --- */
         .vault-header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-glass); padding-bottom: 20px; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;}
         .vault-search { flex: 1; min-width: 250px; position: relative; }
         
@@ -228,10 +228,10 @@
         .app-icon:hover .delete-btn { opacity: 1; transform: scale(1); }
         .delete-btn:hover { background: #ff0040; transform: scale(1.2) !important; }
 
-        /* --- SHLOKA MATRIX UI (The New Progressive Design) --- */
+        /* --- SHLOKA MATRIX UI --- */
         .matrix-layout { display: flex; flex-direction: column; height: 100%; gap: 20px; }
         
-        /* Level 1: Year Tabs */
+        /* Level 1: Samhita Tabs */
         .modern-tabs { 
             display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; 
             border-bottom: 1px solid var(--border-glass);
@@ -247,19 +247,8 @@
         .tab-btn:hover { color: #fff; }
         .tab-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); text-shadow: 0 0 15px var(--primary-glow); }
 
-        /* Level 2: Subject Chips */
-        .chip-container { display: flex; flex-wrap: wrap; gap: 12px; min-height: 50px; align-items: center;}
-        .chip { 
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); 
-            border-radius: 30px; padding: 10px 20px; cursor: pointer; transition: 0.3s; 
-            font-size: 0.95rem; color: #fff; font-weight: 600; display: none; /* Hidden by default */
-        }
-        .chip.visible { display: block; animation: fadeInScale 0.3s ease forwards; }
-        .chip:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
-        .chip.active { background: var(--primary-color); color: #000; border-color: var(--primary-color); box-shadow: 0 0 20px var(--primary-glow); }
-
-        /* Level 3: Layout Split for Chapters & Results */
-        .matrix-body { display: flex; flex: 1; gap: 25px; overflow: hidden; }
+        /* Level 2: Chapters & Results Layout */
+        .matrix-body { display: flex; flex: 1; gap: 25px; overflow: hidden; margin-top: 10px;}
         
         .chapter-sidebar { 
             width: 300px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); 
@@ -292,8 +281,8 @@
             animation: slideUpFade 0.4s ease forwards; opacity: 0;
         }
         .shloka-glass-card:hover { transform: translateX(5px); border-color: var(--primary-color); box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,255,204,0.05); }
+        .shloka-heading { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 800;}
         .shloka-text { font-size: 1.3rem; color: #fff; font-weight: 700; margin-bottom: 12px; line-height: 1.6; font-family: serif; letter-spacing: 0.5px;}
-        .shloka-ref { font-size: 0.9rem; color: var(--primary-color); font-style: italic; font-weight: 600; letter-spacing: 1px;}
 
         @keyframes fadeInScale { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
 
@@ -418,20 +407,16 @@
             <div class="matrix-layout">
                 <div>
                     <h2 style="margin:0; color: var(--primary-color); font-family: 'Orbitron'; font-size: 2rem; letter-spacing: 2px;">SHLOKA MATRIX</h2>
-                    <p style="margin:5px 0 0 0; color:var(--text-muted);">Navigate the timeless wisdom, systemized for your mind.</p>
+                    <p style="margin:5px 0 0 0; color:var(--text-muted);">Navigate the timeless wisdom, securely loaded from database.</p>
                 </div>
 
-                <div class="modern-tabs" id="matrix-years">
+                <div class="modern-tabs" id="matrix-samhitas">
                     </div>
-
-                <div class="chip-container" id="matrix-subjects">
-                    <span style="color:var(--text-muted); font-size: 0.9rem; font-style: italic;">Select an academic year to unlock subjects.</span>
-                </div>
 
                 <div class="matrix-body">
                     <div class="chapter-sidebar" id="matrix-chapters">
                         <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-                            Subject modules offline. Select a subject above.
+                            Database standing by. Select a Samhita above.
                         </div>
                     </div>
                     
@@ -490,7 +475,8 @@
                 setTimeout(() => { boot.style.display = 'none'; document.getElementById('main-dashboard').style.opacity = '1'; }, 1000);
             }, 1800); 
 
-            initShlokaMatrix(); // Initialize UI
+            // Initialize JSON Fetching
+            fetchShlokaData();
         };
 
         function openModal(id, title = null) {
@@ -501,88 +487,68 @@
             const m = document.getElementById(id); m.style.opacity = '0'; setTimeout(()=> m.style.display = 'none', 400);
         }
 
-        // --- UPGRADED SHLOKA MATRIX LOGIC (PROGRESSIVE UI) ---
-        const shlokaDatabase = {
-            "1st Year": {
-                "Padartha Vigyana": {
-                    "Ch 1: Ayurveda Nirupana": [
-                        { text: "Ayu kamayamanena dharmartha sukha sadhanam | Ayurvedopadesheshu vidheyah paramadarah ||", ref: "Ashtanga Hridaya Sutrasthana 1/2" },
-                        { text: "Hitaahitam sukham duhkham ayustasya hitaahitam | Maanam cha taccha yatroktamayurveda sa uchyate ||", ref: "Charak Samhita Sutrasthana 1/41" }
-                    ],
-                    "Ch 2: Dravya Vigyaniya": [
-                        { text: "Khaadini Aatma Manah Kaalo Dishashcha Dravya Sangrahah | Sendriyam Chetanadravyam Nirindriyam Achetanam ||", ref: "Charak Samhita Sutrasthana 1/48" }
-                    ]
-                },
-                "Rachana Sharir": {
-                    "Ch 1: Sharir Upakramaniya": [
-                        { text: "Shiryate iti shariram...", ref: "Basic Definition" }
-                    ]
-                }
-            },
-            "2nd Year": {
-                "Dravyaguna Vigyan": {
-                    "Ch 1: Namarupa Vigyana": [
-                        { text: "Oushadhi nama rupani janate hyajapa vane | Avipashca gopashca ye chaanye vanavasinah ||", ref: "Charak Samhita Sutrasthana 1/120" }
-                    ]
-                },
-                "Roga Nidan": {
-                    "Ch 1: Dosha Dushya Vigyana": [
-                        { text: "Rogastu doshavaishamyam doshasamyam arogata |", ref: "Ashtanga Hridaya Sutrasthana 1/20" }
-                    ]
-                }
-            },
-            "3rd Year": {
-                "Agad Tantra": { "Ch 1: Visha Vigyana": [] }
-            },
-            "4th Year": {
-                "Kayachikitsa": { "Ch 1: Jwara Chikitsa": [] }
-            }
-        };
+        // --- NEW JSON-POWERED SHLOKA MATRIX LOGIC ---
+        let globalShlokaData = {}; // Will hold our categorized JSON data
+        let currentSamhita = null;
 
-        let currentYear = null;
-        let currentSubject = null;
-
-        function openShlokaMatrix() { openModal('shloka-modal'); }
-
-        function initShlokaMatrix() {
-            const yearContainer = document.getElementById('matrix-years');
-            yearContainer.innerHTML = '';
-            for (let year in shlokaDatabase) {
-                yearContainer.innerHTML += `<button class="tab-btn" onclick="selectYear('${year}', this)">${year}</button>`;
+        // 1. Fetch the JSON file from the local folder
+        async function fetchShlokaData() {
+            try {
+                const response = await fetch('shloka.json');
+                if (!response.ok) throw new Error("File not found or blocked by CORS.");
+                const rawArray = await response.json();
+                processShlokaData(rawArray);
+                initShlokaUI();
+            } catch (error) {
+                console.error("Database connection failed:", error);
+                document.getElementById('matrix-samhitas').innerHTML = `
+                    <div style="color:#ff3366; font-size: 0.9rem;">
+                        ⚠️ ERROR: Unable to load 'shloka.json'. <br>
+                        <i>Note: Web browsers block loading local JSON files directly for security (CORS policy). You must run this using a local server like "Live Server" in VS Code.</i>
+                    </div>`;
             }
         }
 
-        function selectYear(year, element) {
-            currentYear = year;
-            currentSubject = null; // Reset subject
+        // 2. Convert the flat JSON array into a nested object (Samhita -> Chapter -> Shlokas)
+        function processShlokaData(data) {
+            globalShlokaData = {};
+            data.forEach(shloka => {
+                // If the Samhita category doesn't exist yet, create it
+                if (!globalShlokaData[shloka.samhita]) {
+                    globalShlokaData[shloka.samhita] = {};
+                }
+                // If the Chapter inside that Samhita doesn't exist yet, create it
+                if (!globalShlokaData[shloka.samhita][shloka.chapter]) {
+                    globalShlokaData[shloka.samhita][shloka.chapter] = [];
+                }
+                // Push the shloka into the correct category
+                globalShlokaData[shloka.samhita][shloka.chapter].push(shloka);
+            });
+        }
+
+        function openShlokaMatrix() { openModal('shloka-modal'); }
+
+        // 3. Build the UI Tabs based on our parsed data
+        function initShlokaUI() {
+            const samhitaContainer = document.getElementById('matrix-samhitas');
+            samhitaContainer.innerHTML = '';
+            for (let samhita in globalShlokaData) {
+                samhitaContainer.innerHTML += `<button class="tab-btn" onclick="selectSamhita('${samhita}', this)">${samhita}</button>`;
+            }
+        }
+
+        // 4. Handle Samhita click -> Load Chapters into Sidebar
+        function selectSamhita(samhita, element) {
+            currentSamhita = samhita;
             
             // Handle active tab styling
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
 
-            // Render Subjects (Chips)
-            const subjContainer = document.getElementById('matrix-subjects');
-            subjContainer.innerHTML = '';
-            for (let subject in shlokaDatabase[year]) {
-                subjContainer.innerHTML += `<div class="chip visible" onclick="selectSubject('${subject}', this)">${subject}</div>`;
-            }
-
-            // Reset UI below
-            document.getElementById('matrix-chapters').innerHTML = `<div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">Select a subject above.</div>`;
-            document.getElementById('shloka-results').innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">AWAITING COMMAND INPUT...</div>`;
-        }
-
-        function selectSubject(subject, element) {
-            currentSubject = subject;
-
-            // Handle active chip styling
-            document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
-            element.classList.add('active');
-
             // Render Chapters (Sidebar)
             const chapterContainer = document.getElementById('matrix-chapters');
             chapterContainer.innerHTML = '';
-            const chapters = shlokaDatabase[currentYear][subject];
+            const chapters = globalShlokaData[samhita];
             
             for (let chapter in chapters) {
                 chapterContainer.innerHTML += `<button class="chapter-btn" onclick="selectChapter('${chapter}', this)">${chapter}</button>`;
@@ -592,6 +558,7 @@
             document.getElementById('shloka-results').innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">Select a chapter to extract data.</div>`;
         }
 
+        // 5. Handle Chapter click -> Load Shlokas into Main Area
         function selectChapter(chapter, element) {
             // Handle active chapter styling
             document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
@@ -599,7 +566,7 @@
 
             // Render Shlokas
             const resultsArea = document.getElementById('shloka-results');
-            const shlokas = shlokaDatabase[currentYear][currentSubject][chapter];
+            const shlokas = globalShlokaData[currentSamhita][chapter];
             
             if(shlokas.length === 0) {
                 resultsArea.innerHTML = `<div style="text-align:center; color:#ff3366; margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">NO DATA FOUND IN ARCHIVE.</div>`;
@@ -610,14 +577,14 @@
             shlokas.forEach((shloka, index) => {
                 resultsArea.innerHTML += `
                     <div class="shloka-glass-card" style="animation-delay: ${index * 0.1}s">
+                        <div class="shloka-heading">${shloka.heading}</div>
                         <div class="shloka-text">${shloka.text}</div>
-                        <div class="shloka-ref">↳ Reference: ${shloka.ref}</div>
                     </div>
                 `;
             });
         }
 
-        // --- UPGRADED SMART FILE MANAGER LOGIC ---
+        // --- SMART FILE MANAGER LOGIC ---
         let driveFiles = JSON.parse(localStorage.getItem('ayurhub_drive_files')) || [];
         let localFiles = []; 
 
