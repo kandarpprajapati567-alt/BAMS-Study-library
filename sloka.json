@@ -1,0 +1,507 @@
+[
+    { 
+        "id": "1_1", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Salutation to the First Physician",
+        "text": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् । औत्सुक्यमोहारतिदान् जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥" 
+    },
+    { 
+        "id": "1_2", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Purpose of Ayurveda",
+        "text": "आयुःकामयमानेन धर्मार्थसुखसाधनम् । आयुर्वेदोपदेशेषु विधेयः परमादरः ॥" 
+    },
+    { 
+        "id": "1_3", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Origin of Ayurveda",
+        "text": "ब्रह्मा स्मृत्वाऽऽयुषो वेदं प्रजापतिमजिग्रहत् । सोऽश्विनौ तौ सहस्राक्षं सोऽत्रिपुत्रादिकान्मुनीन् ॥" 
+    },
+    { 
+        "id": "1_4", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Lineage of Ayurvedic Knowledge",
+        "text": "तेऽग्निवेशादिकांस्ते तु पृथक्तन्त्राणि तेनिरे । तेभ्योऽतिविप्रकीर्णेभ्यः प्रायः सारतरोच्चयः ॥" 
+    },
+    { 
+        "id": "1_5", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Creation of Ashtang Hridayam",
+        "text": "क्रियतेऽष्टाङ्गहृदयमनाकुलमविस्तरम् ।" 
+    },
+    { 
+        "id": "1_5a", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Eight Branches of Ayurveda",
+        "text": "कायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ।" 
+    },
+    { 
+        "id": "1_6", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Definition of the Eight Branches",
+        "text": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ॥" 
+    },
+    { 
+        "id": "1_7", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Three Doshas (Tridosha)",
+        "text": "वायुः पित्तं कफश्चेति त्रयो दोषाः समासतः । विकृताऽविकृता देहं घ्नन्ति ते वर्तयन्ति च ॥" 
+    },
+    { 
+        "id": "1_8", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Locations of the Doshas",
+        "text": "ते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ।" 
+    },
+    { 
+        "id": "1_9", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Doshas in Relation to Time",
+        "text": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।" 
+    },
+    { 
+        "id": "1_10", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Digestive Fire (Agni)",
+        "text": "तैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ।" 
+    },
+    { 
+        "id": "1_11", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Digestive Tract (Koshtha)",
+        "text": "कोष्ठः क्रूरो मृदुर्मध्यो मध्यः स्यात्तैः समैरपि ॥" 
+    },
+    { 
+        "id": "1_12", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Body Constitution (Prakriti)",
+        "text": "शुक्रार्तवस्थैर्जन्मादौ विषेणेव विषकृमेः । तैश्च तिस्रः प्रकृतयो हीनमध्योत्तमाः पृथक् ॥" 
+    },
+    { 
+        "id": "1_13", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Superior and Inferior Constitutions",
+        "text": "समधातुः समस्तासु श्रेष्ठा निन्द्या द्विदोषजाः ।" 
+    },
+    { 
+        "id": "1_14", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Properties of Vata Dosha",
+        "text": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।" 
+    },
+    { 
+        "id": "1_15", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Properties of Pitta Dosha",
+        "text": "पित्तं सस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ।" 
+    },
+    { 
+        "id": "1_16", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Properties of Kapha Dosha",
+        "text": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ॥" 
+    },
+    { 
+        "id": "1_17", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Combinations of Doshas",
+        "text": "संसर्गः सन्निपातश्च तद्द्वित्रिक्षयकोपतः ।" 
+    },
+    { 
+        "id": "1_18", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Tissues (Dhatus) and Waste Products (Malas)",
+        "text": "रसासृङ्मांसमेदोऽस्थिमज्जशुक्राणि धातवः । सप्त दूष्याः मला मूत्रशकृत्स्वेदादयोऽपि च ॥" 
+    },
+    { 
+        "id": "1_19", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Principle of Increase and Decrease",
+        "text": "वृद्धिः समानैः सर्वेषां विपरीतैर्विपर्ययः ।" 
+    },
+    { 
+        "id": "1_20", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Six Tastes (Rasas)",
+        "text": "रसाः स्वाद्वम्ललवणतिक्तोषणकषायकाः । षड् द्रव्यमाश्रितास्ते च यथापूर्वं बलावहाः ॥" 
+    },
+    { 
+        "id": "1_21", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Effect of Tastes on Vata and Kapha",
+        "text": "तत्राद्या मारुतं घ्नन्ति त्रयस्तिक्तादयः कफम् ।" 
+    },
+    { 
+        "id": "1_22", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Effect of Tastes on Pitta",
+        "text": "कषायतिक्तमधुराः पित्तमन्ये तु कुर्वते ॥" 
+    },
+    { 
+        "id": "1_23", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Substances (Dravya)",
+        "text": "शमनं कोपनं स्वस्थहितं द्रव्यमिति त्रिधा ।" 
+    },
+    { 
+        "id": "1_24", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Potency of Substances (Virya)",
+        "text": "उष्णशीतगुणोत्कर्षात्तत्र वीर्यं द्विधा स्मृतम् ॥" 
+    },
+    { 
+        "id": "1_25", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Post-Digestive Effect (Vipaka)",
+        "text": "त्रिधा विपाको द्रव्यस्य स्वाद्वम्लकटुकात्मकः ।" 
+    },
+    { 
+        "id": "1_26", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Twenty Qualities (Gurvadi Gunas)",
+        "text": "गुरुमन्दहिमस्निग्धश्लक्ष्णसान्द्रमृदुस्थिराः । गुणाः ससूक्ष्मविशदा विंशतिः सविपर्ययाः ॥" 
+    },
+    { 
+        "id": "1_27", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Definition of Health and Disease",
+        "text": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।" 
+    },
+    { 
+        "id": "1_28", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Diseases (Nija and Agantuja)",
+        "text": "निजागन्तुविभागेन तत्र रोगो द्विधा स्मृतः ॥" 
+    },
+    { 
+        "id": "1_29", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Seats of Disease (Body and Mind)",
+        "text": "तेषां कायमनोभेदादधिष्ठानमपि द्विधा ।" 
+    },
+    { 
+        "id": "1_30", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Mental Doshas",
+        "text": "रजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ।" 
+    },
+    { 
+        "id": "1_31", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Methods of Patient Examination",
+        "text": "दर्शनस्पर्शनप्रश्नैः परीक्षेत रोगिणम् ।" 
+    },
+    { 
+        "id": "1_32", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Methods of Disease Examination",
+        "text": "रोगं निदानप्राग्रूपलक्षणोपशयाप्तिभिः ॥" 
+    },
+    { 
+        "id": "1_33", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Habitats (Desha)",
+        "text": "भूमिदेहप्रभेदेन देशमाहुर्द्विधा पुनः । जाङ्गलं वातभूयिष्ठमनूपं तु कफोल्बणम् ॥" 
+    },
+    { 
+        "id": "1_34", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Normal Habitat and Concept of Time",
+        "text": "साधारणं सममलं त्रिधा भूदेशमादिशेत् । क्षणादिर्व्याध्यवस्था च कालो द्विधा प्रकीर्तितः ॥" 
+    },
+    { 
+        "id": "1_35", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Types of Treatments (Shodhana and Shamana)",
+        "text": "शोधनं शमनं चेति समासादौषधं द्विधा ।" 
+    },
+    { 
+        "id": "1_36", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Cleansing Therapies and Best Substances",
+        "text": "बस्तिर्विरेको वमनं तथा तैलं घृतं मधु ॥" 
+    },
+    { 
+        "id": "1_37", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Best Treatments for Specific Doshas",
+        "text": "वातपित्तकफानां च क्रमेण परमौषधम् ।" 
+    },
+    { 
+        "id": "1_38", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Treatments for Mental Doshas",
+        "text": "धीधैर्यात्मादिविज्ञानं मनोदोषौषधं परम् ॥" 
+    },
+    { 
+        "id": "1_39", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "The Four Pillars of Treatment",
+        "text": "भिषग्द्रव्यान्युपस्थाता रोगी पादचतुष्टयम् । चिकित्सितस्य निर्दिष्टं प्रत्येकं तच्चतुर्गुणम् ॥" 
+    },
+    { 
+        "id": "1_40", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Qualities of a Good Physician",
+        "text": "दक्षस्तीर्थात्तशास्त्रार्थो दृष्टकर्मा शुचिर्भिषक् ।" 
+    },
+    { 
+        "id": "1_41", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Qualities of Good Medicine",
+        "text": "बहुकल्पं बहुगुणं सम्पन्नं योग्यमौषधम् ॥" 
+    },
+    { 
+        "id": "1_42", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Qualities of a Good Caretaker",
+        "text": "अनुरक्तः शुचिर्दक्षो बुद्धिमान् परिचारकः ।" 
+    },
+    { 
+        "id": "1_43", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Qualities of a Good Patient",
+        "text": "आढ्यो रोगी भिषग्वश्यो ज्ञापकः सत्त्ववानपि ॥" 
+    },
+    { 
+        "id": "1_44", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
+        "heading": "Prognosis and Stages of Disease",
+        "text": "साध्योऽसाध्य इति व्याधिर्द्विधा ते तु पुनर्द्विधा । सुसाध्यः कृच्छ्रसाध्यश्च याप्यो यश्चानुपक्रमः ॥" 
+    },
+    { 
+        "id": "1_45", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Waking Up (Brahma Muhurta)",
+        "text": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः । शरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥" 
+    },
+    { 
+        "id": "c1_1", 
+        "samhita": "Charak Samhita", 
+        "chapter": "सूत्रस्थान (दीर्घञ्जीवितीयमध्याय)", 
+        "heading": "Introduction to Long Life",
+        "text": "दीर्घञ्जीवितीयमध्यायं व्याख्यास्यामः । इति ह स्माह भगवानात्रेयः ॥" 
+    },
+    { 
+        "id": "c1_2", 
+        "samhita": "Charak Samhita", 
+        "chapter": "सूत्रस्थान (दीर्घञ्जीवितीयमध्याय)", 
+        "heading": "Health as the Root of Life's Goals",
+        "text": "धर्मार्थकाममोक्षाणामारोग्यं मूलमुत्तमम् । रोगास्तस्यापहर्तारः श्रेयसो जीवितस्य च ॥" 
+    },
+    { 
+        "id": "s1_1", 
+        "samhita": "Sushruta Samhita", 
+        "chapter": "सूत्रस्थान (वेदोत्पत्ति)", 
+        "heading": "Origin of Ayurvedic Science",
+        "text": "अथातो वेदोत्पत्तिमध्यायं व्याख्यास्यामः ।" 
+    },
+    { 
+        "id": "s1_2", 
+        "samhita": "Sushruta Samhita", 
+        "chapter": "सूत्रस्थान (वेदोत्पत्ति)", 
+        "heading": "The Eight Branches Taught",
+        "text": "आयुर्वेदं अष्टाङ्गं उपदिश्यते ।" 
+    },
+    { 
+        "id": "p1_1", 
+        "samhita": "Padarth Vigyan", 
+        "chapter": "आयुर्वेद निरुपण", 
+        "heading": "Definition of Ayurveda",
+        "text": "हिताहितं सुखं दुःखमायुस्तस्य हिताहितम् । मानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते ॥" 
+    },
+    { 
+        "id": "2_1", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Introduction to Daily Routine and Waking Up",
+        "text": "अथातो दिनचर्याध्यायं व्याख्यास्यामः । इति ह स्माहुरात्रेयादयो महर्षयः ॥ १ ॥ ब्राह्मे मुहूर्त उत्तिष्ठेत्स्वस्थो रक्षार्थमायुषः । शरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥ २ ॥" 
+    },
+    { 
+        "id": "2_2", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Tooth Brushing (Dantadhavana)",
+        "text": "अर्कन्यग्रोधखदिरकरञ्जककुभादिजम् । प्रातर्भुक्त्वा च मृद्वग्रं कषायकटुतिक्तकम् ॥ ३ ॥ भक्षयेद्दन्तपवनं दन्तमांसान्यबाधयन् । नाद्यादजीर्णवमथुश्वासकासज्वरार्दितः ॥ ४ ॥ तृष्णास्यपाकहृन्नेत्रशिरःकर्णामयी च तत् ।" 
+    },
+    { 
+        "id": "2_3", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Application of Collyrium (Anjana)",
+        "text": "सौवीरमञ्जनं नित्यं हितमक्ष्णोस्ततो भजेत् ॥ ५ ॥ चक्षुस्तेजोमयं तस्य विशेषाच्छ्लेष्मतो भयम् । योजयेत्सप्तरात्रेऽस्मात्स्रावणार्थं रसाञ्जनम् ॥ ६ ॥" 
+    },
+    { 
+        "id": "2_4", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Nasal Drops, Gargling, and Betel Chewing",
+        "text": "ततो नावनगण्डूषधूमताम्बूलभाग्भवेत् । ताम्बूलं क्षतपित्तास्ररूक्षोत्कुपितचक्षुषाम् ॥ ७ ॥ विषमूर्च्छामदार्तानां अपथ्यं शोषिणामपि ।" 
+    },
+    { 
+        "id": "2_5", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Daily Oil Massage (Abhyanga)",
+        "text": "अभ्यङ्गमाचरेन्नित्यं, स जराश्रमवातहा ॥ ८ ॥ दृष्टिप्रसादपुष्ट्यायुःस्वप्नसुत्वक्त्वदार्ढ्यकृत् । शिरःश्रवणपादेषु तं विशेषेण शीलयेत् ॥ ९ ॥ वर्ज्योऽभ्यङ्गः कफग्रस्तकृतसंशुद्धिजीर्णिभिः ।" 
+    },
+    { 
+        "id": "2_6", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Exercise Guidelines (Vyayama)",
+        "text": "लाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ॥ १० ॥ विभक्तघनगात्रत्वं व्यायामादुपजायते । वातपित्तामयी बालो वृद्धोऽजीर्णी च तं त्यजेत् ॥ ११ ॥ अर्धशक्त्या निषेव्यस्तु बलिभिः स्निग्धभोजिभिः । शीतकाले वसन्ते च, मन्दमेव ततोऽन्यदा ॥ १२ ॥ तं कृत्वा तु सुखं देहं विमृद्नीयात्समन्ततः । तृष्णाक्षयप्रतमको रक्तपित्तं श्रमः क्लमः ॥ १३ ॥ अतिव्यायामतः कासो ज्वरश्छर्दिश्च जायते ।" 
+    },
+    { 
+        "id": "2_7", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Powder Massage (Udvartana)",
+        "text": "उद्वर्तनं कफहरं मेदसः प्रविलायनम् ॥ १४ ॥ स्थिरीकरणमङ्गानां त्वक्प्रसादकरं परम् ।" 
+    },
+    { 
+        "id": "2_8", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Bathing Rules (Snana)",
+        "text": "दीपनं वृष्यमायुष्यं स्नानमूर्जाबलप्रदम् ॥ १५ ॥ कण्डूमलश्रमस्वेदतन्द्रातृड्दाहपाप्मजित् । उष्णाम्बुनाऽधःकायस्य परिषेको बलावहः ॥ १६ ॥ तेनैव तूत्तमाङ्गस्य बलहृत्केशचक्षुषाम् । स्नानमर्दितनेत्रास्यकर्णरोगातिसारिषु ॥ १७ ॥ आध्मानपीनसाजीर्णिभुक्तवत्सु च गर्हितम् ।" 
+    },
+    { 
+        "id": "2_9", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Dietary Habits and Natural Urges",
+        "text": "जीर्णे हितं मितं चाद्यान्न वेगानीरयेद्बलात् ॥ १८ ॥ न वेगितोऽन्यकार्यः स्यान्नाजित्वा साध्यमामयम् ।" 
+    },
+    { 
+        "id": "2_10", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Righteous Conduct (Dharma)",
+        "text": "सुखार्थः सर्वभूतानां मताः सर्वाः प्रवृत्तयः । सुखं च न विना धर्मात्तस्माद्धर्मपरो भवेत् ॥ १९ ॥ भक्त्या कल्याणमित्रेषु नीचेषु न कुतूहलम् ।" 
+    },
+    { 
+        "id": "2_11", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "The Ten Sins to Avoid",
+        "text": "हिंसास्तेयान्यथाकामं पैशुन्यं परुषानृते ॥ २० ॥ सम्भिन्नालापव्यापादमभिध्यां दृग्विपर्ययम् । पापं कर्मेति दशधा कायवाङ्मानसैस्त्यजेत् ॥ २१ ॥" 
+    },
+    { 
+        "id": "2_12", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Compassion and Empathy",
+        "text": "अवृत्तिव्याधिशोकार्ताननुवर्तेत शक्तितः । आत्मवत्सततं पश्येदपि कीटपिपीलिकाम् ॥ २२ ॥" 
+    },
+    { 
+        "id": "2_13", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Respecting Elders and Helping Others",
+        "text": "अर्चयेद्देवगोविप्रवृद्धवैद्यनृपातिथीन् । विमुखान्नार्थिनः कुर्यान्नावमन्येत नाक्षिपेत् ॥ २३ ॥ उपकारप्रधानः स्यादपकारपरेऽप्यरौ । सम्पद्विपत्स्वेकमना हेतावीर्ष्येत् फले न तु ॥ २४ ॥" 
+    },
+    { 
+        "id": "2_14", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Rules of Good Speech and Etiquette",
+        "text": "काले हितं मितं ब्रूयादविसंवादि पेशलम् । पूर्वाभिभाषी सुमुखः सुशीलः करुणो मृदुः ॥ २५ ॥ नैकः सुखी न सर्वत्र विश्रब्धो न च शङ्कितः । न कञ्चिदात्मनः शत्रुं नात्मानं कस्यचिद्रिपुम् ॥ २६ ॥ प्रकाशयेन्नापमानं न च निःस्नेहतां प्रभोः ।" 
+    },
+    { 
+        "id": "2_15", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Social Harmony and Moderation",
+        "text": "जनस्याशयं विज्ञाय सर्वस्यैवानुरञ्जयेत् ॥ २७ ॥ परानुकूलः स भवेद्विरोधी न कदाचन । परोक्षगुणहा न स्यात् परदोषान्न कीर्तयेत् ॥ २8 ॥ त्रिवर्गशून्यं नारम्भं भजेत्तं चाविरोधयन् । अनुयायात् प्रतिपदं सर्वधर्मेषु मध्यमाम् ॥ २९ ॥" 
+    },
+    { 
+        "id": "2_16", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Personal Hygiene and Good Appearance",
+        "text": "नीचरोमनखश्मश्रुर्निर्मलाङ्घ्रिमलायनः । स्नानशीलः सुसुरभिः सुवेषोऽनुल्बणोज्ज्वलः ॥ ३० ॥ धारयेत्सततं रत्नसिद्धमन्त्रमहौषधीः । नातपत्रपदत्राणविचारी न युगक्षयात् ॥ ३१ ॥" 
+    },
+    { 
+        "id": "2_17", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Places and Times to Avoid",
+        "text": "विशत्रुनिन्दितामेध्यान् देशान्नाक्रमयेत्पदा । न रात्रौ न च सन्ध्यायां न शून्ये चैत्यचत्वरे ॥ ३२ ॥ न देवद्विजगौशस्त्रबन्ध्यनर्वाकविराघवान् । आक्रमयेन्नाग्निमुपविशेन्न पथीति च ॥ ३३ ॥" 
+    },
+    { 
+        "id": "2_18", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Safety Precautions and Bad Habits",
+        "text": "न बाहुभ्यां नदीं तरेन्नाग्निस्कन्धमभिव्रजेत् । सन्दिग्धनावं वृक्षं च नारोहेदुष्टयानवत् ॥ ३४ ॥ नासंवीतमुखः कुर्यात् क्षुतिहास्यविजृम्भणम् । नासिकां न विकुष्णीयान्नाकस्माद्विलिखेद्भुवम् ॥ ३५ ॥" 
+    },
+    { 
+        "id": "2_19", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Physical Postures and Places to Avoid",
+        "text": "नाङ्गैरविचेष्टेत नासीतोत्कटिकश्चिरम् । देहवाक्चेतसां चेष्टाः प्राक् श्रमाद्विनिवर्तयेत् ॥ ३६ ॥ नोर्ध्वजानुश्चिरं तिष्ठेन्न नक्तं सेवेत पादपान् । तथा चत्वरचैत्यान्तचतुष्पथसुरालयान् ॥ ३७ ॥ सूनाटवीशून्यगृहश्मशानानि दिवाऽपि न । न पश्येदादित्यं न नग्नः स्त्रीं न च नग्नः स्नायात् ॥ ३८ ॥" 
+    },
+    { 
+        "id": "2_20", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Self-Reflection",
+        "text": "नक्तंदिनानि मे यान्ति कथंभूतस्य सम्प्रति । दुःखभाग् न भवत्येवं नित्यं संनिहितस्मृतिः ॥ ४६ ॥" 
+    },
+    { 
+        "id": "2_21", 
+        "samhita": "Ashtang Hridayam", 
+        "chapter": "दिनचर्या अध्याय", 
+        "heading": "Conclusion and Benefits of Daily Routine",
+        "text": "इत्येवमाचारमवाप्यतेऽयुरारोग्यमैश्वर्यं यशो नुकामो । लोकाश्च यान् सन्तो विचरन्ति तस्मात् सदाचारपरो भवेत् ॥ ४७ ॥ इत्यायुर्वेदामृतकल्पे अष्टाङ्गहृदये सूत्रस्थाने दिनचर्याध्यायो नाम द्वितीयोऽध्यायः ॥" 
+    }
+]
+
