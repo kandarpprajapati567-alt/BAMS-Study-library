@@ -3,351 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AyurHub Premium | BAMS Master Interface</title>
+    <title>SAMHITA.SYNC | BAMS Master OS</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Orbitron:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap');
 
-        /* --- THEMES --- */
+        /* --- THEMES & VARIABLES --- */
         :root {
-            --bg-color: #050508;
-            --surface-color: rgba(20, 30, 45, 0.75);
-            --primary-color: #00d2ff; /* UG Cyan */
-            --primary-glow: rgba(0, 210, 255, 0.4);
+            --bg-color: #030407;
+            --surface-color: rgba(15, 20, 25, 0.5);
+            --primary-color: #00ffcc; /* Tech Cyan/Green for UG */
+            --primary-glow: rgba(0, 255, 204, 0.4);
             --text-main: #ffffff;
             --text-muted: #8a9bb3;
-            --border-glass: rgba(255, 255, 255, 0.1);
-            --transition-smooth: 0.4s cubic-bezier(0.25, 1, 0.2, 1);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.2, 1);
         }
 
         body[data-role="pg-prep"] {
-            --primary-color: #ff4757; 
-            --primary-glow: rgba(255, 71, 87, 0.4);
-            --surface-color: rgba(40, 15, 20, 0.75);
+            --primary-color: #ff3366; 
+            --primary-glow: rgba(255, 51, 102, 0.4);
         }
 
         body[data-role="pg-scholar"] {
-            --primary-color: #9c88ff; 
-            --primary-glow: rgba(156, 136, 255, 0.4);
-            --surface-color: rgba(25, 15, 40, 0.75);
+            --primary-color: #a29bfe; 
+            --primary-glow: rgba(162, 155, 254, 0.4);
         }
 
         body {
             margin: 0; padding: 0; 
             background-color: var(--bg-color); 
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000'); /* Default Premium Abstract Dark */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text-main);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            transition: all 0.5s ease;
-            overflow-x: hidden;
+            overflow: hidden; /* Prevent scrolling on main body */
             height: 100vh;
         }
 
-        /* --- 3D INTRO & LOGIN SCREEN --- */
-        #intro-login-screen {
+        /* Dark Overlay for Wallpaper */
+        .bg-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: #020202; z-index: 9999;
+            background: linear-gradient(to bottom, rgba(3,4,7,0.7) 0%, rgba(3,4,7,0.95) 100%);
+            backdrop-filter: blur(8px); z-index: -1;
+        }
+
+        /* --- 3D BOOT INTRO --- */
+        #boot-screen {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #000; z-index: 9999;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
         }
 
         .logo-3d {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 30px var(--primary-color);
-            transform: rotateX(15deg) rotateY(-10deg);
-            animation: float3D 4s infinite ease-in-out;
-            margin-bottom: 40px;
+            font-family: 'Orbitron', sans-serif; font-size: 5rem; color: #fff;
+            text-transform: uppercase; letter-spacing: 12px;
+            text-shadow: 0 10px 30px var(--primary-glow), 0 0 50px var(--primary-color);
+            animation: pulse3D 2s infinite alternate; margin: 0;
         }
+        .boot-text { font-family: 'Orbitron', sans-serif; color: var(--primary-color); letter-spacing: 5px; margin-top: 15px; font-size: 1rem; }
 
-        @keyframes float3D {
-            0%, 100% { transform: translateY(0) rotateX(15deg) rotateY(-10deg); text-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 30px var(--primary-color); }
-            50% { transform: translateY(-20px) rotateX(25deg) rotateY(-5deg); text-shadow: 0 30px 40px rgba(0,0,0,0.6), 0 0 50px var(--primary-color); }
+        @keyframes pulse3D {
+            0% { transform: scale(0.95); text-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 20px var(--primary-color); }
+            100% { transform: scale(1.05); text-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 60px var(--primary-color); }
         }
-
-        .login-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-glass);
-            padding: 40px; border-radius: 20px;
-            backdrop-filter: blur(20px);
-            text-align: center;
-            animation: fadeIn 2s ease forwards;
-            opacity: 0; animation-delay: 1s;
-        }
-
-        @keyframes fadeIn { to { opacity: 1; } }
-
-        .custom-select, .action-btn {
-            width: 100%; padding: 15px; margin-top: 15px;
-            background: rgba(0,0,0,0.5); color: #fff;
-            border: 1px solid var(--border-glass); border-radius: 10px;
-            font-family: inherit; font-size: 1rem; outline: none;
-        }
-        .action-btn {
-            background: var(--primary-color); color: #000; font-weight: bold;
-            cursor: pointer; transition: 0.3s; border: none;
-        }
-        .action-btn:hover { box-shadow: 0 0 20px var(--primary-glow); transform: translateY(-2px); }
 
         /* --- DASHBOARD STYLES --- */
-        #main-dashboard {
-            display: none; /* Hidden until login */
-            opacity: 0;
-            transition: opacity 1s ease;
-            height: 100vh; overflow-y: auto;
-        }
+        #main-dashboard { opacity: 0; transition: opacity 1.5s ease; height: 100vh; display: flex; flex-direction: column; }
 
         .top-nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 50px; background: rgba(0,0,0,0.5);
-            border-bottom: 1px solid var(--border-glass); backdrop-filter: blur(15px);
-            position: sticky; top: 0; z-index: 100;
+            padding: 20px 50px; background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid var(--border-glass); backdrop-filter: blur(20px);
         }
 
+        .brand-name { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: 3px; margin: 0; }
+        .user-controls { display: flex; align-items: center; gap: 20px; }
+        
         .role-badge {
-            background: var(--primary-glow); color: var(--primary-color);
-            padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 800;
-            letter-spacing: 1px; border: 1px solid var(--primary-color);
+            background: rgba(0,0,0,0.5); color: var(--primary-color);
+            padding: 8px 20px; border-radius: 30px; font-size: 0.8rem; font-weight: 800;
+            letter-spacing: 2px; border: 1px solid var(--primary-color); box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        .settings-icon { font-size: 1.5rem; cursor: pointer; transition: 0.3s; margin-left: 20px; }
-        .settings-icon:hover { transform: rotate(90deg); color: var(--primary-color); }
+        .icon-btn { 
+            font-size: 1.5rem; cursor: pointer; transition: 0.3s; 
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); 
+            border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center;
+        }
+        .icon-btn:hover { background: var(--primary-color); color: #000; transform: rotate(90deg); box-shadow: 0 0 20px var(--primary-glow); }
 
-        .dashboard-container { padding: 40px 50px; max-width: 1600px; margin: 0 auto; }
-        .welcome-text { font-size: 2.5rem; margin-bottom: 5px; font-weight: 800; }
-        .welcome-sub { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px; }
+        /* --- VERTICALLY CENTERED CONTENT --- */
+        .dashboard-content {
+            flex: 1; display: flex; flex-direction: column; justify-content: center;
+            padding: 0 50px; position: relative; top: -5vh; /* Nudges slightly up for perfect visual center */
+        }
 
-        /* --- HORIZONTAL SCROLLING CARDS --- */
+        .welcome-area { margin-bottom: 40px; }
+        .welcome-text { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -1px; }
+        .welcome-sub { color: var(--text-muted); font-size: 1.2rem; margin-top: 10px; font-weight: 300; }
+
+        /* --- HORIZONTAL CAROUSEL --- */
         .module-carousel {
-            display: flex; gap: 30px; padding-bottom: 30px;
-            overflow-x: auto; scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            /* Hide scrollbar for clean look */
+            display: flex; gap: 35px; padding: 20px 0;
+            overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory;
             scrollbar-width: none; 
         }
         .module-carousel::-webkit-scrollbar { display: none; }
 
         .premium-card {
-            min-width: 320px; height: 400px;
-            scroll-snap-align: start; flex: 0 0 auto;
-            background-color: var(--surface-color);
-            background-size: cover; background-position: center;
-            border: 1px solid var(--border-glass); border-radius: 24px;
-            padding: 30px; cursor: pointer; position: relative; overflow: hidden;
+            min-width: 320px; height: 420px; scroll-snap-align: start; flex: 0 0 auto;
+            background-color: #000; background-size: cover; background-position: center;
+            border: 1px solid var(--border-glass); border-radius: 30px;
+            padding: 35px; cursor: pointer; position: relative; overflow: hidden;
             transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: flex-end;
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.65); /* Dark overlay for wallpapers */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        
+        /* Dark Gradient Overlay for Cards */
+        .premium-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.2) 80%); z-index: 1; transition: 0.5s;
         }
 
-        /* Dynamic Wallpapers */
-        #card-notes { background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800'); }
-        #card-shloka { background-image: url('https://images.unsplash.com/photo-1600180758850-66ee744740e7?q=80&w=800'); }
-        #card-mcq { background-image: url('https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=800'); }
-        #card-pyq { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800'); }
+        /* Latest Elegant Wallpapers for Cards */
+        #card-notes { background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800'); }
+        #card-shloka { background-image: url('https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800'); }
+        #card-mcq { background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800'); }
+        #card-pyq { background-image: url('https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800'); }
 
-        .premium-card:hover {
-            transform: translateY(-10px); border-color: var(--primary-color);
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0,0,0,0.6), 0 0 20px var(--primary-glow);
-        }
+        .premium-card:hover { transform: translateY(-15px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 30px var(--primary-glow); }
+        .premium-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.1) 90%); }
 
-        .card-content { z-index: 1; position: relative; }
-        .card-icon { font-size: 3rem; margin-bottom: 15px; display: inline-block; filter: drop-shadow(0 0 10px var(--primary-glow)); }
-        .card-title { font-size: 1.5rem; margin: 0 0 10px 0; font-weight: 800; color: #fff; }
-        .card-desc { color: #ddd; font-size: 0.95rem; line-height: 1.5; margin: 0; }
+        .card-content { z-index: 2; position: relative; transform: translateY(10px); transition: 0.4s; }
+        .premium-card:hover .card-content { transform: translateY(0); }
+        .card-icon { font-size: 3.5rem; margin-bottom: 20px; display: inline-block; filter: drop-shadow(0 0 15px var(--primary-color)); }
+        .card-title { font-size: 1.8rem; margin: 0 0 10px 0; font-weight: 800; color: #fff; letter-spacing: 1px;}
+        .card-desc { color: #aaa; font-size: 0.95rem; line-height: 1.6; margin: 0; font-weight: 300;}
 
-        /* --- SETTINGS MODAL --- */
-        .settings-modal {
+        /* --- MODALS (Settings & Generic) --- */
+        .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(10px);
-            display: none; justify-content: center; align-items: center; opacity: 0; transition: 0.3s;
+            background: rgba(0,0,0,0.85); z-index: 2000; backdrop-filter: blur(15px);
+            display: none; justify-content: center; align-items: center; opacity: 0; transition: 0.4s;
         }
-        .settings-box {
-            background: var(--surface-color); border: 1px solid var(--primary-color);
-            padding: 30px; border-radius: 20px; width: 400px; max-width: 90%;
-            position: relative;
+        .modal-box {
+            background: rgba(10, 15, 20, 0.9); border: 1px solid var(--border-glass);
+            padding: 40px; border-radius: 24px; width: 450px; max-width: 90%; position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9);
         }
-        .close-btn {
-            position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);
-        }
-        .close-btn:hover { color: var(--primary-color); }
+        .modal-box.glow { border-color: var(--primary-color); box-shadow: inset 0 0 30px var(--primary-glow), 0 20px 50px rgba(0,0,0,0.8); }
+        
+        .close-btn { position: absolute; top: 20px; right: 25px; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); transition: 0.3s;}
+        .close-btn:hover { color: var(--primary-color); transform: scale(1.2); }
 
-        /* --- MEDIA QUERIES (MOBILE FRIENDLY) --- */
+        .input-group { margin-top: 20px; text-align: left;}
+        .input-group label { display: block; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;}
+        
+        .custom-select, .file-input-wrapper {
+            width: 100%; padding: 15px; background: rgba(0,0,0,0.5); color: #fff;
+            border: 1px solid var(--border-glass); border-radius: 12px; font-family: inherit; font-size: 1rem; box-sizing: border-box; outline: none; transition: 0.3s;
+        }
+        .custom-select:focus { border-color: var(--primary-color); }
+        
+        .action-btn {
+            width: 100%; padding: 15px; margin-top: 25px;
+            background: var(--primary-color); color: #000; font-weight: 800; letter-spacing: 1px;
+            border-radius: 12px; border: none; cursor: pointer; transition: 0.3s; text-transform: uppercase;
+        }
+        .action-btn:hover { box-shadow: 0 0 25px var(--primary-glow); transform: translateY(-3px); }
+
+        /* Dummy Settings Toggles */
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.02); border-radius: 8px;}
+        .toggle-row span { color: #ddd; font-size: 0.95rem; }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .logo-3d { font-size: 2.5rem; }
+            .logo-3d { font-size: 3rem; }
             .top-nav { padding: 15px 20px; }
-            .dashboard-container { padding: 20px; }
-            .welcome-text { font-size: 1.8rem; }
-            .user-status span { display: none; } /* Hide name on mobile */
-            .premium-card { min-width: 80vw; height: 350px; } /* Cards take up most of screen width on mobile */
-            .settings-box { width: 90%; }
+            .dashboard-content { padding: 0 20px; top: 0; }
+            .welcome-text { font-size: 2.2rem; }
+            .premium-card { min-width: 85vw; height: 380px; }
+            .role-badge { font-size: 0.7rem; padding: 6px 12px; }
         }
 
     </style>
 </head>
 <body data-role="ug">
 
-    <div id="intro-login-screen">
-        <div class="logo-3d">AYUR<span style="color: var(--primary-color);">HUB</span></div>
-        <div class="login-box">
-            <h3 style="margin-top:0; color: #fff;">System Authentication</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Select your academic profile to initialize.</p>
-            
-            <select id="login-role-selector" class="custom-select">
-                <option value="ug">UG Student (BAMS)</option>
-                <option value="pg-prep">PG Preparation (AIAPGET)</option>
-                <option value="pg-scholar">PG Scholar (Specialized)</option>
-            </select>
-            
-            <button class="action-btn" onclick="executeLogin()">INITIALIZE SYSTEM</button>
-        </div>
+    <div class="bg-overlay"></div>
+
+    <div id="boot-screen">
+        <h1 class="logo-3d">SAMHITA<span style="color: var(--primary-color);">.SYNC</span></h1>
+        <div class="boot-text">INITIALIZING OS ENVIRONMENT...</div>
     </div>
 
     <div id="main-dashboard">
         <div class="top-nav">
-            <h2 style="margin:0; font-weight:800; letter-spacing: 2px;">AYUR<span style="color:var(--primary-color);">HUB</span></h2>
-            <div class="user-status">
-                <span style="color: var(--text-muted);">Welcome, Dr. Sharma</span>
+            <h2 class="brand-name">CHARAK<span style="color:var(--primary-color);">.OS</span></h2>
+            <div class="user-controls">
                 <div class="role-badge" id="ui-role-badge">UG SCHOLAR</div>
-                <div class="settings-icon" onclick="openSettings()">⚙️</div>
+                <div class="icon-btn" onclick="openModal('settings-modal')">⚙️</div>
             </div>
         </div>
 
-        <div class="dashboard-container">
-            <h1 class="welcome-text">Academic <span style="color:var(--primary-color);">Workspace.</span></h1>
-            <p class="welcome-sub" id="ui-welcome-sub">Your foundational Ayurveda studies are ready.</p>
+        <div class="dashboard-content">
+            <div class="welcome-area">
+                <h1 class="welcome-text">Command <span style="color:var(--primary-color);">Center.</span></h1>
+                <p class="welcome-sub" id="ui-welcome-sub">System running optimally. Select a module to begin.</p>
+            </div>
 
             <div class="module-carousel">
-                
-                <div class="premium-card" id="card-notes">
+                <div class="premium-card" id="card-notes" onclick="openModal('dummy-modal', 'Notes & Vault')">
                     <div class="card-content">
                         <div class="card-icon">📁</div>
-                        <h3 class="card-title">Notes & Vault</h3>
-                        <p class="card-desc" id="desc-notes">Access your daily lecture notes, PDF books, and personal study materials.</p>
+                        <h3 class="card-title">Notes Vault</h3>
+                        <p class="card-desc" id="desc-notes">Access daily lecture notes, PDF books, and local study materials.</p>
                     </div>
                 </div>
 
-                <div class="premium-card" id="card-shloka">
+                <div class="premium-card" id="card-shloka" onclick="openModal('dummy-modal', 'Shloka Matrix')">
                     <div class="card-content">
                         <div class="card-icon">📖</div>
                         <h3 class="card-title">Shloka Matrix</h3>
-                        <p class="card-desc" id="desc-shloka">Master the Samhitas. Read, memorize, and star important foundational Shlokas.</p>
+                        <p class="card-desc" id="desc-shloka">Master the Samhitas. Read, memorize, and manage foundational Shlokas.</p>
                     </div>
                 </div>
 
-                <div class="premium-card" id="card-mcq">
+                <div class="premium-card" id="card-mcq" onclick="openModal('dummy-modal', 'MCQ Engine')">
                     <div class="card-content">
                         <div class="card-icon">🎯</div>
-                        <h3 class="card-title">Chapter MCQs</h3>
-                        <p class="card-desc" id="desc-mcq">Test your knowledge chapter-by-chapter immediately after studying.</p>
+                        <h3 class="card-title">MCQ Engine</h3>
+                        <p class="card-desc" id="desc-mcq">Test knowledge chapter-by-chapter immediately after studying.</p>
                     </div>
                 </div>
 
-                <div class="premium-card" id="card-pyq">
+                <div class="premium-card" id="card-pyq" onclick="openModal('dummy-modal', 'Time Machine (PYQ)')">
                     <div class="card-content">
                         <div class="card-icon">⏳</div>
-                        <h3 class="card-title">Previous Year Qs</h3>
-                        <p class="card-desc" id="desc-pyq">Review university exam question papers to understand exam patterns.</p>
+                        <h3 class="card-title">Time Machine</h3>
+                        <p class="card-desc" id="desc-pyq">Analyze previous year university exam papers and patterns.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <div class="settings-modal" id="settings-modal">
-        <div class="settings-box">
-            <span class="close-btn" onclick="closeSettings()">✕</span>
-            <h2 style="margin-top:0; color: var(--primary-color);">System Settings</h2>
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-box glow">
+            <span class="close-btn" onclick="closeModal('settings-modal')">✕</span>
+            <h2 style="margin-top:0; color: var(--text-main); font-family: 'Orbitron';">SYSTEM SETTINGS</h2>
             
-            <label style="color: var(--text-muted); font-size: 0.9rem;">Change Academic Role:</label>
-            <select id="settings-role-selector" class="custom-select" onchange="switchRole(this.value)">
-                <option value="ug">UG Student (BAMS)</option>
-                <option value="pg-prep">PG Preparation (AIAPGET)</option>
-                <option value="pg-scholar">PG Scholar (Specialized)</option>
-            </select>
+            <div class="input-group">
+                <label>Academic Profile</label>
+                <select id="settings-role-selector" class="custom-select" onchange="switchRole(this.value)">
+                    <option value="ug">UG Student (BAMS)</option>
+                    <option value="pg-prep">PG Preparation (AIAPGET)</option>
+                    <option value="pg-scholar">PG Scholar (Specialized)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Custom Wallpaper (Gallery)</label>
+                <input type="file" id="bg-upload" accept="image/*" class="file-input-wrapper" onchange="uploadWallpaper(event)">
+            </div>
+
+            <div class="input-group">
+                <label>Preferences</label>
+                <div class="toggle-row"><span>Auto-Sync Data</span> <input type="checkbox" checked></div>
+                <div class="toggle-row"><span>Focus Mode (DND)</span> <input type="checkbox"></div>
+                <div class="toggle-row"><span>Haptic Feedback</span> <input type="checkbox" checked></div>
+            </div>
             
-            <button class="action-btn" style="margin-top: 25px;" onclick="closeSettings()">SAVE & APPLY</button>
+            <button class="action-btn" onclick="closeModal('settings-modal')">APPLY CHANGES</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="dummy-modal">
+        <div class="modal-box" style="text-align: center;">
+            <span class="close-btn" onclick="closeModal('dummy-modal')">✕</span>
+            <div style="font-size: 3rem; margin-bottom: 15px; animation: pulse3D 1.5s infinite alternate;">🔒</div>
+            <h2 id="dummy-title" style="color: var(--primary-color); margin: 0;">Module Name</h2>
+            <p style="color: var(--text-muted); margin-top: 10px;">This environment is currently under construction. Please check back after next deployment.</p>
+            <button class="action-btn" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--border-glass);" onclick="closeModal('dummy-modal')">RETURN</button>
         </div>
     </div>
 
     <script>
-        // Data Structure for Role Switching
-        const roleData = {
-            "ug": {
-                badge: "UG SCHOLAR",
-                subText: "Your foundational Ayurveda studies are ready.",
-                notes: "Access your daily lecture notes, PDF books, and personal study materials.",
-                shloka: "Master the Samhitas. Read, memorize, and star important foundational Shlokas.",
-                mcq: "Test your knowledge chapter-by-chapter immediately after studying.",
-                pyq: "Review university exam question papers to understand exam patterns."
-            },
-            "pg-prep": {
-                badge: "AIAPGET PREP",
-                subText: "Focus mode engaged. Time to maximize your MCQ speed and accuracy.",
-                notes: "Access high-yield revision notes, mnemonics, and quick summary charts.",
-                shloka: "Targeted competitive Shlokas. Focus on fill-in-the-blanks and tricky lines.",
-                mcq: "Time-bound mock tests and rapid-fire MCQs to boost AIAPGET rank.",
-                pyq: "Analyze 10+ years of all-India AIAPGET previous year question papers."
-            },
-            "pg-scholar": {
-                badge: "PG SCHOLAR",
-                subText: "Welcome to your advanced research and thesis workspace.",
-                notes: "Organize your clinical case studies, thesis research, and literature reviews.",
-                shloka: "Deep dive into cross-references, commentaries (Tikas), and specific subject Shlokas.",
-                mcq: "Advanced clinical scenario MCQs and academic assessments.",
-                pyq: "Access subject-specific university PG exit exam papers."
-            }
+        // --- 1. BOOT SEQUENCE ---
+        window.onload = () => {
+            // Check for saved custom wallpaper
+            const savedBg = localStorage.getItem('samhita_bg');
+            if(savedBg) { document.body.style.backgroundImage = `url('${savedBg}')`; }
+
+            // Boot Animation Timer
+            setTimeout(() => {
+                const bootScreen = document.getElementById('boot-screen');
+                const dashboard = document.getElementById('main-dashboard');
+                
+                bootScreen.style.transform = 'scale(1.2)';
+                bootScreen.style.opacity = '0';
+                
+                setTimeout(() => {
+                    bootScreen.style.display = 'none';
+                    dashboard.style.opacity = '1';
+                }, 1200);
+            }, 2500); // 2.5 seconds fake boot
         };
 
-        // 1. Login Function
-        function executeLogin() {
-            const selectedRole = document.getElementById('login-role-selector').value;
-            
-            // Sync setting selector with login selector
-            document.getElementById('settings-role-selector').value = selectedRole;
-            
-            // Apply role data
-            switchRole(selectedRole);
-
-            // Hide Login Intro & Show Dashboard
-            const introScreen = document.getElementById('intro-login-screen');
-            const dashboard = document.getElementById('main-dashboard');
-            
-            introScreen.style.transform = "scale(1.1)";
-            introScreen.style.opacity = "0";
-            
-            setTimeout(() => {
-                introScreen.style.display = "none";
-                dashboard.style.display = "block";
-                setTimeout(() => { dashboard.style.opacity = "1"; }, 50);
-            }, 800);
-        }
-
-        // 2. Role Switch Function
-        function switchRole(role) {
-            document.body.setAttribute("data-role", role);
-            const data = roleData[role];
-            
-            document.getElementById('ui-role-badge').innerText = data.badge;
-            document.getElementById('ui-welcome-sub').innerText = data.subText;
-            document.getElementById('desc-notes').innerText = data.notes;
-            document.getElementById('desc-shloka').innerText = data.shloka;
-            document.getElementById('desc-mcq').innerText = data.mcq;
-            document.getElementById('desc-pyq').innerText = data.pyq;
-        }
-
-        // 3. Settings Modal Functions
-        function openSettings() {
-            const modal = document.getElementById('settings-modal');
+        // --- 2. MODAL CONTROLS ---
+        function openModal(id, title = null) {
+            const modal = document.getElementById(id);
+            if(title && id === 'dummy-modal') document.getElementById('dummy-title').innerText = title;
             modal.style.display = 'flex';
             setTimeout(() => { modal.style.opacity = '1'; }, 10);
         }
 
-        function closeSettings() {
-            const modal = document.getElementById('settings-modal');
+        function closeModal(id) {
+            const modal = document.getElementById(id);
             modal.style.opacity = '0';
-            setTimeout(() => { modal.style.display = 'none'; }, 300);
+            setTimeout(() => { modal.style.display = 'none'; }, 400);
+        }
+
+        // --- 3. CUSTOM WALLPAPER LOGIC ---
+        function uploadWallpaper(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Check file size (limit to ~4MB to prevent localStorage crash)
+                if (file.size > 4 * 1024 * 1024) {
+                    alert("Image too large! Please upload a file smaller than 4MB.");
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgUrl = e.target.result;
+                    document.body.style.backgroundImage = `url('${imgUrl}')`;
+                    // Save to local storage so it stays after refresh
+                    try {
+                        localStorage.setItem('samhita_bg', imgUrl);
+                        alert("Wallpaper successfully applied!");
+                    } catch (e) {
+                        alert("Storage quota exceeded. Image applied but won't save after refresh.");
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // --- 4. ROLE SWITCHING (Same as before, triggered from settings) ---
+        const roleData = {
+            "ug": { badge: "UG SCHOLAR", subText: "System running optimally. Select a module to begin." },
+            "pg-prep": { badge: "AIAPGET PREP", subText: "Focus mode engaged. Time to maximize your speed and accuracy." },
+            "pg-scholar": { badge: "PG SCHOLAR", subText: "Welcome to your advanced clinical research workspace." }
+        };
+
+        function switchRole(role) {
+            document.body.setAttribute("data-role", role);
+            const data = roleData[role];
+            document.getElementById('ui-role-badge').innerText = data.badge;
+            document.getElementById('ui-welcome-sub').innerText = data.subText;
         }
     </script>
 </body>
