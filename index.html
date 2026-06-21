@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAMS Premium Adaptive Hub</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+        /* Default (UG) Theme */
+        :root {
+            --bg-color: #0a0f16;
+            --surface-color: rgba(20, 30, 45, 0.6);
+            --primary-color: #00d2ff; /* Cyan for UG */
+            --primary-glow: rgba(0, 210, 255, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #8a9bb3;
+            --border-glass: rgba(255, 255, 255, 0.05);
+        }
+
+        /* PG Prep Theme */
+        body[data-role="pg-prep"] {
+            --primary-color: #ff4757; /* Red for energy/speed */
+            --primary-glow: rgba(255, 71, 87, 0.3);
+            --surface-color: rgba(40, 15, 20, 0.6);
+        }
+
+        /* PG Scholar Theme */
+        body[data-role="pg-scholar"] {
+            --primary-color: #9c88ff; /* Purple for premium/deep study */
+            --primary-glow: rgba(156, 136, 255, 0.3);
+            --surface-color: rgba(25, 15, 40, 0.6);
+        }
+
+        body {
+            margin: 0; padding: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.5s ease;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation / Status Bar */
+        .top-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+
+        .user-status {
+            display: flex; align-items: center; gap: 15px;
+        }
+
+        .role-badge {
+            background: var(--primary-glow);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Main Dashboard Layout */
+        .dashboard-container {
+            padding: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .welcome-text {
+            font-size: 2.5rem; margin-bottom: 10px; font-weight: 800;
+        }
+        .welcome-sub {
+            color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px;
+        }
+
+        /* Premium 4-Card Grid */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .premium-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 30px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.2, 1);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .premium-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top right, var(--primary-glow), transparent 50%);
+            opacity: 0; transition: opacity 0.4s; z-index: 0;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--primary-glow);
+        }
+
+        .premium-card:hover::before { opacity: 1; }
+
+        .card-content { z-index: 1; position: relative; }
+
+        .card-icon {
+            font-size: 3rem; margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px var(--primary-glow));
+        }
+
+        .card-title {
+            font-size: 1.5rem; margin: 0 0 10px 0; font-weight: 800;
+        }
+
+        .card-desc {
+            color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0;
+        }
+
+        /* Control Panel for Testing */
+        .dev-controls {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(0,0,0,0.8); padding: 15px; border-radius: 10px;
+            border: 1px dashed #fff; z-index: 100;
+        }
+        .dev-controls select { padding: 5px; background: #222; color: #fff; border: none; outline: none;}
+
+    </style>
+</head>
+<body data-role="ug">
+
+    <div class="top-nav">
+        <h2 style="margin:0; font-weight:800; letter-spacing: 2px;">AYUR<span style="color:var(--primary-color);">HUB</span></h2>
+        <div class="user-status">
+            <span style="color: var(--text-muted);">Logged in as: Dr. Sharma</span>
+            <div class="role-badge" id="ui-role-badge">UG SCHOLAR</div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <h1 class="welcome-text">Welcome back, <span style="color:var(--primary-color);">Partner.</span></h1>
+        <p class="welcome-sub" id="ui-welcome-sub">Your foundational Ayurveda studies are ready.</p>
+
+        <div class="module-grid">
+            
+            <div class="premium-card">
+                <div class="card-content">
+                    <div class="card-icon">📁</div>
+                    <h3 class="card-title">Notes & Vault</h3>
+                    <p class="card-desc" id="desc-notes">Access your daily lecture notes, PDF books, and personal study materials.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="card-content">
+                    <div class="card-icon">📖</div>
+                    <h3 class="card-title">Shloka Matrix</h3>
+                    <p class="card-desc" id="desc-shloka">Master the Samhitas. Read, memorize, and star important foundational Shlokas.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="card-content">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Chapter MCQs</h3>
+                    <p class="card-desc" id="desc-mcq">Test your knowledge chapter-by-chapter immediately after studying.</p>
+                </div>
+            </div>
+
+            <div class="premium-card">
+                <div class="card-content">
+                    <div class="card-icon">⏳</div>
+                    <h3 class="card-title">Previous Year Qs</h3>
+                    <p class="card-desc" id="desc-pyq">Review university exam question papers to understand exam patterns.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="dev-controls">
+        <label style="font-size: 0.8rem; color:#aaa;">Simulate Login Role:</label><br>
+        <select id="role-simulator" onchange="switchRole(this.value)">
+            <option value="ug">UG Student</option>
+            <option value="pg-prep">PG Preparation (AIAPGET)</option>
+            <option value="pg-scholar">PG Scholar (Specialized)</option>
+        </select>
+    </div>
+
+    <script>
+        // Data structure defining how UI changes based on Role
+        const roleData = {
+            "ug": {
+                badge: "UG SCHOLAR",
+                subText: "Your foundational Ayurveda studies are ready.",
+                notes: "Access your daily lecture notes, PDF books, and personal study materials.",
+                shloka: "Master the Samhitas. Read, memorize, and star important foundational Shlokas.",
+                mcq: "Test your knowledge chapter-by-chapter immediately after studying.",
+                pyq: "Review university exam question papers to understand exam patterns."
+            },
+            "pg-prep": {
+                badge: "AIAPGET PREP",
+                subText: "Focus mode engaged. Time to maximize your MCQ speed and accuracy.",
+                notes: "Access high-yield revision notes, mnemonics, and quick summary charts.",
+                shloka: "Targeted competitive Shlokas. Focus on fill-in-the-blanks and tricky lines.",
+                mcq: "Time-bound mock tests and rapid-fire MCQs to boost AIAPGET rank.",
+                pyq: "Analyze 10+ years of all-India AIAPGET previous year question papers."
+            },
+            "pg-scholar": {
+                badge: "PG SCHOLAR",
+                subText: "Welcome to your advanced research and thesis workspace.",
+                notes: "Organize your clinical case studies, thesis research, and literature reviews.",
+                shloka: "Deep dive into cross-references, commentaries (Tikas), and specific subject Shlokas.",
+                mcq: "Advanced clinical scenario MCQs and academic assessments.",
+                pyq: "Access subject-specific university PG exit exam papers."
+            }
+        };
+
+        function switchRole(role) {
+            // Change the CSS Theme
+            document.body.setAttribute("data-role", role);
+            
+            // Fetch the specific data for that role
+            const data = roleData[role];
+            
+            // Update the UI texts dynamically
+            document.getElementById('ui-role-badge').innerText = data.badge;
+            document.getElementById('ui-welcome-sub').innerText = data.subText;
+            document.getElementById('desc-notes').innerText = data.notes;
+            document.getElementById('desc-shloka').innerText = data.shloka;
+            document.getElementById('desc-mcq').innerText = data.mcq;
+            document.getElementById('desc-pyq').innerText = data.pyq;
+        }
+    </script>
+</body>
+</html>
