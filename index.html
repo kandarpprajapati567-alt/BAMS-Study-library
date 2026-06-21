@@ -31,7 +31,7 @@
             background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif;
-            min-height: 100vh; overflow-x: hidden; overflow-y: auto; /* Fixed for Desktop */
+            min-height: 100vh; overflow-x: hidden; overflow-y: auto; 
         }
 
         .bg-overlay {
@@ -75,12 +75,13 @@
             background: rgba(0,0,0,0.6); color: var(--primary-color);
             padding: 8px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 800;
             letter-spacing: 1px; border: 1px solid var(--primary-color); box-shadow: 0 0 10px var(--primary-glow);
+            text-align: center;
         }
 
         .icon-btn { 
             font-size: 1.2rem; cursor: pointer; transition: 0.3s; 
             background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); 
-            border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; flex-shrink: 0;
         }
         .icon-btn:hover { background: var(--primary-color); color: #000; transform: rotate(90deg); box-shadow: 0 0 15px var(--primary-glow); }
 
@@ -98,7 +99,7 @@
             display: flex; gap: 30px; padding: 20px 10px 40px 10px; width: 100%;
             overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory;
         }
-        /* Custom sleek scrollbar for desktop usability */
+        
         .module-carousel::-webkit-scrollbar { height: 8px; }
         .module-carousel::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
         .module-carousel::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
@@ -110,14 +111,12 @@
             padding: 30px; cursor: pointer; position: relative; overflow: hidden;
             transition: var(--transition-smooth); display: flex; flex-direction: column; justify-content: flex-end;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            /* Entrance Animation Variables */
             opacity: 0; transform: translateY(50px);
             animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
         
         @keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
 
-        /* Staggered entrance animation for cards */
         #card-notes { animation-delay: 0.2s; }
         #card-shloka { animation-delay: 0.4s; }
         #card-mcq { animation-delay: 0.6s; }
@@ -147,13 +146,14 @@
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.85); z-index: 2000; backdrop-filter: blur(20px);
             display: none; justify-content: center; align-items: center; opacity: 0; transition: 0.4s;
+            padding: 20px; /* Added padding to prevent edges touching on mobile */
         }
         .modal-box {
             background: var(--surface-color); border: 1px solid var(--border-glass);
-            padding: 40px; border-radius: 30px; width: 450px; max-width: 90%; position: relative;
+            padding: 40px; border-radius: 30px; width: 100%; max-width: 450px; position: relative;
             box-shadow: 0 30px 60px rgba(0,0,0,0.9); max-height: 90vh; overflow-y: auto;
         }
-        .modal-box.large { width: 1000px; max-width: 95%; height: 85vh; display: flex; flex-direction: column; }
+        .modal-box.large { max-width: 1000px; height: 85vh; display: flex; flex-direction: column; }
         .modal-box.glow { border-color: var(--primary-color); box-shadow: inset 0 0 40px var(--primary-glow), 0 30px 60px rgba(0,0,0,0.8); }
         
         .close-btn { position: absolute; top: 20px; right: 25px; font-size: 1.8rem; cursor: pointer; color: var(--text-muted); transition: 0.3s; z-index: 10;}
@@ -165,6 +165,7 @@
         .custom-input {
             width: 100%; padding: 15px; background: rgba(0,0,0,0.5); color: #fff;
             border: 1px solid var(--border-glass); border-radius: 12px; font-family: inherit; outline: none; transition: 0.3s;
+            -webkit-appearance: none; /* Better mobile rendering for selects */
         }
         .custom-input:focus { border-color: var(--primary-color); box-shadow: 0 0 15px var(--primary-glow); }
         
@@ -174,15 +175,14 @@
         }
         .action-btn:hover { box-shadow: 0 0 25px var(--primary-glow); transform: translateY(-3px); }
 
-        /* --- SMART FILE MANAGER UI (APP ICON GRID) --- */
-        .vault-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 20px; margin-bottom: 25px; }
-        .vault-search { flex: 1; margin-left: 30px; position: relative; }
+        /* --- SMART FILE MANAGER UI --- */
+        .vault-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 20px; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;}
+        .vault-search { flex: 1; min-width: 250px; position: relative; }
         
-        .action-bar { display: flex; gap: 20px; margin-bottom: 30px; }
-        .file-btn { flex: 1; background: rgba(255,255,255,0.03); border: 1px dashed var(--primary-color); color: var(--primary-color); padding: 15px; text-align: center; border-radius: 15px; cursor: pointer; transition: 0.3s; font-weight: 800; letter-spacing: 1px; }
+        .action-bar { display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap;}
+        .file-btn { flex: 1; min-width: 150px; background: rgba(255,255,255,0.03); border: 1px dashed var(--primary-color); color: var(--primary-color); padding: 15px; text-align: center; border-radius: 15px; cursor: pointer; transition: 0.3s; font-weight: 800; letter-spacing: 1px; }
         .file-btn:hover { background: var(--primary-glow); color: #fff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);}
         
-        /* The App Icon Grid */
         .file-grid { 
             display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
             gap: 25px; overflow-y: auto; flex: 1; padding: 10px; align-content: start;
@@ -211,26 +211,49 @@
         }
         .app-icon-badge.drive { background: #0077ff; color: white;}
 
-        /* Delete Button */
         .delete-btn {
             position: absolute; top: -8px; left: -8px; background: #ff3366; color: white;
             border: none; border-radius: 50%; width: 26px; height: 26px; font-size: 0.9rem; font-weight: bold;
             cursor: pointer; display: none; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 5;
         }
         .app-icon:hover .delete-btn { display: flex; }
-        .delete-btn:hover { transform: scale(1.2); }
 
-        /* --- RESPONSIVE FIXES --- */
+        /* --- SHLOKA MATRIX SPECIFIC STYLES --- */
+        .filter-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .shloka-display-area {
+            background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); border-radius: 15px;
+            padding: 20px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;
+        }
+        .shloka-card {
+            background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 4px solid var(--primary-color);
+        }
+        .shloka-text { font-size: 1.1rem; color: #fff; font-weight: 600; margin-bottom: 5px;}
+        .shloka-ref { font-size: 0.85rem; color: var(--text-muted); font-style: italic;}
+
+        /* --- RESPONSIVE FIXES (MOBILE ALIGNMENT & SCROLL FIX) --- */
         @media (max-width: 768px) {
-            .logo-3d { font-size: 3rem; }
-            .top-nav { padding: 15px 20px; }
-            .dashboard-content { padding: 20px; margin-top: 20px; }
-            .welcome-text { font-size: 2.5rem; }
-            .module-carousel { padding: 10px 0; gap: 20px; }
-            .premium-card { min-width: 85vw; height: 380px; }
-            .action-bar { flex-direction: column; gap: 10px;}
-            .modal-box.large { height: 95vh; border-radius: 20px; padding: 20px;}
-            .vault-header { flex-direction: column; align-items: flex-start; gap: 15px;}
+            .logo-3d { font-size: 2.5rem; letter-spacing: 5px; } /* Prevent clipping on load */
+            .top-nav { padding: 15px 20px; flex-direction: column; gap: 15px;} /* Stack nav on mobile */
+            .brand-name { font-size: 1.3rem; }
+            .role-badge { font-size: 0.7rem; padding: 6px 12px;}
+            
+            .dashboard-content { padding: 20px 10px; margin-top: 10px; }
+            .welcome-text { font-size: 2.2rem; }
+            
+            .module-carousel { 
+                padding: 10px 20px 30px 20px; gap: 15px; 
+                scroll-snap-type: x proximity; /* Proximity makes scroll less jerky on mobile */
+            }
+            .premium-card { 
+                min-width: 75vw; /* Reduced from 85vw to stop skipping */
+                height: 350px; 
+            }
+            .card-icon { font-size: 2.5rem; }
+            .card-title { font-size: 1.3rem; }
+
+            .modal-box { padding: 20px; } /* Less padding inside modal */
+            .modal-box.large { height: 90vh; }
+            .vault-header { flex-direction: column; align-items: stretch; gap: 10px;}
             .vault-search { margin-left: 0; width: 100%;}
             .file-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; }
             .app-icon { padding: 15px 10px; }
@@ -271,11 +294,11 @@
                     </div>
                 </div>
 
-                <div class="premium-card" id="card-shloka" onclick="openModal('dummy-modal', 'Shloka Matrix')">
+                <div class="premium-card" id="card-shloka" onclick="openShlokaMatrix()">
                     <div class="card-content">
                         <div class="card-icon">📖</div>
                         <h3 class="card-title">Shloka Matrix</h3>
-                        <p class="card-desc">Master the Samhitas. Read, memorize, and manage Shlokas.</p>
+                        <p class="card-desc">Master the Samhitas. Filter by year, subject, and chapter.</p>
                     </div>
                 </div>
 
@@ -319,8 +342,36 @@
                 </div>
             </div>
 
-            <div class="file-grid" id="vault-file-grid">
+            <div class="file-grid" id="vault-file-grid"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="shloka-modal">
+        <div class="modal-box large">
+            <span class="close-btn" onclick="closeModal('shloka-modal')">✕</span>
+            
+            <div class="vault-header">
+                <h2 style="margin:0; color: var(--primary-color); font-family: 'Orbitron';">SHLOKA MATRIX</h2>
+                <p style="margin:5px 0 0 0; color:var(--text-muted); font-size:0.9rem;">Filter down to find the exact Shlokas you need to master.</p>
+            </div>
+
+            <div class="filter-container">
+                <select id="filter-year" class="custom-input" onchange="updateSubjects()">
+                    <option value="">-- Select Year --</option>
+                </select>
+                <select id="filter-subject" class="custom-input" onchange="updateChapters()" disabled>
+                    <option value="">-- Select Subject --</option>
+                </select>
+                <select id="filter-chapter" class="custom-input" onchange="displayShlokas()" disabled>
+                    <option value="">-- Select Chapter --</option>
+                </select>
+            </div>
+
+            <div class="shloka-display-area" id="shloka-results">
+                <div style="text-align:center; color:var(--text-muted); margin-top:40px;">
+                    Select Year, Subject, and Chapter to load Shlokas.
                 </div>
+            </div>
         </div>
     </div>
 
@@ -368,6 +419,8 @@
                 boot.style.transform = 'scale(1.2)'; boot.style.opacity = '0';
                 setTimeout(() => { boot.style.display = 'none'; document.getElementById('main-dashboard').style.opacity = '1'; }, 1000);
             }, 1800); 
+
+            initShlokaData(); // Initialize Shloka Matrix data on load
         };
 
         // --- MODAL CONTROLS ---
@@ -379,7 +432,113 @@
             const m = document.getElementById(id); m.style.opacity = '0'; setTimeout(()=> m.style.display = 'none', 400);
         }
 
-        // --- SMART FILE MANAGER LOGIC (APP ICON STYLE) ---
+        // --- SHLOKA MATRIX LOGIC ---
+        // Sample database - You can easily expand this!
+        const shlokaDatabase = {
+            "1st Year": {
+                "Padartha Vigyana": {
+                    "Chapter 1: Ayurveda Nirupana": [
+                        { text: "Ayu kamayamanena dharmartha sukha sadhanam | Ayurvedopadesheshu vidheyah paramadarah ||", ref: "Ashtanga Hridaya Sutrasthana 1/2" },
+                        { text: "Hitaahitam sukham duhkham ayustasya hitaahitam | Maanam cha taccha yatroktamayurveda sa uchyate ||", ref: "Charak Samhita Sutrasthana 1/41" }
+                    ],
+                    "Chapter 2: Dravya Vigyaniya": [
+                        { text: "Khaadini Aatma Manah Kaalo Dishashcha Dravya Sangrahah | Sendriyam Chetanadravyam Nirindriyam Achetanam ||", ref: "Charak Samhita Sutrasthana 1/48" }
+                    ]
+                },
+                "Rachana Sharir": {
+                    "Chapter 1: Sharir Upakramaniya": [
+                        { text: "Shiryate iti shariram...", ref: "Basic Definition" }
+                    ]
+                }
+            },
+            "2nd Year": {
+                "Dravyaguna Vigyan": {
+                    "Chapter 1: Namarupa Vigyana": [
+                        { text: "Oushadhi nama rupani janate hyajapa vane | Avipashca gopashca ye chaanye vanavasinah ||", ref: "Charak Samhita Sutrasthana 1/120" }
+                    ]
+                },
+                "Roga Nidan": {
+                    "Chapter 1: Dosha Dushya Vigyana": [
+                        { text: "Rogastu doshavaishamyam doshasamyam arogata |", ref: "Ashtanga Hridaya Sutrasthana 1/20" }
+                    ]
+                }
+            }
+        };
+
+        function openShlokaMatrix() {
+            openModal('shloka-modal');
+        }
+
+        function initShlokaData() {
+            const yearSelect = document.getElementById('filter-year');
+            yearSelect.innerHTML = '<option value="">-- Select Year --</option>';
+            for (let year in shlokaDatabase) {
+                yearSelect.innerHTML += `<option value="${year}">${year}</option>`;
+            }
+        }
+
+        function updateSubjects() {
+            const year = document.getElementById('filter-year').value;
+            const subjectSelect = document.getElementById('filter-subject');
+            const chapterSelect = document.getElementById('filter-chapter');
+            const results = document.getElementById('shloka-results');
+
+            subjectSelect.innerHTML = '<option value="">-- Select Subject --</option>';
+            chapterSelect.innerHTML = '<option value="">-- Select Chapter --</option>';
+            chapterSelect.disabled = true;
+            results.innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px;">Select Year, Subject, and Chapter to load Shlokas.</div>`;
+
+            if (year) {
+                subjectSelect.disabled = false;
+                for (let subject in shlokaDatabase[year]) {
+                    subjectSelect.innerHTML += `<option value="${subject}">${subject}</option>`;
+                }
+            } else {
+                subjectSelect.disabled = true;
+            }
+        }
+
+        function updateChapters() {
+            const year = document.getElementById('filter-year').value;
+            const subject = document.getElementById('filter-subject').value;
+            const chapterSelect = document.getElementById('filter-chapter');
+            const results = document.getElementById('shloka-results');
+
+            chapterSelect.innerHTML = '<option value="">-- Select Chapter --</option>';
+            results.innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px;">Select Year, Subject, and Chapter to load Shlokas.</div>`;
+
+            if (subject) {
+                chapterSelect.disabled = false;
+                for (let chapter in shlokaDatabase[year][subject]) {
+                    chapterSelect.innerHTML += `<option value="${chapter}">${chapter}</option>`;
+                }
+            } else {
+                chapterSelect.disabled = true;
+            }
+        }
+
+        function displayShlokas() {
+            const year = document.getElementById('filter-year').value;
+            const subject = document.getElementById('filter-subject').value;
+            const chapter = document.getElementById('filter-chapter').value;
+            const results = document.getElementById('shloka-results');
+
+            if (year && subject && chapter) {
+                const shlokas = shlokaDatabase[year][subject][chapter];
+                results.innerHTML = ''; // Clear empty state
+                
+                shlokas.forEach(shloka => {
+                    results.innerHTML += `
+                        <div class="shloka-card">
+                            <div class="shloka-text">${shloka.text}</div>
+                            <div class="shloka-ref">- ${shloka.ref}</div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        // --- SMART FILE MANAGER LOGIC ---
         let driveFiles = JSON.parse(localStorage.getItem('ayurhub_drive_files')) || [];
         let localFiles = []; 
 
@@ -444,12 +603,10 @@
             renderFiles();
         }
 
-        function openFile(url, isDrive) {
-            window.open(url, '_blank'); 
-        }
+        function openFile(url, isDrive) { window.open(url, '_blank'); }
 
         function deleteFile(event, id, isDrive) {
-            event.stopPropagation(); // Prevents the app icon click event from firing
+            event.stopPropagation();
             if(confirm("Are you sure you want to remove this file?")) {
                 if(isDrive) {
                     driveFiles = driveFiles.filter(f => f.id !== id);
