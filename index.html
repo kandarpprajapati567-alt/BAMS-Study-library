@@ -12,7 +12,7 @@
         :root {
             --bg-color: #030407;
             --surface-color: rgba(15, 20, 25, 0.65);
-            --primary-color: #00ffcc; /* Tech Cyan/Green for UG */
+            --primary-color: #00ffcc;
             --primary-glow: rgba(0, 255, 204, 0.5);
             --text-main: #ffffff;
             --text-muted: #8a9bb3;
@@ -263,7 +263,6 @@
         .chapter-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
         .chapter-btn.active { background: rgba(0,255,204,0.1); color: var(--primary-color); border-color: rgba(0,255,204,0.3); }
 
-        /* FIXED & UPGRADED: 100% Width to ensure pure vertical stacking */
         .shloka-display-area {
             flex: 1; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); 
             border-radius: 16px; padding: 25px; overflow-y: auto; 
@@ -273,9 +272,8 @@
         .shloka-display-area::-webkit-scrollbar { width: 8px; }
         .shloka-display-area::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
 
-        /* NEW GEN UI CARD */
         .shloka-glass-card {
-            width: 100%; /* Force full width, making them stack exactly one below another */
+            width: 100%;
             flex-shrink: 0; 
             background: linear-gradient(135deg, rgba(20, 25, 30, 0.8) 0%, rgba(5, 10, 15, 0.9) 100%); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
@@ -285,7 +283,7 @@
             display: flex; flex-direction: column; gap: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
             backdrop-filter: blur(15px);
-            cursor: pointer; /* Indication it can be clicked for translation */
+            cursor: pointer;
         }
         
         .shloka-glass-card:hover { 
@@ -295,7 +293,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,255,204,0.1); 
         }
 
-        /* NEW: STAR BUTTON FOR Ratta/Memorization */
         .star-btn {
             position: absolute; top: 20px; right: 25px;
             background: transparent; border: none; color: var(--text-muted);
@@ -315,7 +312,7 @@
             font-size: 1.4rem; color: #ffffff; font-weight: 600; line-height: 1.8; 
             font-family: serif; letter-spacing: 0.5px;
             white-space: pre-line; word-wrap: break-word; margin: 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8); padding-right: 40px; /* Space for the star */
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8); padding-right: 40px;
         }
 
         /* --- RESPONSIVE FIXES --- */
@@ -462,6 +459,7 @@
         </div>
     </div>
 
+    <!-- TRANSLATION MODAL -->
     <div class="modal-overlay" id="translation-modal">
         <div class="modal-box large" style="max-width: 800px; height: auto; max-height: 90vh;">
             <span class="close-btn" onclick="closeModal('translation-modal')">✕</span>
@@ -602,30 +600,41 @@
             element.classList.add('active');
 
             const resultsArea = document.getElementById('shloka-results');
-            const shlokas = globalShlokaData[currentSamhita][chapter];
+            const shlokasGroup = globalShlokaData[currentSamhita][chapter];
             
-            if(shlokas.length === 0) {
+            if(shlokasGroup.length === 0) {
                 resultsArea.innerHTML = `<div style="text-align:center; color:#ff3366; margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">NO DATA FOUND IN ARCHIVE.</div>`;
                 return;
             }
 
             resultsArea.innerHTML = ''; 
-            shlokas.forEach((shloka, index) => {
-                // Escaping single quotes in strings before passing them to function
-                const safeHeading = shloka.heading.replace(/'/g, "\\'");
-                const safeText = shloka.text.replace(/'/g, "\\'").replace(/\n/g, '\\n');
+            let globalIndex = 0;
+            
+            shlokasGroup.forEach((shlokaObj) => {
+                // REGEX MAGIC: Splitting the huge text block into separate strings.
+                // It looks for endings like ॥२॥ or ।४। and intelligently breaks the text down.
+                let parsedShlokas = shlokaObj.text.match(/[\s\S]*?(?:॥\s*\d*\s*॥|।\s*\d+\s*।|॥|$)/g);
+                parsedShlokas = parsedShlokas.map(s => s.trim()).filter(s => s.length > 0);
 
-                resultsArea.innerHTML += `
-                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
-                        <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
-                        <div class="shloka-heading">${shloka.heading}</div>
-                        <div class="shloka-text">${shloka.text}</div>
-                    </div>
-                `;
+                parsedShlokas.forEach((singleShlokaText, subIndex) => {
+                    // Update heading slightly if multiple shlokas were extracted from one block
+                    let displayHeading = parsedShlokas.length > 1 ? `${shlokaObj.heading} (Part ${subIndex + 1})` : shlokaObj.heading;
+                    
+                    const safeHeading = displayHeading.replace(/'/g, "\\'");
+                    const safeText = singleShlokaText.replace(/'/g, "\\'").replace(/\n/g, '\\n');
+
+                    resultsArea.innerHTML += `
+                        <div class="shloka-glass-card" style="animation-delay: ${globalIndex * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
+                            <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
+                            <div class="shloka-heading">${displayHeading}</div>
+                            <div class="shloka-text">${singleShlokaText}</div>
+                        </div>
+                    `;
+                    globalIndex++;
+                });
             });
         }
 
-        // NEW: Toggle Star logic
         function toggleStar(event, element) {
             event.stopPropagation(); // Prevents the card click (translation modal) from triggering
             if(element.classList.contains('active')) {
@@ -637,7 +646,6 @@
             }
         }
 
-        // NEW: Open Translation Modal
         function openTranslationModal(heading, text) {
             document.getElementById('trans-heading').innerText = heading;
             document.getElementById('trans-shloka').innerText = text;
@@ -692,10 +700,7 @@
             const file = event.target.files[0];
             if(file) {
                 const fileUrl = URL.createObjectURL(file); 
-                localFiles.unshift({ 
-                    id: Date.now(), name: file.name, type: 'local', 
-                    url: fileUrl 
-                });
+                localFiles.unshift({ id: Date.now(), name: file.name, type: 'local', url: fileUrl });
                 renderFiles();
             }
         }
@@ -706,9 +711,7 @@
             const url = prompt("Paste Google Drive Link:");
             if(!url) return;
 
-            driveFiles.unshift({
-                id: Date.now(), name: name, type: 'drive', url: url
-            });
+            driveFiles.unshift({ id: Date.now(), name: name, type: 'drive', url: url });
             localStorage.setItem('ayurhub_drive_files', JSON.stringify(driveFiles));
             renderFiles();
         }
