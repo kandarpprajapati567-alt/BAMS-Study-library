@@ -231,7 +231,6 @@
         /* --- SHLOKA MATRIX UI (NEXT-GEN UPGRADE) --- */
         .matrix-layout { display: flex; flex-direction: column; height: 100%; gap: 20px; }
         
-        /* Level 1: Samhita Tabs */
         .modern-tabs { 
             display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; 
             border-bottom: 1px solid var(--border-glass);
@@ -247,7 +246,6 @@
         .tab-btn:hover { color: #fff; }
         .tab-btn.active { color: var(--primary-color); border-bottom-color: var(--primary-color); text-shadow: 0 0 15px var(--primary-glow); }
 
-        /* Level 2: Chapters & Results Layout */
         .matrix-body { display: flex; flex: 1; gap: 25px; overflow: hidden; margin-top: 10px;}
         
         .chapter-sidebar { 
@@ -265,54 +263,60 @@
         .chapter-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
         .chapter-btn.active { background: rgba(0,255,204,0.1); color: var(--primary-color); border-color: rgba(0,255,204,0.3); }
 
-        /* CRITICAL FIX: Ensure the display area allows scrolling and proper gaps */
+        /* FIXED & UPGRADED: 100% Width to ensure pure vertical stacking */
         .shloka-display-area {
             flex: 1; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); 
             border-radius: 16px; padding: 25px; overflow-y: auto; 
-            display: flex; flex-direction: column; gap: 30px; /* Big gap between cards */
+            display: flex; flex-direction: column; align-items: center; gap: 25px; 
             box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
         }
         .shloka-display-area::-webkit-scrollbar { width: 8px; }
         .shloka-display-area::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
 
-        /* UPGRADED: Darkish White Glassmorphism + flex-shrink fix */
+        /* NEW GEN UI CARD */
         .shloka-glass-card {
-            flex-shrink: 0; /* OVERLAP FIX: Prevents the card from squishing its height */
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%); /* Darkish white effect */
-            border: 1px solid rgba(255, 255, 255, 0.15); /* White glass border */
-            border-left: 5px solid var(--primary-color); /* Strong indicator line */
+            width: 100%; /* Force full width, making them stack exactly one below another */
+            flex-shrink: 0; 
+            background: linear-gradient(135deg, rgba(20, 25, 30, 0.8) 0%, rgba(5, 10, 15, 0.9) 100%); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            border-left: 6px solid var(--primary-color); 
             border-radius: 16px; padding: 25px 30px; position: relative; transition: var(--transition-smooth);
             animation: slideUpFade 0.5s ease forwards; opacity: 0; 
             display: flex; flex-direction: column; gap: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-            backdrop-filter: blur(15px); /* Strong blur for the separate glass look */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+            backdrop-filter: blur(15px);
+            cursor: pointer; /* Indication it can be clicked for translation */
         }
         
         .shloka-glass-card:hover { 
-            transform: translateX(8px) translateY(-3px); 
-            border-color: rgba(255, 255, 255, 0.3);
-            border-left-color: var(--primary-color);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7), inset 0 0 25px rgba(0,255,204,0.1); 
+            transform: translateX(10px) scale(1.01); 
+            border-color: rgba(0, 255, 204, 0.4);
+            background: linear-gradient(135deg, rgba(30, 40, 45, 0.8) 0%, rgba(10, 15, 20, 0.9) 100%); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,255,204,0.1); 
         }
 
-        /* UPGRADED: Modern Tag-like Headings */
+        /* NEW: STAR BUTTON FOR Ratta/Memorization */
+        .star-btn {
+            position: absolute; top: 20px; right: 25px;
+            background: transparent; border: none; color: var(--text-muted);
+            font-size: 1.8rem; cursor: pointer; transition: 0.3s;
+            z-index: 10; padding: 0;
+        }
+        .star-btn:hover { transform: scale(1.2); color: #ffd700; }
+        .star-btn.active { color: #ffd700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+
         .shloka-heading { 
-            font-size: 0.8rem; color: #000; text-transform: uppercase; letter-spacing: 2px; 
+            font-size: 0.85rem; color: #000; text-transform: uppercase; letter-spacing: 2px; 
             font-weight: 800; background: var(--primary-color); padding: 6px 14px; 
             border-radius: 8px; align-self: flex-start; box-shadow: 0 4px 15px var(--primary-glow);
         }
 
-        /* UPGRADED & FIXED: Text breaks nicely and never overflows */
         .shloka-text { 
-            font-size: 1.35rem; color: #ffffff; font-weight: 600; line-height: 1.8; 
+            font-size: 1.4rem; color: #ffffff; font-weight: 600; line-height: 1.8; 
             font-family: serif; letter-spacing: 0.5px;
-            white-space: pre-line; /* Respects JSON new lines (\n) strictly */
-            word-wrap: break-word; /* Prevents long words from breaking the box */
-            margin: 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8); /* Helps text stand out against the white glass */
+            white-space: pre-line; word-wrap: break-word; margin: 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8); padding-right: 40px; /* Space for the star */
         }
-
-        @keyframes fadeInScale { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
 
         /* --- RESPONSIVE FIXES --- */
         @media (max-width: 768px) {
@@ -330,12 +334,12 @@
             .file-btn { flex-direction: row; font-size: 0.9rem; padding: 15px;}
             .file-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 15px; }
             
-            /* Matrix Responsive */
             .matrix-body { flex-direction: column; overflow-y: auto; }
             .chapter-sidebar { width: 100%; max-height: 200px; border-radius: 12px; }
             .shloka-display-area { padding: 15px; overflow: visible;}
             .shloka-text { font-size: 1.15rem; }
             .shloka-glass-card { padding: 20px; }
+            .star-btn { top: 15px; right: 15px; font-size: 1.5rem;}
         }
     </style>
 </head>
@@ -439,8 +443,7 @@
                     <p style="margin:5px 0 0 0; color:var(--text-muted);">Navigate the timeless wisdom, securely loaded from database.</p>
                 </div>
 
-                <div class="modern-tabs" id="matrix-samhitas">
-                    </div>
+                <div class="modern-tabs" id="matrix-samhitas"></div>
 
                 <div class="matrix-body">
                     <div class="chapter-sidebar" id="matrix-chapters">
@@ -456,6 +459,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="translation-modal">
+        <div class="modal-box large" style="max-width: 800px; height: auto; max-height: 90vh;">
+            <span class="close-btn" onclick="closeModal('translation-modal')">✕</span>
+            <h2 id="trans-heading" style="color: var(--primary-color); font-family: 'Orbitron'; margin-top: 0; font-size: 1.2rem; letter-spacing: 1px;">Heading Here</h2>
+            
+            <div id="trans-shloka" style="font-size: 1.6rem; font-family: serif; color: #fff; text-align: center; margin: 30px 0; white-space: pre-line; line-height: 1.8;">
+                Shloka Text Here
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 25px 0;">
+            
+            <h3 style="color: var(--primary-color); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Translation</h3>
+            <p style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
+                (Detailed translation file will be linked here in upcoming patches.)
+            </p>
+
+            <h3 style="color: var(--primary-color); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; margin-top: 25px;">Short Explanation</h3>
+            <p style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
+                (Short contextual explanation of the shloka will appear here.)
+            </p>
         </div>
     </div>
 
@@ -504,7 +530,6 @@
                 setTimeout(() => { boot.style.display = 'none'; document.getElementById('main-dashboard').style.opacity = '1'; }, 1000);
             }, 1800); 
 
-            // Initialize JSON Fetching
             fetchShlokaData();
         };
 
@@ -517,10 +542,9 @@
         }
 
         // --- NEW JSON-POWERED SHLOKA MATRIX LOGIC ---
-        let globalShlokaData = {}; // Will hold our categorized JSON data
+        let globalShlokaData = {}; 
         let currentSamhita = null;
 
-        // 1. Fetch the JSON file from the local folder
         async function fetchShlokaData() {
             try {
                 const response = await fetch('shloka.json');
@@ -533,31 +557,22 @@
                 document.getElementById('matrix-samhitas').innerHTML = `
                     <div style="color:#ff3366; font-size: 0.9rem;">
                         ⚠️ ERROR: Unable to load 'shloka.json'. <br>
-                        <i>Note: Web browsers block loading local JSON files directly for security (CORS policy). You must run this using a local server like "Live Server" in VS Code.</i>
+                        <i>Note: Web browsers block loading local JSON files directly for security. Run using a local server.</i>
                     </div>`;
             }
         }
 
-        // 2. Convert the flat JSON array into a nested object (Samhita -> Chapter -> Shlokas)
         function processShlokaData(data) {
             globalShlokaData = {};
             data.forEach(shloka => {
-                // If the Samhita category doesn't exist yet, create it
-                if (!globalShlokaData[shloka.samhita]) {
-                    globalShlokaData[shloka.samhita] = {};
-                }
-                // If the Chapter inside that Samhita doesn't exist yet, create it
-                if (!globalShlokaData[shloka.samhita][shloka.chapter]) {
-                    globalShlokaData[shloka.samhita][shloka.chapter] = [];
-                }
-                // Push the shloka into the correct category
+                if (!globalShlokaData[shloka.samhita]) globalShlokaData[shloka.samhita] = {};
+                if (!globalShlokaData[shloka.samhita][shloka.chapter]) globalShlokaData[shloka.samhita][shloka.chapter] = [];
                 globalShlokaData[shloka.samhita][shloka.chapter].push(shloka);
             });
         }
 
         function openShlokaMatrix() { openModal('shloka-modal'); }
 
-        // 3. Build the UI Tabs based on our parsed data
         function initShlokaUI() {
             const samhitaContainer = document.getElementById('matrix-samhitas');
             samhitaContainer.innerHTML = '';
@@ -566,15 +581,11 @@
             }
         }
 
-        // 4. Handle Samhita click -> Load Chapters into Sidebar
         function selectSamhita(samhita, element) {
             currentSamhita = samhita;
-            
-            // Handle active tab styling
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
 
-            // Render Chapters (Sidebar)
             const chapterContainer = document.getElementById('matrix-chapters');
             chapterContainer.innerHTML = '';
             const chapters = globalShlokaData[samhita];
@@ -583,17 +594,13 @@
                 chapterContainer.innerHTML += `<button class="chapter-btn" onclick="selectChapter('${chapter}', this)">${chapter}</button>`;
             }
 
-            // Reset Shloka area
             document.getElementById('shloka-results').innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">Select a chapter to extract data.</div>`;
         }
 
-        // 5. Handle Chapter click -> Load Shlokas into Main Area
         function selectChapter(chapter, element) {
-            // Handle active chapter styling
             document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
 
-            // Render Shlokas
             const resultsArea = document.getElementById('shloka-results');
             const shlokas = globalShlokaData[currentSamhita][chapter];
             
@@ -604,14 +611,37 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                // The structure here has been upgraded slightly to match the new CSS
+                // Escaping single quotes in strings before passing them to function
+                const safeHeading = shloka.heading.replace(/'/g, "\\'");
+                const safeText = shloka.text.replace(/'/g, "\\'").replace(/\n/g, '\\n');
+
                 resultsArea.innerHTML += `
-                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s">
+                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
+                        <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
                         <div class="shloka-heading">${shloka.heading}</div>
                         <div class="shloka-text">${shloka.text}</div>
                     </div>
                 `;
             });
+        }
+
+        // NEW: Toggle Star logic
+        function toggleStar(event, element) {
+            event.stopPropagation(); // Prevents the card click (translation modal) from triggering
+            if(element.classList.contains('active')) {
+                element.classList.remove('active');
+                element.innerHTML = '☆';
+            } else {
+                element.classList.add('active');
+                element.innerHTML = '★';
+            }
+        }
+
+        // NEW: Open Translation Modal
+        function openTranslationModal(heading, text) {
+            document.getElementById('trans-heading').innerText = heading;
+            document.getElementById('trans-shloka').innerText = text;
+            openModal('translation-modal');
         }
 
         // --- SMART FILE MANAGER LOGIC ---
