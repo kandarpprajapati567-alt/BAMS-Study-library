@@ -580,9 +580,10 @@
         }
 
         // ==========================================
-        // THE FIX: REMOVED FAULTY REGEX LOGIC HERE
+        // NEW UPDATED LOGIC INJECTED HERE
         // ==========================================
         function selectChapter(chapter, element) {
+            // Highlight active chapter
             document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
 
@@ -596,19 +597,32 @@
 
             resultsArea.innerHTML = ''; 
             
-            // Now, it will simply take ONE JSON object and make exactly ONE clean glass card.
-            shlokasGroup.forEach((shlokaObj, index) => {
-                // Formatting strings so they don't break the onclick function
-                const safeHeading = shlokaObj.heading ? shlokaObj.heading.replace(/'/g, "\\'") : '';
-                const safeText = shlokaObj.text ? shlokaObj.text.replace(/'/g, "\\'").replace(/\n/g, '\\n') : '';
+            let animationCounter = 0; // Ensures staggered animation for all cards
 
-                resultsArea.innerHTML += `
-                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
-                        <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
-                        <div class="shloka-heading">${shlokaObj.heading}</div>
-                        <div class="shloka-text">${shlokaObj.text}</div>
-                    </div>
-                `;
+            shlokasGroup.forEach((shlokaObj) => {
+                const safeHeading = shlokaObj.heading ? shlokaObj.heading.replace(/'/g, "\\'") : '';
+                
+                // SPLIT LOGIC: Break the main text block into individual shlokas by newline
+                let textToSplit = shlokaObj.text || '';
+                // Handle both literal newline characters and escaped \n
+                textToSplit = textToSplit.replace(/\\n/g, '\n'); 
+                
+                // Filter out any empty lines so we don't create blank cards
+                const individualShlokas = textToSplit.split('\n').filter(line => line.trim() !== '');
+
+                // Create an individual glass card for EVERY single shloka
+                individualShlokas.forEach((verse) => {
+                    const safeText = verse.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    
+                    resultsArea.innerHTML += `
+                        <div class="shloka-glass-card" style="animation-delay: ${animationCounter * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
+                            <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
+                            <div class="shloka-heading">${shlokaObj.heading}</div>
+                            <div class="shloka-text">${verse.trim()}</div>
+                        </div>
+                    `;
+                    animationCounter++;
+                });
             });
         }
         // ==========================================
