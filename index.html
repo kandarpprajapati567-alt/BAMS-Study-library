@@ -258,31 +258,45 @@
         .chapter-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
         .chapter-btn.active { background: rgba(0,255,204,0.1); color: var(--primary-color); border-color: rgba(0,255,204,0.3); }
 
+        /* ADDED PERSPECTIVE HERE FOR 3D EFFECT */
         .shloka-display-area {
             flex: 1; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); 
-            border-radius: 16px; padding: 25px; overflow-y: auto; 
+            border-radius: 16px; padding: 25px; overflow-y: auto; overflow-x: hidden;
             display: flex; flex-direction: column; align-items: center; gap: 25px; 
             box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+            perspective: 1200px; /* Magic 3D Depth */
         }
         .shloka-display-area::-webkit-scrollbar { width: 8px; }
         .shloka-display-area::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
 
+        /* UPDATED BASE CARD FOR 3D STARTING POSITION */
         .shloka-glass-card {
             width: 100%;
             flex-shrink: 0; 
             background: linear-gradient(135deg, rgba(20, 25, 30, 0.8) 0%, rgba(5, 10, 15, 0.9) 100%); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             border-left: 6px solid var(--primary-color); 
-            border-radius: 16px; padding: 25px 30px; position: relative; transition: var(--transition-smooth);
-            animation: slideUpFade 0.5s ease forwards; opacity: 0; 
+            border-radius: 16px; padding: 25px 30px; position: relative;
             display: flex; flex-direction: column; gap: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
             backdrop-filter: blur(15px);
             cursor: pointer;
+            
+            /* 3D Properties */
+            transform: rotateX(60deg) translateY(60px) translateZ(-50px);
+            opacity: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.6s ease-out, box-shadow 0.4s, background 0.4s, border-color 0.4s;
+        }
+
+        /* 3D END POSITION (TRIGGERED BY JAVASCRIPT) */
+        .shloka-glass-card.show-3d {
+            transform: rotateX(0deg) translateY(0) translateZ(0);
+            opacity: 1;
         }
         
-        .shloka-glass-card:hover { 
-            transform: translateX(10px) scale(1.01); 
+        .shloka-glass-card:hover.show-3d { 
+            transform: translateX(10px) scale(1.01) rotateX(0deg); 
             border-color: rgba(0, 255, 204, 0.4);
             background: linear-gradient(135deg, rgba(30, 40, 45, 0.8) 0%, rgba(10, 15, 20, 0.9) 100%); 
             box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,255,204,0.1); 
@@ -430,9 +444,14 @@
             <span class="close-btn" onclick="closeModal('shloka-modal')">✕</span>
             
             <div class="matrix-layout">
-                <div>
-                    <h2 style="margin:0; color: var(--primary-color); font-family: 'Orbitron'; font-size: 2rem; letter-spacing: 2px;">SHLOKA MATRIX</h2>
-                    <p style="margin:5px 0 0 0; color:var(--text-muted);">Navigate the timeless wisdom, securely loaded from database.</p>
+                <div class="vault-header" style="margin-bottom: 0; padding-bottom: 10px; border: none;">
+                    <div>
+                        <h2 style="margin:0; color: var(--primary-color); font-family: 'Orbitron'; font-size: 2rem; letter-spacing: 2px;">SHLOKA MATRIX</h2>
+                        <p style="margin:5px 0 0 0; color:var(--text-muted);">Navigate the timeless wisdom, securely loaded from database.</p>
+                    </div>
+                    <div class="vault-search">
+                        <input type="text" id="shloka-search-input" class="custom-input" placeholder="🔍 Search Shlokas..." oninput="filterShlokas(this.value)">
+                    </div>
                 </div>
 
                 <div class="modern-tabs" id="matrix-samhitas"></div>
@@ -518,6 +537,11 @@
         function openModal(id, title = null) {
             if(title && id === 'dummy-modal') document.getElementById('dummy-title').innerText = title;
             const m = document.getElementById(id); m.style.display = 'flex'; setTimeout(()=> m.style.opacity = '1', 10);
+            
+            // Clear shloka search input if opening shloka modal
+            if(id === 'shloka-modal' && document.getElementById('shloka-search-input')) {
+                document.getElementById('shloka-search-input').value = '';
+            }
         }
         function closeModal(id) {
             const m = document.getElementById(id); m.style.opacity = '0'; setTimeout(()=> m.style.display = 'none', 400);
@@ -577,15 +601,18 @@
             }
 
             document.getElementById('shloka-results').innerHTML = `<div style="text-align:center; color:var(--text-muted); margin-top:40px; font-size: 1.2rem; font-family: 'Orbitron';">Select a chapter to extract data.</div>`;
+            
+            // Clear search when switching samhita
+            document.getElementById('shloka-search-input').value = '';
         }
 
-        // ==========================================
-        // NEW UPDATED LOGIC INJECTED HERE
-        // ==========================================
         function selectChapter(chapter, element) {
             // Highlight active chapter
             document.querySelectorAll('.chapter-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
+
+            // Clear search box when switching chapter
+            document.getElementById('shloka-search-input').value = '';
 
             const resultsArea = document.getElementById('shloka-results');
             const shlokasGroup = globalShlokaData[currentSamhita][chapter];
@@ -597,35 +624,71 @@
 
             resultsArea.innerHTML = ''; 
             
-            let animationCounter = 0; // Ensures staggered animation for all cards
-
             shlokasGroup.forEach((shlokaObj) => {
                 const safeHeading = shlokaObj.heading ? shlokaObj.heading.replace(/'/g, "\\'") : '';
                 
-                // SPLIT LOGIC: Break the main text block into individual shlokas by newline
                 let textToSplit = shlokaObj.text || '';
-                // Handle both literal newline characters and escaped \n
                 textToSplit = textToSplit.replace(/\\n/g, '\n'); 
                 
-                // Filter out any empty lines so we don't create blank cards
                 const individualShlokas = textToSplit.split('\n').filter(line => line.trim() !== '');
 
-                // Create an individual glass card for EVERY single shloka
                 individualShlokas.forEach((verse) => {
                     const safeText = verse.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     
                     resultsArea.innerHTML += `
-                        <div class="shloka-glass-card" style="animation-delay: ${animationCounter * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
+                        <div class="shloka-glass-card" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
                             <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
                             <div class="shloka-heading">${shlokaObj.heading}</div>
                             <div class="shloka-text">${verse.trim()}</div>
                         </div>
                     `;
-                    animationCounter++;
                 });
             });
+
+            // --- 3D SCROLL INTERSECTION OBSERVER LOGIC ---
+            // This detects when a card enters the scroll view and applies the 'show-3d' class!
+            const cards = document.querySelectorAll('.shloka-glass-card');
+            
+            const observerOptions = {
+                root: document.getElementById('shloka-results'), // Observes within the scroll area
+                threshold: 0.15 // Triggers when 15% of the card is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Apply the 3D pop-in effect
+                        entry.target.classList.add('show-3d');
+                        // Optional: Un-comment next line to only animate ONCE per load
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Remove class so it animates again when scrolling back up!
+                        entry.target.classList.remove('show-3d');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => observer.observe(card));
         }
-        // ==========================================
+
+        // --- DYNAMIC SHLOKA SEARCH LOGIC ---
+        function filterShlokas(query) {
+            const queryText = query.toLowerCase();
+            const cards = document.querySelectorAll('.shloka-glass-card');
+            
+            cards.forEach(card => {
+                const shlokaContent = card.innerText.toLowerCase();
+                
+                if(shlokaContent.includes(queryText)) {
+                    card.style.display = 'flex';
+                    // Re-trigger the 3D effect gently on search results
+                    setTimeout(() => card.classList.add('show-3d'), 50); 
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('show-3d'); // Reset state
+                }
+            });
+        }
 
         function toggleStar(event, element) {
             event.stopPropagation(); // Prevents the card click (translation modal) from triggering
