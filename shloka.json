@@ -1,935 +1,1079 @@
-[
-    { 
-        "id": "1_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Salutation to the First Physician",
-        "text": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् । औत्सुक्यमोहारतिदान् जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥" 
-    },
-    { 
-        "id": "1_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Purpose of Ayurveda",
-        "text": "आयुःकामयमानेन धर्मार्थसुखसाधनम् । आयुर्वेदोपदेशेषु विधेयः परमादरः ॥" 
-    },
-    { 
-        "id": "1_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Origin of Ayurveda",
-        "text": "ब्रह्मा स्मृत्वाऽऽयुषो वेदं प्रजापतिमजिग्रहत् । सोऽश्विनौ तौ सहस्राक्षं सोऽत्रिपुत्रादिकान्मुनीन् ॥" 
-    },
-    { 
-        "id": "1_4", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Lineage of Ayurvedic Knowledge",
-        "text": "तेऽग्निवेशादिकांस्ते तु पृथक्तन्त्राणि तेनिरे । तेभ्योऽतिविप्रकीर्णेभ्यः प्रायः सारतरोच्चयः ॥" 
-    },
-    { 
-        "id": "1_5", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Creation of Ashtang Hridayam",
-        "text": "क्रियतेऽष्टाङ्गहृदयमनाकुलमविस्तरम् ।" 
-    },
-    { 
-        "id": "1_5a", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Eight Branches of Ayurveda",
-        "text": "कायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ।" 
-    },
-    { 
-        "id": "1_6", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Definition of the Eight Branches",
-        "text": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ॥" 
-    },
-    { 
-        "id": "1_7", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Three Doshas (Tridosha)",
-        "text": "वायुः पित्तं कफश्चेति त्रयो दोषाः समासतः । विकृताऽविकृता देहं घ्नन्ति ते वर्तयन्ति च ॥" 
-    },
-    { 
-        "id": "1_8", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Locations of the Doshas",
-        "text": "ते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ।" 
-    },
-    { 
-        "id": "1_9", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Doshas in Relation to Time",
-        "text": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।" 
-    },
-    { 
-        "id": "1_10", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Digestive Fire (Agni)",
-        "text": "तैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ।" 
-    },
-    { 
-        "id": "1_11", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Digestive Tract (Koshtha)",
-        "text": "कोष्ठः क्रूरो मृदुर्मध्यो मध्यः स्यात्तैः समैरपि ॥" 
-    },
-    { 
-        "id": "1_12", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Body Constitution (Prakriti)",
-        "text": "शुक्रार्तवस्थैर्जन्मादौ विषेणेव विषकृमेः । तैश्च तिस्रः प्रकृतयो हीनमध्योत्तमाः पृथक् ॥" 
-    },
-    { 
-        "id": "1_13", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Superior and Inferior Constitutions",
-        "text": "समधातुः समस्तासु श्रेष्ठा निन्द्या द्विदोषजाः ।" 
-    },
-    { 
-        "id": "1_14", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Properties of Vata Dosha",
-        "text": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।" 
-    },
-    { 
-        "id": "1_15", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Properties of Pitta Dosha",
-        "text": "पित्तं सस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ।" 
-    },
-    { 
-        "id": "1_16", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Properties of Kapha Dosha",
-        "text": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ॥" 
-    },
-    { 
-        "id": "1_17", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Combinations of Doshas",
-        "text": "संसर्गः सन्निपातश्च तद्द्वित्रिक्षयकोपतः ।" 
-    },
-    { 
-        "id": "1_18", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Tissues (Dhatus) and Waste Products (Malas)",
-        "text": "रसासृङ्मांसमेदोऽस्थिमज्जशुक्राणि धातवः । सप्त दूष्याः मला मूत्रशकृत्स्वेदादयोऽपि च ॥" 
-    },
-    { 
-        "id": "1_19", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Principle of Increase and Decrease",
-        "text": "वृद्धिः समानैः सर्वेषां विपरीतैर्विपर्ययः ।" 
-    },
-    { 
-        "id": "1_20", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Six Tastes (Rasas)",
-        "text": "रसाः स्वाद्वम्ललवणतिक्तोषणकषायकाः । षड् द्रव्यमाश्रितास्ते च यथापूर्वं बलावहाः ॥" 
-    },
-    { 
-        "id": "1_21", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Effect of Tastes on Vata and Kapha",
-        "text": "तत्राद्या मारुतं घ्नन्ति त्रयस्तिक्तादयः कफम् ।" 
-    },
-    { 
-        "id": "1_22", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Effect of Tastes on Pitta",
-        "text": "कषायतिक्तमधुराः पित्तमन्ये तु कुर्वते ॥" 
-    },
-    { 
-        "id": "1_23", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Substances (Dravya)",
-        "text": "शमनं कोपनं स्वस्थहितं द्रव्यमिति त्रिधा ।" 
-    },
-    { 
-        "id": "1_24", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Potency of Substances (Virya)",
-        "text": "उष्णशीतगुणोत्कर्षात्तत्र वीर्यं द्विधा स्मृतम् ॥" 
-    },
-    { 
-        "id": "1_25", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Post-Digestive Effect (Vipaka)",
-        "text": "त्रिधा विपाको द्रव्यस्य स्वाद्वम्लकटुकात्मकः ।" 
-    },
-    { 
-        "id": "1_26", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Twenty Qualities (Gurvadi Gunas)",
-        "text": "गुरुमन्दहिमस्निग्धश्लक्ष्णसान्द्रमृदुस्थिराः । गुणाः ससूक्ष्मविशदा विंशतिः सविपर्ययाः ॥" 
-    },
-    { 
-        "id": "1_27", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Definition of Health and Disease",
-        "text": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।" 
-    },
-    { 
-        "id": "1_28", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Diseases (Nija and Agantuja)",
-        "text": "निजागन्तुविभागेन तत्र रोगो द्विधा स्मृतः ॥" 
-    },
-    { 
-        "id": "1_29", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Seats of Disease (Body and Mind)",
-        "text": "तेषां कायमनोभेदादधिष्ठानमपि द्विधा ।" 
-    },
-    { 
-        "id": "1_30", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Mental Doshas",
-        "text": "रजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ।" 
-    },
-    { 
-        "id": "1_31", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Methods of Patient Examination",
-        "text": "दर्शनस्पर्शनप्रश्नैः परीक्षेत रोगिणम् ।" 
-    },
-    { 
-        "id": "1_32", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Methods of Disease Examination",
-        "text": "रोगं निदानप्राग्रूपलक्षणोपशयाप्तिभिः ॥" 
-    },
-    { 
-        "id": "1_33", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Habitats (Desha)",
-        "text": "भूमिदेहप्रभेदेन देशमाहुर्द्विधा पुनः । जाङ्गलं वातभूयिष्ठमनूपं तु कफोल्बणम् ॥" 
-    },
-    { 
-        "id": "1_34", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Normal Habitat and Concept of Time",
-        "text": "साधारणं सममलं त्रिधा भूदेशमादिशेत् । क्षणादिर्व्याध्यवस्था च कालो द्विधा प्रकीर्तितः ॥" 
-    },
-    { 
-        "id": "1_35", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Types of Treatments (Shodhana and Shamana)",
-        "text": "शोधनं शमनं चेति समासादौषधं द्विधा ।" 
-    },
-    { 
-        "id": "1_36", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Cleansing Therapies and Best Substances",
-        "text": "बस्तिर्विरेको वमनं तथा तैलं घृतं मधु ॥" 
-    },
-    { 
-        "id": "1_37", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Best Treatments for Specific Doshas",
-        "text": "वातपित्तकफानां च क्रमेण परमौषधम् ।" 
-    },
-    { 
-        "id": "1_38", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Treatments for Mental Doshas",
-        "text": "धीधैर्यात्मादिविज्ञानं मनोदोषौषधं परम् ॥" 
-    },
-    { 
-        "id": "1_39", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "The Four Pillars of Treatment",
-        "text": "भिषग्द्रव्यान्युपस्थाता रोगी पादचतुष्टयम् । चिकित्सितस्य निर्दिष्टं प्रत्येकं तच्चतुर्गुणम् ॥" 
-    },
-    { 
-        "id": "1_40", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Qualities of a Good Physician",
-        "text": "दक्षस्तीर्थात्तशास्त्रार्थो दृष्टकर्मा शुचिर्भिषक् ।" 
-    },
-    { 
-        "id": "1_41", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Qualities of Good Medicine",
-        "text": "बहुकल्पं बहुगुणं सम्पन्नं योग्यमौषधम् ॥" 
-    },
-    { 
-        "id": "1_42", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Qualities of a Good Caretaker",
-        "text": "अनुरक्तः शुचिर्दक्षो बुद्धिमान् परिचारकः ।" 
-    },
-    { 
-        "id": "1_43", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Qualities of a Good Patient",
-        "text": "आढ्यो रोगी भिषग्वश्यो ज्ञापकः सत्त्ववानपि ॥" 
-    },
-    { 
-        "id": "1_44", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "सूत्रस्थान (आयुषकामीय अध्याय)", 
-        "heading": "Prognosis and Stages of Disease",
-        "text": "साध्योऽसाध्य इति व्याधिर्द्विधा ते तु पुनर्द्विधा । सुसाध्यः कृच्छ्रसाध्यश्च याप्यो यश्चानुपक्रमः ॥" 
-    },
-    { 
-        "id": "1_45", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Waking Up (Brahma Muhurta)",
-        "text": "ब्राह्मे मुहूर्ते उत्तिष्ठेत् स्वस्थो रक्षार्थमायुषः । शरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥" 
-    },
-    { 
-        "id": "c1_1", 
-        "samhita": "Charak Samhita", 
-        "chapter": "सूत्रस्थान (दीर्घञ्जीवितीयमध्याय)", 
-        "heading": "Introduction to Long Life",
-        "text": "दीर्घञ्जीवितीयमध्यायं व्याख्यास्यामः । इति ह स्माह भगवानात्रेयः ॥" 
-    },
-    { 
-        "id": "c1_2", 
-        "samhita": "Charak Samhita", 
-        "chapter": "सूत्रस्थान (दीर्घञ्जीवितीयमध्याय)", 
-        "heading": "Health as the Root of Life's Goals",
-        "text": "धर्मार्थकाममोक्षाणामारोग्यं मूलमुत्तमम् । रोगास्तस्यापहर्तारः श्रेयसो जीवितस्य च ॥" 
-    },
-    { 
-        "id": "s1_1", 
-        "samhita": "Sushruta Samhita", 
-        "chapter": "सूत्रस्थान (वेदोत्पत्ति)", 
-        "heading": "Origin of Ayurvedic Science",
-        "text": "अथातो वेदोत्पत्तिमध्यायं व्याख्यास्यामः ।" 
-    },
-    { 
-        "id": "s1_2", 
-        "samhita": "Sushruta Samhita", 
-        "chapter": "सूत्रस्थान (वेदोत्पत्ति)", 
-        "heading": "The Eight Branches Taught",
-        "text": "आयुर्वेदं अष्टाङ्गं उपदिश्यते ।" 
-    },
-    { 
-        "id": "p1_1", 
-        "samhita": "Padarth Vigyan", 
-        "chapter": "आयुर्वेद निरुपण", 
-        "heading": "Definition of Ayurveda",
-        "text": "हिताहितं सुखं दुःखमायुस्तस्य हिताहितम् । मानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते ॥" 
-    },
-    
-    { 
-        "id": "2_1_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Introduction to Daily Routine",
-        "text": "अथातो दिनचर्याध्यायं व्याख्यास्यामः । इति ह स्माहुरात्रेयादयो महर्षयः ॥ १ ॥" 
-    },
-    { 
-        "id": "2_1_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Waking Up in Brahma Muhurta",
-        "text": "ब्राह्मे मुहूर्त उत्तिष्ठेत्स्वस्थो रक्षार्थमायुषः । शरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥ २ ॥" 
-    },
-    { 
-        "id": "2_2_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Materials for Tooth Brushing",
-        "text": "अर्कन्यग्रोधखदिरकरञ्जककुभादिजम् । प्रातर्भुक्त्वा च मृद्वग्रं कषायकटुतिक्तकम् ॥ ३ ॥" 
-    },
-    { 
-        "id": "2_2_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Method and Contraindications for Brushing",
-        "text": "भक्षयेद्दन्तपवनं दन्तमांसान्यबाधयन् । नाद्यादजीर्णवमथुश्वासकासज्वरार्दितः ॥ ४ ॥" 
-    },
-    { 
-        "id": "2_2_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Further Contraindications for Brushing",
-        "text": "तृष्णास्यपाकहृन्नेत्रशिरःकर्णामयी च तत् ।" 
-    },
-    { 
-        "id": "2_3_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Daily Application of Sauviranjana",
-        "text": "सौवीरमञ्जनं नित्यं हितमक्ष्णोस्ततो भजेत् ॥ ५ ॥" 
-    },
-    { 
-        "id": "2_3_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Application of Rasanjana",
-        "text": "चक्षुस्तेजोमयं तस्य विशेषाच्छ्लेष्मतो भयम् । योजयेत्सप्तरात्रेऽस्मात्स्रावणार्थं रसाञ्जनम् ॥ ६ ॥" 
-    },
-    { 
-        "id": "2_4_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Nasal Drops, Gargling, and Betel",
-        "text": "ततो नावनगण्डूषधूमताम्बूलभाग्भवेत् । ताम्बूलं क्षतपित्तास्ररूक्षोत्कुपितचक्षुषाम् ॥ ७ ॥" 
-    },
-    { 
-        "id": "2_4_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Contraindications for Betel Chewing",
-        "text": "विषमूर्च्छामदार्तानां अपथ्यं शोषिणामपि ।" 
-    },
-    { 
-        "id": "2_5_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Benefits of Daily Oil Massage",
-        "text": "अभ्यङ्गमाचरेन्नित्यं, स जराश्रमवातहा ॥ 8 ॥" 
-    },
-    { 
-        "id": "2_5_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Specific Areas for Oil Massage",
-        "text": "दृष्टिप्रसादपुष्ट्यायुःस्वप्नसुत्वक्त्वदार्ढ्यकृत् । शिरःश्रवणपादेषु तं विशेषेण शीलयेत् ॥ ९ ॥" 
-    },
-    { 
-        "id": "2_5_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Contraindications for Oil Massage",
-        "text": "वर्ज्योऽभ्यङ्गः कफग्रस्तकृतसंशुद्धिजीर्णिभिः ।" 
-    },
-    { 
-        "id": "2_6_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Benefits of Exercise",
-        "text": "लाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ॥ १० ॥" 
-    },
-    { 
-        "id": "2_6_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Who Should Avoid Exercise",
-        "text": "विभक्तघनगात्रत्वं व्यायामादुपजायते । वातपित्तामयी बालो वृद्धोऽजीर्णी च तं त्यजेत् ॥ ११ ॥" 
-    },
-    { 
-        "id": "2_6_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Rules for Exercise Intensity",
-        "text": "अर्धशक्त्या निषेव्यस्तु बलिभिः स्निग्धभोजिभिः । शीतकाले वसन्ते च, मन्दमेव ततोऽन्यदा ॥ १२ ॥" 
-    },
-    { 
-        "id": "2_6_4", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Complications of Over-Exercise",
-        "text": "तं कृत्वा तु सुखं देहं विमृद्नीयात्समन्ततः । तृष्णाक्षयप्रतमको रक्तपित्तं श्रमः क्लमः ॥ १३ ॥" 
-    },
-    { 
-        "id": "2_6_5", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Diseases from Over-Exercise",
-        "text": "अतिव्यायामतः कासो ज्वरश्छर्दिश्च जायते ।" 
-    },
-    { 
-        "id": "2_7_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Benefits of Udvartana (Powder Massage)",
-        "text": "उद्वर्तनं कफहरं मेदसः प्रविलायनम् ॥ १४ ॥" 
-    },
-    { 
-        "id": "2_7_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Physical Benefits of Udvartana",
-        "text": "स्थिरीकरणमङ्गानां त्वक्प्रसादकरं परम् ।" 
-    },
-    { 
-        "id": "2_8_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Benefits of Bathing",
-        "text": "दीपनं वृष्यमायुष्यं स्नानमूर्जाबलप्रदम् ॥ १५ ॥" 
-    },
-    { 
-        "id": "2_8_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Hot Water for Lower Body",
-        "text": "कण्डूमलश्रमस्वेदतन्द्रातृड्दाहपाप्मजित् । उष्णाम्बुनाऽधःकायस्य परिषेको बलावहः ॥ १६ ॥" 
-    },
-    { 
-        "id": "2_8_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Hot Water on Head Harms Hair and Eyes",
-        "text": "तेनैव तूत्तमाङ्गस्य बलहृत्केशचक्षुषाम् । स्नानमर्दितनेत्रास्यकर्णरोगातिसारिषु ॥ १७ ॥" 
-    },
-    { 
-        "id": "2_8_4", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Contraindications for Bathing",
-        "text": "आध्मानपीनसाजीर्णिभुक्तवत्सु च गर्हितम् ।" 
-    },
-    { 
-        "id": "2_9_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Dietary Rules and Natural Urges",
-        "text": "जीर्णे हितं मितं चाद्यान्न वेगानीरयेद्बलात् ॥ १८ ॥" 
-    },
-    { 
-        "id": "2_9_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Attending Urges Without Delay",
-        "text": "न वेगितोऽन्यकार्यः स्यान्नाजित्वा साध्यमामयम् ।" 
-    },
-    { 
-        "id": "2_10_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Following Righteousness (Dharma)",
-        "text": "सुखार्थः सर्वभूतानां मताः सर्वाः प्रवृत्तयः । सुखं च न विना धर्मात्तस्माद्धर्मपरो भवेत् ॥ १९ ॥" 
-    },
-    { 
-        "id": "2_10_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Good Company",
-        "text": "भक्त्या कल्याणमित्रेषु नीचेषु न कुतूहलम् ।" 
-    },
-    { 
-        "id": "2_11_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Ten Sins to Avoid (Part 1)",
-        "text": "हिंसास्तेयान्यथाकामं पैशुन्यं परुषानृते ॥ २० ॥" 
-    },
-    { 
-        "id": "2_11_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Ten Sins to Avoid (Part 2)",
-        "text": "सम्भिन्नालापव्यापादमभिध्यां दृग्विपर्ययम् । पापं कर्मेति दशधा कायवाङ्मानसैस्त्यजेत् ॥ २१ ॥" 
-    },
-    { 
-        "id": "2_12_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Compassion for All Beings",
-        "text": "अवृत्तिव्याधिशोकार्ताननुवर्तेत शक्तितः । आत्मवत्सततं पश्येदपि कीटपिपीलिकाम् ॥ २२ ॥" 
-    },
-    { 
-        "id": "2_13_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Respecting Elders and Guests",
-        "text": "अर्चयेद्देवगोविप्रवृद्धवैद्यनृपातिथीन् । विमुखान्नार्थिनः कुर्यान्नावमन्येत नाक्षिपेत् ॥ २३ ॥" 
-    },
-    { 
-        "id": "2_13_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Forgiveness and Equanimity",
-        "text": "उपकारप्रधानः स्यादपकारपरेऽप्यरौ । सम्पद्विपत्स्वेकमना हेतावीर्ष्येत् फले न तु ॥ २४ ॥" 
-    },
-    { 
-        "id": "2_14_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Etiquette of Speech",
-        "text": "काले हितं मितं ब्रूयादविसंवादि पेशलम् । पूर्वाभिभाषी सुमुखः सुशीलः करुणो मृदुः ॥ २५ ॥" 
-    },
-    { 
-        "id": "2_14_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Social Behavior",
-        "text": "नैकः सुखी न सर्वत्र विश्रब्धो न च शङ्कितः । न कञ्चिदात्मनः शत्रुं नात्मानं कस्यचिद्रिपुम् ॥ २६ ॥" 
-    },
-    { 
-        "id": "2_14_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Concealing Disrespect",
-        "text": "प्रकाशयेन्नापमानं न च निःस्नेहतां प्रभोः ।" 
-    },
-    { 
-        "id": "2_15_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Pleasing Others",
-        "text": "जनस्याशयं विज्ञाय सर्वस्यैवानुरञ्जयेत् ॥ २७ ॥" 
-    },
-    { 
-        "id": "2_15_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Avoiding Conflict",
-        "text": "परानुकूलः स भवेद्विरोधी न कदाचन । परोक्षगुणहा न स्यात् परदोषान्न कीर्तयेत् ॥ २8 ॥" 
-    },
-    { 
-        "id": "2_15_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Balancing the Three Goals",
-        "text": "त्रिवर्गशून्यं नारम्भं भजेत्तं चाविरोधयन् । अनुयायात् प्रतिपदं सर्वधर्मेषु मध्यमाम् ॥ २९ ॥" 
-    },
-    { 
-        "id": "2_16_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Personal Grooming",
-        "text": "नीचरोमनखश्मश्रुर्निर्मलाङ्घ्रिमलायनः । स्नानशीलः सुसुरभिः सुवेषोऽनुल्बणोज्ज्वलः ॥ ३० ॥" 
-    },
-    { 
-        "id": "2_16_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Wearing Protective Items",
-        "text": "धारयेत्सततं रत्नसिद्धमन्त्रमहौषधीः । नातपत्रपदत्राणविचारी न युगक्षयात् ॥ ३१ ॥" 
-    },
-    { 
-        "id": "2_17_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Places to Avoid Walking",
-        "text": "विशत्रुनिन्दितामेध्यान् देशान्नाक्रमयेत्पदा । न रात्रौ न च सन्ध्यायां न शून्ये चैत्यचत्वरे ॥ ३२ ॥" 
-    },
-    { 
-        "id": "2_17_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Objects and Places to Respect",
-        "text": "न देवद्विजगौशस्त्रबन्ध्यनर्वाकविराघवान् । आक्रमयेन्नाग्निमुपविशेन्न पथीति च ॥ ३३ ॥" 
-    },
-    { 
-        "id": "2_18_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Risks to Avoid",
-        "text": "न बाहुभ्यां नदीं तरेन्नाग्निस्कन्धमभिव्रजेत् । सन्दिग्धनावं वृक्षं च नारोहेदुष्टयानवत् ॥ ३४ ॥" 
-    },
-    { 
-        "id": "2_18_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Bodily Etiquette",
-        "text": "नासंवीतमुखः कुर्यात् क्षुतिहास्यविजृम्भणम् । नासिकां न विकुष्णीयान्नाकस्माद्विलिखेद्भुवम् ॥ ३५ ॥" 
-    },
-    { 
-        "id": "2_19_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Avoiding Strain",
-        "text": "नाङ्गैरविचेष्टेत नासीतोत्कटिकश्चिरम् । देहवाक्चेतसां चेष्टाः प्राक् श्रमाद्विनिवर्तयेत् ॥ ३६ ॥" 
-    },
-    { 
-        "id": "2_19_2", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Places to Avoid at Night",
-        "text": "नोर्ध्वजानुश्चिरं तिष्ठेन्न नक्तं सेवेत पादपान् । तथा चत्वरचैत्यान्तचतुष्पथसुरालयान् ॥ ३७ ॥" 
-    },
-    { 
-        "id": "2_19_3", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Forbidden Acts",
-        "text": "सूनाटवीशून्यगृहश्मशानानि दिवाऽपि न । न पश्येदादित्यं न नग्नः स्त्रीं न च नग्नः स्नायात् ॥ ३8 ॥" 
-    },
-    { 
-        "id": "2_20_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Self-Reflection for Happiness",
-        "text": "नक्तंदिनानि मे यान्ति कथंभूतस्य सम्प्रति । दुःखभाग् न भवत्येवं नित्यं संनिहितस्मृतिः ॥ ४६ ॥" 
-    },
-    { 
-        "id": "2_21_1", 
-        "samhita": "Ashtang Hridayam", 
-        "chapter": "दिनचर्या अध्याय", 
-        "heading": "Fruits of Good Conduct",
-        "text": "इत्येवमाचारमवाप्यतेऽयुरारोग्यमैश्वर्यं यशो नुकामो । लोकाश्च यान् सन्तो विचरन्ति तस्मात् सदाचारपरो भवेत् ॥ ४७ ॥ इत्यायुर्वेदामृतकल्पे अष्टाङ्गहृदये सूत्रस्थाने दिनचर्याध्यायो नाम द्वितीयोऽध्यायः ॥" 
-    },
-
+{
+  "book_name": "Ashtanga Hridaya (Extracted Chapters)",
+  "chapters": [
     {
-        "id": "4_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "अधारणीय वेग (Non-suppressible Urges)",
-        "text": "वेगान्न धारयेद्वातविण्मूत्रक्षवथुतृषाम् । क्षुन्निद्राकासश्रमश्वासजृम्भाश्रुच्छर्दिरेतसाम् ॥१॥"
+      "chapter_number": 1,
+      "chapter_name": "Ayushkamiya Adhyaya",
+      "shlokas": [
+        {
+          "id": "1",
+          "title_sanskrit": "मङ्गलाचरणम्",
+          "title_english": "Mangalacharana",
+          "text": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् ।\nऔत्सुक्यमोहारतिदान्जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥ १ ॥"
+        },
+        {
+          "id": "2",
+          "title_sanskrit": "आयुर्वेदप्रयोजनम्",
+          "title_english": "Purpose of Ayurveda",
+          "text": "आयुः कामयमानेन धर्मार्थसुखसाधनम् ।\nआयुर्वेदोपदेशेषु विधेयः परमादरः ॥ २ ॥"
+        },
+        {
+          "id": "3",
+          "title_sanskrit": "आयुर्वेदावतरणम्",
+          "title_english": "Origin of Ayurveda",
+          "text": "ब्रह्मा स्मृत्वाऽऽयुषो वेदं प्रजापतिमजिग्रहत् ।\nसोऽश्विनौ तौ सहस्राक्षं सोऽत्रिपुत्रादिकान्मुनीन् ॥ ३ ॥"
+        },
+        {
+          "id": "4",
+          "title_sanskrit": "तन्त्रनिर्मातारः",
+          "title_english": "The Authors of the Treatises",
+          "text": "तेऽग्निवेशादिकांस्ते तु पृथक् तन्त्राणि तेनिरे ।\nतेभ्योऽतिविप्रकीर्णेभ्यः प्रायः सारतरोच्चयः ॥ ४ ॥"
+        },
+        {
+          "id": "5",
+          "title_sanskrit": "अष्टाङ्गहृदयस्य उत्पत्तिः",
+          "title_english": "Creation of Ashtanga Hridaya",
+          "text": "क्रियतेऽष्टाङ्गहृदयं नातिसङ्क्षेपविस्तरम् ।\nकायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ॥ ५ ॥"
+        },
+        {
+          "id": "6",
+          "title_sanskrit": "अष्टाङ्गानि",
+          "title_english": "The Eight Branches of Ayurveda",
+          "text": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ।\nवायुः पित्तं कफश्चेति त्रयो दोषाः समासतः ॥ ६ ॥"
+        },
+        {
+          "id": "7",
+          "title_sanskrit": "त्रिदोषव्याप्तिः",
+          "title_english": "Pervasion of the Tridoshas",
+          "text": "विकृताऽविकृता देहं घ्नन्ति ते वर्तयन्ति च ।\nते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ॥ ७ ॥"
+        },
+        {
+          "id": "8",
+          "title_sanskrit": "दोषकालः अग्निप्रकृतयश्च",
+          "title_english": "Dosha Timings and Digestive Fire",
+          "text": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।\nतैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ॥ ८ ॥"
+        },
+        {
+          "id": "9",
+          "title_sanskrit": "कोष्ठप्रकृतयः",
+          "title_english": "Types of Bowel/Digestive Tract",
+          "text": "कोष्ठः क्रूरो मृदुर्मध्यो मध्यः स्यात्तैः समैरपि ।\nशुक्रार्तवस्थैर्जन्मादौ विषेणेव विषक्रिमेः ॥ ९ ॥"
+        },
+        {
+          "id": "10",
+          "title_sanskrit": "देहप्रकृतयः",
+          "title_english": "Body Constitutions",
+          "text": "तैश्च तिस्रः प्रकृतयो हीनमध्योत्तमाः पृथक् ।\nसमधातुः समस्तासु श्रेष्ठा निन्द्या द्विदोषजाः ॥ १० ॥"
+        },
+        {
+          "id": "11",
+          "title_sanskrit": "वातपित्तगुणः",
+          "title_english": "Qualities of Vata and Pitta",
+          "text": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।\nपित्तं सस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ॥ ११ ॥"
+        },
+        {
+          "id": "12",
+          "title_sanskrit": "कफगुणः सन्निपातश्च",
+          "title_english": "Qualities of Kapha and Dosha Combinations",
+          "text": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ।\nसंसर्गः सन्निपातश्च तद्वित्रिक्षयकोपतः ॥ १२ ॥"
+        },
+        {
+          "id": "13",
+          "title_sanskrit": "धातु-मल-परिचयः",
+          "title_english": "Tissues and Wastes",
+          "text": "रसासृङ्मांसमेदोऽस्थिमज्जाशुक्राणि धातवः ।\nसप्त दूष्याः मला मूत्रशकृत्स्वेदादयोऽपि च ॥ १३ ॥"
+        },
+        {
+          "id": "14",
+          "title_sanskrit": "वृद्धि-क्षय-कारणम् षड्रसाश्च",
+          "title_english": "Cause of Increase/Decrease and Six Tastes",
+          "text": "वृद्धिः समानैः सर्वेषां विपरीतैर्विपर्ययः ।\nरसाः स्वाद्वम्ललवणतिक्तोषणकषायकाः ॥ १४ ॥"
+        },
+        {
+          "id": "15",
+          "title_sanskrit": "रसानां बलम्",
+          "title_english": "Strength of the Tastes",
+          "text": "षड् द्रव्यमाश्रितास्ते च यथापूर्वं बलावहाः ।\nतत्राद्या मारुतं घ्नन्ति त्रयस्तिक्तादयः कफम् ॥ १५ ॥"
+        },
+        {
+          "id": "16",
+          "title_sanskrit": "दोषाणां रसानां च सम्बन्धः द्रव्याणि च",
+          "title_english": "Relation of Tastes to Doshas and Types of Substances",
+          "text": "कषायतिक्तमधुराः पित्तमन्ये तु कुर्वते ।\nशमनं कोपनं स्वस्थहितं द्रव्यमिति त्रिधा ॥ १६ ॥"
+        },
+        {
+          "id": "17",
+          "title_sanskrit": "वीर्यं विपाकश्च",
+          "title_english": "Potency and Post-Digestive Effect",
+          "text": "उष्णशीतगुणोत्कर्षात्तत्र वीर्यं द्विधा स्मृतम् ।\nत्रिधा विपाको द्रव्यस्य स्वाद्वम्लकटुकात्मकः ॥ १७ ॥"
+        },
+        {
+          "id": "18",
+          "title_sanskrit": "विंशति गुणाः",
+          "title_english": "The Twenty Qualities",
+          "text": "गुरुमन्दहिमस्निग्धश्लक्ष्णसान्द्रमृदुस्थिराः ।\nगुणाः ससूक्ष्मविशदा विंशतिः सविपर्ययाः ॥ १८ ॥"
+        },
+        {
+          "id": "19",
+          "title_sanskrit": "रोगारोग्यकारणम्",
+          "title_english": "Causes of Disease and Health",
+          "text": "कालार्थकर्मणां योगो हीनमिथ्यातिमात्रकः ।\nसम्यग्योगश्च विज्ञेयो रोगारोग्यैककारणम् ॥ १९ ॥"
+        },
+        {
+          "id": "20",
+          "title_sanskrit": "रोगभेदः",
+          "title_english": "Definition and Types of Disease",
+          "text": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।\nनिजागन्तुविभागेन तत्र रोगा द्विधा स्मृताः ॥ २० ॥"
+        },
+        {
+          "id": "21",
+          "title_sanskrit": "रोगाधिष्ठानम्",
+          "title_english": "Sites of Disease",
+          "text": "तेषां कायमनोभेदादधिष्ठानमपि द्विधा ।\nरजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ॥ २१ ॥"
+        },
+        {
+          "id": "22",
+          "title_sanskrit": "रोग-रोगि-परीक्षा",
+          "title_english": "Examination of Disease and Patient",
+          "text": "दर्शनस्पर्शनप्रश्नैः परीक्षेत च रोगिणम् ।\nरोगं निदानप्राग्रूपलक्षणोपशयाप्तिभिः ॥ २२ ॥"
+        },
+        {
+          "id": "23",
+          "title_sanskrit": "देशभेदः",
+          "title_english": "Types of Habitat/Land",
+          "text": "भूमिदेहप्रभेदेन देशमाहुरिह द्विधा ।\nजाङ्गलं वातभूयिष्ठमनूपं तु कफोल्बणम् ॥ २३ ॥"
+        },
+        {
+          "id": "24",
+          "title_sanskrit": "साधारणदेशः कालश्च",
+          "title_english": "Normal Habitat and Time",
+          "text": "साधारणं सममलं त्रिधा भूदेशमादिशेत् ।\nक्षणादिर्व्याध्यवस्था च कालो भेषजयोगकृत् ॥ २४ ॥"
+        },
+        {
+          "id": "25",
+          "title_sanskrit": "औषधभेदः",
+          "title_english": "Types of Therapy",
+          "text": "शोधनं शमनं चेति समासाद्दौषधं द्विधा ।\nशरीरजानां दोषाणां क्रमेण परमौषधम् ॥ २५ ॥"
+        },
+        {
+          "id": "26",
+          "title_sanskrit": "श्रेष्ठौषधानि",
+          "title_english": "Supreme Medicines for Doshas",
+          "text": "बस्तिर्विरेको वमनं तथा तैलघृतं मधु ।\nधीधैर्यात्मादिविज्ञानं मनोदोषौषधं परम् ॥ २६ ॥"
+        },
+        {
+          "id": "27",
+          "title_sanskrit": "चिकित्साचतुष्पादः",
+          "title_english": "Four Limbs of Treatment",
+          "text": "भिषग्द्रव्यान्युपस्थाता रोगी पादचतुष्टयम् ।\nचिकित्सितस्य निर्दिष्टं प्रत्येकं तच्चतुर्गुणम् ॥ २७ ॥"
+        },
+        {
+          "id": "28",
+          "title_sanskrit": "वैद्य-औषध-गुणाः",
+          "title_english": "Qualities of Physician and Medicine",
+          "text": "दक्षस्तीर्थात्तशास्त्रार्थो दृष्टकर्मा शुचिर्भिषक् ।\nबहुकल्पं बहुगुणं सम्पन्नं योग्यमौषधम् ॥ २८ ॥"
+        },
+        {
+          "id": "29",
+          "title_sanskrit": "परिचारक-रोगि-गुणाः",
+          "title_english": "Qualities of Attendant and Patient",
+          "text": "अनुरक्तः शुचिर्दक्षो बुद्धिमान् परिचारकः ।\nआढ्यो रोगी भिषग्वश्यो ज्ञापकः सत्त्ववानपि ॥ २९ ॥"
+        },
+        {
+          "id": "30",
+          "title_sanskrit": "रोगसाध्यासाध्यता",
+          "title_english": "Prognosis Classification",
+          "text": "साध्योऽसाध्य इति व्याधिर्द्विधा तौ तु पुनर्द्विधा ।\nसुसाध्यः कृच्छ्रसाध्यश्च याप्यो यश्चानुक्रमः ॥ ३० ॥"
+        },
+        {
+          "id": "31",
+          "title_sanskrit": "सुसाध्यलक्षणम् - १",
+          "title_english": "Features of Easily Curable Disease - 1",
+          "text": "सर्वौषधक्षमे देहे यूनाः पुंसो जितात्मनः ।\nअमर्मगोऽल्पहेत्वग्ररूपरूपोऽनुपद्रवः ॥ ३१ ॥"
+        },
+        {
+          "id": "32",
+          "title_sanskrit": "सुसाध्यलक्षणम् - २",
+          "title_english": "Features of Easily Curable Disease - 2",
+          "text": "अतुल्यदूष्यदेशर्तुप्रकृतिः पादसम्पदि ।\nग्रहेष्वनुगुणेष्वेकदोषमार्गो नवः सुखः ॥ ३२ ॥"
+        },
+        {
+          "id": "33",
+          "title_sanskrit": "कृच्छ्रसाध्य-याप्य-लक्षणम्",
+          "title_english": "Features of Difficult and Palliable Disease",
+          "text": "शस्त्रादिसाधनः कृच्छ्रः सङ्करे तत्र चोदितैः ।\nशेषत्वेनायुषो याप्यः पथ्याभ्यासेन याप्यते ॥ ३३ ॥"
+        },
+        {
+          "id": "34",
+          "title_sanskrit": "असाध्यलक्षणम्",
+          "title_english": "Features of Incurable Disease",
+          "text": "अनुपक्रम एव स्यात् स्थितोऽत्यन्तविपर्यये ।\nऔत्सुक्यमोहारतिकृद् दृष्टरिष्टोऽक्षनाशनः ॥ ३४ ॥"
+        },
+        {
+          "id": "35",
+          "title_sanskrit": "वर्ज्य-रोगी - १",
+          "title_english": "Patients to be Rejected - 1",
+          "text": "त्यजेदार्तं भिषग्भूपैर्द्विष्टं तेषां द्विषं तथा ।\nहीनोपकरणं व्यग्रमविधेयं गतायुषम् ॥ ३५ ॥"
+        },
+        {
+          "id": "36",
+          "title_sanskrit": "वर्ज्य-रोगी - २ तथा ग्रन्थविस्तारः",
+          "title_english": "Patients to be Rejected - 2 & Text Scope",
+          "text": "चण्डं शोकातुरं भीरुं कृतघ्नं वैद्यमानिनम् ।\nतस्येदमध्यायशतं विंशतिश्चानुपूर्वशः ॥ ३६ ॥"
+        },
+        {
+          "id": "37",
+          "title_sanskrit": "सूत्रस्थानाध्यायाः - १",
+          "title_english": "Chapters of Sutrasthana - 1",
+          "text": "स्थानेषु षट्सु रचितं सूत्रस्थानं तदादिमम् ।\nआयुष्कामीयदिनर्तुरोगानुत्पादनीयकाः ॥ ३७ ॥"
+        },
+        {
+          "id": "38",
+          "title_sanskrit": "सूत्रस्थानाध्यायाः - २",
+          "title_english": "Chapters of Sutrasthana - 2",
+          "text": "द्रवद्रव्यविज्ञानीयमन्नस्वरूपमेव च ।\nअन्नरक्षामात्रशितीयावुपकल्पनीयकः ॥ ३८ ॥"
+        },
+        {
+          "id": "39",
+          "title_sanskrit": "सूत्रस्थानाध्यायाः - ३",
+          "title_english": "Chapters of Sutrasthana - 3",
+          "text": "शोधनादिगणः स्नेहः स्वेदो वमनरेचनम् ।\nबस्तिर्विधिर्नस्यविधिर्धूमपानविधिस्तथा ॥ ३९ ॥"
+        },
+        {
+          "id": "40",
+          "title_sanskrit": "सूत्रस्थानाध्यायाः - ४",
+          "title_english": "Chapters of Sutrasthana - 4",
+          "text": "गण्डूषाश्च्योतनं तद्वन्नेत्रतर्पणमेव च ।\nयन्त्रशस्त्रविधिकश्च सिराव्यधस्तथैव च ॥ ४० ॥"
+        },
+        {
+          "id": "41",
+          "title_sanskrit": "सूत्रस्थानाध्यायाः - ५",
+          "title_english": "Chapters of Sutrasthana - 5",
+          "text": "शल्यस्य हरणं तद्वच्छस्त्रकर्मविधिक्रमः ।\nक्षारकर्मविधिकश्चेत्यध्यायास्त्रिंशदीरिताः ॥ ४१ ॥"
+        },
+        {
+          "id": "42",
+          "title_sanskrit": "शारीरस्थानम्",
+          "title_english": "Sharira Sthana",
+          "text": "शारीरं षडध्यायं स्याद्गर्भावक्रान्तिरेव च ।\nगर्भव्याकरणं तद्वन्मर्मविभाग एव च ॥ ४२ ॥"
+        },
+        {
+          "id": "43",
+          "title_sanskrit": "निदानस्थानम्",
+          "title_english": "Nidana Sthana",
+          "text": "निदानं षोडशाध्यायं ज्वरादीनां प्रकीर्तितम् ।\nसर्वव्याधिसमुत्थानलक्षणोत्पत्तिसूचकम् ॥ ४३ ॥"
+        },
+        {
+          "id": "44",
+          "title_sanskrit": "चिकित्सास्थानम् - १",
+          "title_english": "Chikitsa Sthana - 1",
+          "text": "चिकित्सितं द्वाविंशतिर्विभागेनोपदेक्ष्यते ।\nज्वररक्तपित्तकासश्वासयक्ष्मादिकान्तिकम् ॥ ४४ ॥"
+        },
+        {
+          "id": "45",
+          "title_sanskrit": "चिकित्सास्थानम् - २",
+          "title_english": "Chikitsa Sthana - 2",
+          "text": "छर्दिमदात्ययार्शांसि ग्रहणीमूत्राघातकम् ।\nप्रमेहो विद्रधिश्चैव गुल्मोदरभगन्दरम् ॥ ४५ ॥"
+        },
+        {
+          "id": "46",
+          "title_sanskrit": "कल्पस्थानम्",
+          "title_english": "Kalpa Sthana",
+          "text": "कल्पं षडध्यायं तत्र वमनादिविधिक्रमः ।\nभेषजानां विकल्पाश्च संशोधनसंशमनम् ॥ ४६ ॥"
+        },
+        {
+          "id": "47",
+          "title_sanskrit": "उत्तरस्थानम्",
+          "title_english": "Uttara Sthana",
+          "text": "उत्तरं चत्वारिंशत्स्याद्बालग्रहोर्ध्वजत्रुजम् ।\nशल्यदंष्ट्राजरावृषान् रोगांस्तत्रोपदेक्ष्यते ॥ ४७ ॥"
+        },
+        {
+          "id": "48",
+          "title_sanskrit": "तन्त्रसमापनम्",
+          "title_english": "Conclusion of the Treatise",
+          "text": "इत्यध्यायशतं विंशं षट्स्थानेषु प्रकीर्तितम् ।\nअष्टाङ्गहृदयं नाम तन्त्रमेतत्प्रयुज्यते ॥ ४८ ॥"
+        },
+        {
+          "id": "48.5",
+          "title_sanskrit": "उपसंहारः",
+          "title_english": "Final Half Verse",
+          "text": "एतत्पठन् विचार्यैव भिषक् सिद्धिमवाप्नुयात् ॥ ४८ ½ ॥"
+        }
+      ]
     },
     {
-        "id": "4_2_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "अधोवात (Fart) रोकने के रोग",
-        "text": "अधोवातस्य रोधेन गुल्मोदावर्तरुक्क्लमाः । वातमूत्रशकृत्सङ्गो दृष्ट्यग्निवधहृद्गदाः ॥२॥"
+      "chapter_number": 2,
+      "chapter_name": "Dinacharya Adhyaya",
+      "shlokas": [
+        {
+          "id": "1",
+          "title_sanskrit": "जागरण काल",
+          "title_english": "Waking Up Time",
+          "text": "ब्राह्मे मुहूर्ते उत्तिष्ठेत्स्वस्थो रक्षार्थमायुषः ।\nशरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥ १ ॥"
+        },
+        {
+          "id": "2-3",
+          "title_sanskrit": "दन्तधावन",
+          "title_english": "Brushing the Teeth",
+          "text": "अर्कन्यग्रोधखदिरकरञ्जककुभादिजम् ।\nप्रातर्भुक्त्वा च मृद्वग्रं कषायकटुतिक्तकम् ॥ २ ॥\nभक्षयेद्दन्तपवनं दन्तमांसान्यबाधयन् ।\nनिहन्ति गन्धवैरस्यं जिह्वादन्तास्यजं मलम् ॥ ३ ॥"
+        },
+        {
+          "id": "4-5",
+          "title_sanskrit": "दन्तधावन के लाभ एवं निषेध",
+          "title_english": "Benefits & Contraindications for Brushing",
+          "text": "निष्कृष्य रुचिमाधत्ते सद्यो दन्तविशोधनम् ।\nनाद्यादजीर्णवमथुश्वासकासज्वरार्दितः ॥ ४ ॥\nतृष्णास्यपाकहृन्नेत्रशिरःकर्णामयी च तत् ।"
+        },
+        {
+          "id": "5-6",
+          "title_sanskrit": "अञ्जन",
+          "title_english": "Collyrium / Eye Care",
+          "text": "सौवीरमञ्जनं नित्यं हितमक्ष्णोस्ततो भजेत् ॥ ५ ॥\nचक्षुस्तेजोमयं तस्य विशेषाच्छ्लेष्मतो भयम् ।\nयोजयेत्सप्तरात्रेऽस्मात्स्रावणार्थं रसाञ्जनम् ॥ ६ ॥"
+        },
+        {
+          "id": "7-8",
+          "title_sanskrit": "नावन, गण्डूष, धूम, ताम्बूल",
+          "title_english": "Nasal Drops, Gargling, Inhalation, Betel Leaf",
+          "text": "ततो नावनगण्डूषधूमताम्बूलभाग्भवेत् ।\nताम्बूलं क्षतपित्तास्ररूक्षोत्कुपितचक्षुषाम् ॥ ७ ॥\nविषमूर्च्छामदार्तानां पथ्यं न शोषिणामपि ।"
+        },
+        {
+          "id": "8-9",
+          "title_sanskrit": "अभ्यङ्ग",
+          "title_english": "Daily Oil Massage",
+          "text": "अभ्यङ्गमाचरेन्नित्यं स जराश्रमवातहा ॥ ८ ॥\nदृष्टिप्रसादपुष्ट्यायुःस्वप्नसुत्वक्त्वदार्ढ्यकृत् ।\nशिरःश्रवणपादेषु तं विशेषेण शीलयेत् ॥ ९ ॥"
+        },
+        {
+          "id": "10",
+          "title_sanskrit": "अभ्यङ्ग निषेध तथा व्यायाम",
+          "title_english": "Contraindications for Massage & Exercise",
+          "text": "वर्ज्योऽभ्यङ्गः कफग्रस्तकृतसंशुद्ध्यजीर्णिभिः ।\nलाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ॥ १० ॥"
+        },
+        {
+          "id": "11",
+          "title_sanskrit": "व्यायाम के लाभ तथा निषेध",
+          "title_english": "Benefits & Contraindications of Exercise - continued",
+          "text": "लाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ।\nविभक्तघनगात्रत्वं व्यायामादुपजायते ॥ ११ ॥\nवातपित्तामयी बालो वृद्धोऽजीर्णी च तं त्यजेत् ।"
+        },
+        {
+          "id": "12-13",
+          "title_sanskrit": "व्यायाम की मात्रा",
+          "title_english": "Proper Amount of Exercise",
+          "text": "अर्धशक्त्या निषेव्यस्तु बलिभिः स्निग्धभोजिभिः ॥ १२ ॥\nशीतकाले वसन्ते च मन्दमेव ततोऽन्यदा ।\nतं कृत्वाऽनुसुखं देहं मर्दयेच्च समन्ततः ॥ १३ ॥"
+        },
+        {
+          "id": "14",
+          "title_sanskrit": "अतिव्यायाम के उपद्रव",
+          "title_english": "Complications of Excessive Exercise",
+          "text": "तृष्णा क्षयः प्रतमको रक्तपित्तं श्रमः क्लमः ।\nअतिव्यायामतः कासो ज्वरश्छर्दिश्च जायते ॥ १४ ॥"
+        },
+        {
+          "id": "15",
+          "title_sanskrit": "अति-साहसिक कार्यों का निषेध",
+          "title_english": "Avoidance of Overexertion",
+          "text": "व्यायामजागराध्वस्त्रीहास्यभाष्यादि साहसम् ।\nगजं सिंह इवाकर्षन् भजन्नति विनश्यति ॥ १५ ॥"
+        },
+        {
+          "id": "16",
+          "title_sanskrit": "उद्वर्तन",
+          "title_english": "Dry Powder Massage",
+          "text": "उद्वर्तनं कफहरं मेदसः प्रविलापनम् ।\nस्थिरीकरणमङ्गानां त्वक्प्रसादकरं परम् ॥ १६ ॥"
+        },
+        {
+          "id": "17-18",
+          "title_sanskrit": "स्नान के लाभ",
+          "title_english": "Benefits of Bathing",
+          "text": "दीपनं वृष्यमायुष्यं स्नानमूर्जाबलप्रदम् ।\nकण्डूमलश्रमस्वेदतन्द्रातृड्दाहपाप्मजित् ॥ १७ ॥\nउष्णाम्बुनाऽधःकायस्य परिषेको बलावहः ।\nतेनैव तूत्तमाङ्गस्य बलहृत्केशचक्षुषाम् ॥ १८ ॥"
+        },
+        {
+          "id": "19",
+          "title_sanskrit": "स्नान निषेध",
+          "title_english": "Contraindications for Bathing",
+          "text": "स्नानमर्दितनेत्रास्यकर्णरोगातिसारिषु ।\nआध्मानपीनसाजीर्णभुक्तवत्सु च गर्हितम् ॥ १९ ॥"
+        },
+        {
+          "id": "20",
+          "title_sanskrit": "भोजन का नियम",
+          "title_english": "Rule for Eating",
+          "text": "जीर्णे हितं मितं चाद्यान्न वेगानीरयेद्बलात् ।\nन वेगितोऽन्यकार्यः स्यान्नाजित्वा साध्यमामयम् ॥ २० ॥"
+        },
+        {
+          "id": "21",
+          "title_sanskrit": "सद्वृत्त का महत्त्व",
+          "title_english": "Importance of Good Conduct / Dharma",
+          "text": "सुखार्थाः सर्वभूतानां मताः सर्वाः प्रवृत्तयः ।\nसुखं च न विना धर्मात्तस्माद्धर्मपरो भवेत् ॥ २१ ॥"
+        },
+        {
+          "id": "22-23",
+          "title_sanskrit": "दश पाप कर्मों का त्याग",
+          "title_english": "Abandoning the Ten Sins of Body, Speech, and Mind",
+          "text": "भक्त्या कल्याणमित्रेषु नीचेषु च विपर्ययः ।\nहिंसास्तेयान्यथाकामं पैशून्यं परुषानृते ॥ २२ ॥\nसम्भिन्नालापव्यापादमभिध्यां दृग्विपर्ययम् ।\nपापं कर्मेति दशधा कायवाङ्मानसैस्त्यजेत् ॥ २३ ॥"
+        },
+        {
+          "id": "24",
+          "title_sanskrit": "समभाव और दया",
+          "title_english": "Compassion and Empathy",
+          "text": "अवृत्तिव्याधिशोकार्ताननुवर्तेत शक्तितः ।\nआत्मवत्सततं पश्येदपि कीटपिपीलिकम् ॥ २४ ॥"
+        },
+        {
+          "id": "25",
+          "title_sanskrit": "सम्मान और दान",
+          "title_english": "Respect and Charity",
+          "text": "अर्चयेद्देवगोविप्रवृद्धवैद्यनृपातिथीन् ।\nविमुखान् नार्थिनः कुर्यान्नावमन्येत नाक्षिपेत् ॥ २५ ॥"
+        },
+        {
+          "id": "26",
+          "title_sanskrit": "उपकार और समतोलन",
+          "title_english": "Benevolence and Equanimity",
+          "text": "उपकारप्रधानः स्यादपकारपरेऽप्यरौ ।\nसम्पद्विपत्स्वेकमना हेतावीर्ष्येत् फले न तु ॥ २६ ॥"
+        },
+        {
+          "id": "27",
+          "title_sanskrit": "मधुर वाणी और सुशीलता",
+          "title_english": "Pleasant Speech and Good Character",
+          "text": "काले हितं मितं ब्रूयादविसंवादि पेशलम् ।\nपूर्वाभिभाषी सुमुखः सुशीलः करुणार्द्रधीः ॥ २७ ॥"
+        },
+        {
+          "id": "28",
+          "title_sanskrit": "अजातशत्रुता",
+          "title_english": "Social Trust and Having No Enemies",
+          "text": "नैकः सुखी न सर्वत्र विश्रब्धो न च शङ्कितः ।\nन कञ्चिदात्मनः शत्रुं नात्मानं कस्यचिद्रिपुम् ॥ २8 ॥"
+        },
+        {
+          "id": "29-30",
+          "title_sanskrit": "व्यवहार कुशलता तथा इन्द्रिय संयम",
+          "title_english": "Worldly Wisdom and Sensory Control",
+          "text": "प्रकाशयेन्नापमानं न च निःस्नेहतां प्रभोः ।\nजनस्याशयमालक्ष्य यो यथा परितुष्यति ॥ २९ ॥\nतं तथैवानुवर्तेत पराराधनपण्डितः ।\nन पीडयेदिन्द्रियाणि न चैतान्यतिलालयेत् ॥ ३० ॥"
+        },
+        {
+          "id": "31-32",
+          "title_sanskrit": "वेशभूषा और आभूषण",
+          "title_english": "Attire and Adornments",
+          "text": "नीचरोमनखश्मश्रुर्निर्मलाम्बरधारणः ।\nस्नानशीलः सुसुरभिः सुवेषोऽनुल्बणोज्ज्वलः ॥ ३१ ॥\nधारयेत् सततं रत्नसिद्धमन्त्रमहौषधीः ।\nसातपत्रपदत्राणो विचरेद्युगमात्रदृक् ॥ ३२ ॥"
+        },
+        {
+          "id": "33-34",
+          "title_sanskrit": "रात्रिकालीन व्यवहार एवं निषेध",
+          "title_english": "Night Travel and Cautions",
+          "text": "निशि चात्ययिके कार्ये दण्डी मौली सहायवान् ।\nचैत्यपूज्यध्वजाशस्तच्छायाभस्मतुषाशुचीन् ॥ ३३ ॥\nनाक्रामेच्छर्करालोष्टबलिस्नानभुवोऽपि च ।\nनदीं तरेन्न बाहुभ्यां नाग्निस्कन्धमभिव्रजेत् ॥ ३४ ॥"
+        },
+        {
+          "id": "35-36",
+          "title_sanskrit": "शारीरिक चेष्टाओं के नियम",
+          "title_english": "Rules for Physical Actions",
+          "text": "सन्दिग्धनावं वृक्षं च नारोहेद्दुष्टयानवत् ।\nनासंवृतमुखः कुर्यात् क्षुतिहास्यविजृम्भणम् ॥ ३५ ॥\nनासिकां न विकुष्णीयान्नाकस्माद्विलिखेद्भुवम् ।\nनाचेष्टेत विगुणं नासीतोत्कटकस्थितः ॥ ३६ ॥"
+        },
+        {
+          "id": "37-38",
+          "title_sanskrit": "वर्जित स्थान और कर्म",
+          "title_english": "Prohibited Places and Actions",
+          "text": "देहवाक्चेतसां चेष्टाः प्राक् श्रमाद्विनिवर्तयेत् ।\nनोर्ध्वजानुश्चिरं तिष्ठेन्नक्तं सेवेत न द्रुमान् ॥ ३७ ॥\nतथा चत्वरचैत्यान्तचतुष्पथसुरालयान् ।\nसूनाटवीशून्यगृहश्मशानानि दिवापि च ॥ ३८ ॥"
+        },
+        {
+          "id": "39-40",
+          "title_sanskrit": "दृष्टि एवं व्यापार निषेध",
+          "title_english": "Restrictions on Sight and Trade",
+          "text": "सर्वथेक्षेत नादित्यं न भारं शिरसा वहेत् ।\nनेक्षेत प्रततं सूक्ष्मं दीप्तामेध्याप्रियाणि च ॥ ३९ ॥\nमद्यविक्रयसन्धानदानादानानि नाचरेत् ।\nपुरोवातातपरजस्तुषारपरुषानिलान् ॥ ४० ॥"
+        },
+        {
+          "id": "41-42",
+          "title_sanskrit": "आसन और संगति निषेध",
+          "title_english": "Prohibited Associations and Postures",
+          "text": "अनृजुः क्षवथुद्गारकासस्वप्नान्नमैथुनम् ।\nकूलच्छायां नृपद्विष्टं व्यालदंष्ट्रिविषाणिनः ॥ ४१ ॥\nहीनानार्यातिनिपुणसेवां विग्रहमुत्तमैः ।\nसन्ध्यास्वभ्यवहारस्त्रीस्वप्नाध्ययनचिन्तनम् ॥ ४२ ॥"
+        },
+        {
+          "id": "43-44",
+          "title_sanskrit": "त्याज्य व्यवहार",
+          "title_english": "Behaviors to Abandon",
+          "text": "शत्रुसत्रगणाकीर्णगणिकापणिकाशनम् ।\nगात्रवक्त्रनखैर्वाद्यं हस्तकेशावधूननम् ॥ ४३ ॥\nतोयाग्निपूज्यमध्येन यानं धूमं शवाश्रयम् ।\nमद्यातिसक्तिं विश्रम्भस्वातन्त्र्ये स्त्रीषु च त्यजेत् ॥ ४४ ॥"
+        },
+        {
+          "id": "45-46",
+          "title_sanskrit": "लोकव्यवहार एवं सद्व्रत",
+          "title_english": "Worldly Conduct and the Ultimate Vow",
+          "text": "आचार्यः सर्वचेष्टासु लोक एव हि धीमतः ।\nअनुकुर्यात्तमेवातो लौकिकेऽर्थे परीक्षकः ॥ ४५ ॥\nआर्द्रसन्तानता त्यागः कायवाक्चेतसां दमः ।\nस्वार्थबुद्धिः परार्थेषु पर्याप्तमिति सद्व्रतम् ॥ ४६ ॥"
+        },
+        {
+          "id": "47-48",
+          "title_sanskrit": "आत्मचिन्तन एवं सद्वृत्त का फल",
+          "title_english": "Self-Reflection and Fruits of Good Conduct",
+          "text": "नक्तंदिनानि मे यान्ति कथम्भूतस्य सम्प्रति ।\nदुःखभाङ्न भवत्येवं नित्यं सन्निहितस्मृतिः ॥ ४७ ॥\nइत्याचारः समासेन यं प्राप्नोति समाचरन् ।\nआयुरारोग्यमैश्वर्यं यशो लोकांश्च शाश्वतान् ॥ ४८ ॥"
+        }
+      ]
     },
     {
-        "id": "4_2_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "मल (Feces) रोकने के रोग",
-        "text": "शकृतः पिण्डिकोद्वेष्टप्रतिश्यायशिरोरुजः । ऊर्ध्ववायुः परीकर्तो हृदयस्योपरोधनम् ॥३॥"
+      "chapter_number": 3,
+      "chapter_name": "Rutucharya Adhyaya",
+      "shlokas": [
+        {
+          "id": "1",
+          "title_sanskrit": "षड् ऋतवः",
+          "title_english": null,
+          "text": "मासैर्द्विसङ्ख्यैर्माघाद्यैः क्रमात् षडृतवः स्मृताः ।\nशिशिरोऽथ वसन्तश्च ग्रीष्मो वर्षाशरद्धिमाः ॥ १ ॥"
+        },
+        {
+          "id": "2",
+          "title_sanskrit": "आदानकालः (उत्तरायणम्)",
+          "title_english": null,
+          "text": "शिशिराद्यास्त्रिभिस्तैस्तु विद्यादयनमुत्तरम् ।\nआदानं च तदादत्ते नृणां प्रतिदिनं बलम् ॥ २ ॥"
+        },
+        {
+          "id": "3",
+          "title_sanskrit": "आदानकालस्य प्रभावः",
+          "title_english": null,
+          "text": "तस्मिन्नत्यर्थतीक्ष्णोष्णरूक्षा मार्गस्वभावतः ।\nआदित्यपवनाः सौम्यान् क्षपयन्ति गुणान् भुवः ॥ ३ ॥"
+        },
+        {
+          "id": "4",
+          "title_sanskrit": "आदानकाले रसाः",
+          "title_english": null,
+          "text": "तिक्तः कषायः कटुको बलिनोऽत्र रसाः क्रमात् ।\nतस्मादादानमाग्नेयमृतवो दक्षिणायनम् ॥ ४ ॥"
+        },
+        {
+          "id": "5",
+          "title_sanskrit": "विसर्गकालः (दक्षिणायनम्)",
+          "title_english": null,
+          "text": "वर्षादयो विसर्गश्च यद्बलं विसृजत्ययम् ।\nसौम्यत्वादत्र सोमो हि बलवान् हीयते रविः ॥ ५ ॥"
+        },
+        {
+          "id": "6",
+          "title_sanskrit": "विसर्गकाले रसाः",
+          "title_english": null,
+          "text": "मेघवृष्ट्यनिलैः शीतैः शान्ततापे महीतले ।\nस्निग्धाश्चेहाम्ललवणमधुरा बलिनो रसाः ॥ ६ ॥"
+        },
+        {
+          "id": "7",
+          "title_sanskrit": "ऋतुषु बलावस्था",
+          "title_english": null,
+          "text": "शीतेऽग्र्यं वृष्टिघर्मेऽल्पं बलं मध्यं तु शेषयोः ।\nबलिनः शीतसंरोधाद्धेमन्ते प्रबलोऽनलः ॥ ७ ॥"
+        },
+        {
+          "id": "8",
+          "title_sanskrit": "हेमन्तऋतुचर्या - आहारः",
+          "title_english": null,
+          "text": "भवत्यल्पेन्धनो धातून् स पचेद्वायुनेरितः ।\nअतो हिमेऽस्मिन् सेवेत स्वाद्वम्ललवणान् रसान् ॥ ८ ॥"
+        },
+        {
+          "id": "9",
+          "title_sanskrit": "हेमन्ते दिनचर्या",
+          "title_english": null,
+          "text": "दैर्घ्यान्निशानामेतर्हि प्रातरेव बुभुक्षितः ।\nअवश्यकार्यं सम्भाव्य यथोक्तं शीलयेदनु ॥ ९ ॥"
+        },
+        {
+          "id": "10",
+          "title_sanskrit": "हेमन्ते अभ्यङ्गः",
+          "title_english": null,
+          "text": "वातघ्नतैलैरभ्यङ्गं मूर्ध्नि तैलं विमर्दनम् ।\nनियुद्धं कुशलैः सार्धं पादाघातं च युक्तितः ॥ १० ॥"
+        },
+        {
+          "id": "11",
+          "title_sanskrit": "हेमन्ते स्नानविधिः",
+          "title_english": null,
+          "text": "कषायापहृतस्नेहस्ततः स्नातो यथाविधि ।\nकुङ्कुमेन सदर्पेण प्रदिग्धोऽगुरुधूपितः ॥ ११ ॥"
+        },
+        {
+          "id": "12",
+          "title_sanskrit": "हेमन्ते भक्ष्याभक्ष्यम्",
+          "title_english": null,
+          "text": "रसान् स्निग्धान् पलं पुष्टं गौडमच्छसुरां सुराम् ।\nगोधूमपिष्टमाषैक्षुक्षीरोत्थविकृतीः शुभाः ॥ १२ ॥"
+        },
+        {
+          "id": "13",
+          "title_sanskrit": "हेमन्ते वस्त्रं जलं च",
+          "title_english": null,
+          "text": "नवमन्नं वसां तैलं शौचकार्ये सुखोदकम् ।\nप्रावाराजिनकौशेयप्रवेणीकौचवावृतम् ॥ १३ ॥"
+        },
+        {
+          "id": "14",
+          "title_sanskrit": "हेमन्ते शयनम् आतपश्च",
+          "title_english": null,
+          "text": "उष्णस्वभावैर्लघुभिः प्रावृतः शयनं भजेत् ।\nयुक्त्याऽर्करश्मीन् स्वेदं च पादत्राणं च सर्वदा ॥ १४ ॥"
+        },
+        {
+          "id": "15",
+          "title_sanskrit": "हेमन्ते स्त्रीसङ्गः",
+          "title_english": null,
+          "text": "पीवरोरुस्तनश्रोण्यः समदाः प्रमदाः प्रियाः ।\nहरन्ति शीतमुष्णाङ्ग्यो धूपकुङ्कुमयौवनैः ॥ १५ ॥"
+        },
+        {
+          "id": "16",
+          "title_sanskrit": "हेमन्ते वर्ज्यावर्ज्यम्",
+          "title_english": null,
+          "text": "वर्जयेदन्नपानं च वातलं लघु शीतलम् ।\nप्रवातं प्रमिताहारं मन्थं चापि हिमागमे ॥ १६ ॥"
+        },
+        {
+          "id": "17",
+          "title_sanskrit": "शिशिरऋतुचर्या",
+          "title_english": null,
+          "text": "अयमेव विधिः कार्यः शिशिरेऽपि विशेषतः ।\nतदा हि शीतमाधिक्यं रौक्ष्यं चादानकालजम् ॥ १७ ॥"
+        },
+        {
+          "id": "18",
+          "title_sanskrit": "वसन्ते कफप्रकोपः",
+          "title_english": null,
+          "text": "कफश्चितो हि शिशिरे वसन्तेऽर्कांशुतापितः ।\nप्रविलीयमानो देहाग्निं बाधते कुरुते गदान् ॥ १८ ॥"
+        },
+        {
+          "id": "19",
+          "title_sanskrit": "वसन्ते शोधनम् अपथ्यं च",
+          "title_english": null,
+          "text": "अतस्तज्जयाय क्षिप्रं वमनादीन् समाचरेत् ।\nगुर्वम्लस्निग्धमधुरं दिवास्वप्नं च वर्जयेत् ॥ १९ ॥"
+        },
+        {
+          "id": "20",
+          "title_sanskrit": "वसन्ते दिनचर्या",
+          "title_english": null,
+          "text": "व्यायाममुद्वर्तनं च कवलग्रहमञ्जनम् ।\nसुखाम्बुना शौचविधिं शीलयेत्कुसुमागमे ॥ २० ॥"
+        },
+        {
+          "id": "21",
+          "title_sanskrit": "वसन्ते लेपः आहारश्च",
+          "title_english": null,
+          "text": "स्नातोऽनुलिप्तः कर्पूरचन्दनागरुकुङ्कुमैः ।\nपुराणयवगोधूमक्षौद्रजाङ्गलशूल्यभुक् ॥ २१ ॥"
+        },
+        {
+          "id": "22",
+          "title_sanskrit": "वसन्ते पेयानि",
+          "title_english": null,
+          "text": "पिबेन्मध्वासवारिष्टसीधुमार्द्वीकमाधवान् ।\nवसन्तेऽनुभवेत् स्त्रीणां काननानां च यौवनम् ॥ २२ ॥"
+        },
+        {
+          "id": "23",
+          "title_sanskrit": "ग्रीष्मे अपथ्यम्",
+          "title_english": null,
+          "text": "ग्रीष्मे वर्ज्यानि कट्वम्ललवणोष्णानि यत्नतः ।\nव्यायामातपसन्तापमैथुनानि च सर्वदा ॥ २३ ॥"
+        },
+        {
+          "id": "24",
+          "title_sanskrit": "ग्रीष्मे आहारः",
+          "title_english": null,
+          "text": "भजेन्मधुरमेवान्नं लघु स्निग्धं हिमं द्रवम् ।\nसुशीततोयसिक्ताङ्गो लिह्यात्सक्तून् सशर्करान् ॥ २४ ॥"
+        },
+        {
+          "id": "25",
+          "title_sanskrit": "ग्रीष्मे मद्यनिषेधः",
+          "title_english": null,
+          "text": "मद्यं न पेयं पेयं वा स्वल्पं सुबहुवारि वा ।\nअन्यथा शोषशैथिल्यदाहमोहान् करोति तत् ॥ २५ ॥"
+        },
+        {
+          "id": "26",
+          "title_sanskrit": "ग्रीष्मे विशिष्टाहारः",
+          "title_english": null,
+          "text": "कुन्देन्दुधवलं शालिमश्नीयान्मांसजाङ्गलैः ।\nपिबेद्रसं नातिघनं रसालां रागषाडवौ ॥ २६ ॥"
+        },
+        {
+          "id": "27",
+          "title_sanskrit": "ग्रीष्मे पेयानि",
+          "title_english": null,
+          "text": "पानकं पञ्चसारं वा नवमृद्भाजनस्थितम् ।\nपिबेन्मृणालकर्पूरमातुलुङ्गदलान्वितम् ॥ २७ ॥"
+        },
+        {
+          "id": "28",
+          "title_sanskrit": "ग्रीष्मे शीतलोपचाराः",
+          "title_english": null,
+          "text": "सजलैस्तालवृन्तैश्च फुल्लैरुत्पलपल्लवैः ।\nवीज्यमानो रमेद्रात्रौ हर्म्यपृष्ठे निशाकरे ॥ २८ ॥"
+        },
+        {
+          "id": "29",
+          "title_sanskrit": "ग्रीष्मे शयनम्",
+          "title_english": null,
+          "text": "काननेषु च रम्येषु जलपुष्पयुतेषु च ।\nसुगन्धिषु च देशेषु शयीत कुसुमास्तरे ॥ २९ ॥"
+        },
+        {
+          "id": "30",
+          "title_sanskrit": "ग्रीष्मे रात्रौ पयःपानम्",
+          "title_english": null,
+          "text": "पयो वा शर्करोन्मिश्रं शृतं शीतं पिवेन्निशि ।\nग्रीष्मे च मैथुनं यत्नाद्वर्जयेद् दुर्बलो नरः ॥ ३० ॥"
+        },
+        {
+          "id": "31",
+          "title_sanskrit": "वर्षाऋतौ दोषावस्था",
+          "title_english": null,
+          "text": "आदाने ग्लानिते देहे पक्ता भवति दुर्बलः ।\nस वर्षास्वनिलादीनां दूषणैर्बाध्यते पुनः ॥ ३१ ॥"
+        },
+        {
+          "id": "32",
+          "title_sanskrit": "वर्षासु वातप्रकोपकारणानि",
+          "title_english": null,
+          "text": "भूबाष्पान्मेघनिष्यन्दात् पाकादम्लाज्जलस्य च ।\nवर्षास्वग्निबले क्षीणे कुप्यन्ति पवनादयः ॥ ३२ ॥"
+        },
+        {
+          "id": "33",
+          "title_sanskrit": "वर्षाचर्या - सामान्यनियमः",
+          "title_english": null,
+          "text": "तस्मात्साधारणः सर्वो विधिर्वर्षासु शस्यते ।\nउदश्विदादिमन्थं च जीर्णे धान्यं भजेन्नरः ॥ ३३ ॥"
+        },
+        {
+          "id": "34",
+          "title_sanskrit": "वर्षासु आहारः",
+          "title_english": null,
+          "text": "यवगोधूमशाल्यन्नं माषान् सूपं च शीलयेत् ।\nव्यञ्जनं चाम्ललवणं भजेत् क्षौद्रान्वितं तथा ॥ ३४ ॥"
+        },
+        {
+          "id": "35",
+          "title_sanskrit": "वर्षासु पेयानि",
+          "title_english": null,
+          "text": "माध्वीकमरिष्टं वा जलं वा शृतशीतलम् ।\nपिबेत् क्षौद्रान्वितं तोयं पञ्चकोलसमन्वितम् ॥ ३५ ॥"
+        },
+        {
+          "id": "36",
+          "title_sanskrit": "वर्षासु शोधनम्",
+          "title_english": null,
+          "text": "आस्थापनं शुद्धतनुर्जीर्णधान्यं रसान् पिबेत् ।\nजाङ्गलानि च मांसानि पलं पुष्टं च शीलयेत् ॥ ३६ ॥"
+        },
+        {
+          "id": "37",
+          "title_sanskrit": "वर्षासु विहारः",
+          "title_english": null,
+          "text": "घर्षोद्वर्तनस्नानगन्धमाल्यनिषेवणम् ।\nलघुशुद्धाम्बरं शीतवर्जितं च निवेशनम् ॥ ३७ ॥"
+        },
+        {
+          "id": "38",
+          "title_sanskrit": "वर्षासु वर्ज्यानि",
+          "title_english": null,
+          "text": "नदीजलं पिबेन्नैव न स्वपेद् दिवसे तथा ।\nव्यायाममातपं चैव व्यवायं चात्र वर्जयेत् ॥ ३८ ॥"
+        },
+        {
+          "id": "39",
+          "title_sanskrit": "शरदृतावागमनम्",
+          "title_english": null,
+          "text": "वर्षाशीतोचिताङ्गानां सहसैवार्करश्मिभिः ।\nतप्तानां सञ्चितं पूर्वं पित्तं शरदि कुप्यति ॥ ३९ ॥"
+        },
+        {
+          "id": "40",
+          "title_sanskrit": "शरदि शोधनम्",
+          "title_english": null,
+          "text": "तस्य प्रशान्तये क्षिप्रं तिक्तं सर्पिः पिबेन्नरः ।\nविरेचनं सिरावेधं कुर्याच्चापि चिकित्सकः ॥ ४० ॥"
+        },
+        {
+          "id": "41",
+          "title_sanskrit": "शरदि आहारः",
+          "title_english": null,
+          "text": "तिक्तं स्वादु कषायं च क्षुधितोऽन्नं भजेल्लघु ।\nशालिमुद्गसिताधात्रीपटोलमधुजाङ्गलम् ॥ ४१ ॥"
+        },
+        {
+          "id": "42",
+          "title_sanskrit": "हंसोदकम् (भाग १)",
+          "title_english": null,
+          "text": "तप्तं तप्तांशुकिरणैः शीतं शीतांशुरश्मिभिः ।\nसमन्तादप्यहोरात्रमगस्त्येनाविषीकृतम् ॥ ४२ ॥"
+        },
+        {
+          "id": "43",
+          "title_sanskrit": "हंसोदकम् (भाग २)",
+          "title_english": null,
+          "text": "शुचि स्यादमृतोपमं स्नानपानावगाहिनाम् ।\nहंसोदकमिति ख्यातं शारदं विमलं जलम् ॥ ४३ ॥"
+        },
+        {
+          "id": "44",
+          "title_sanskrit": "शरदि विहारः",
+          "title_english": null,
+          "text": "चन्दनोशीरकर्पूरमुक्ताहारविभूषितः ।\nसौधेषु हर्म्यपृष्ठेषु शयीत शशिरश्मिषु ॥ ४४ ॥"
+        },
+        {
+          "id": "45",
+          "title_sanskrit": "शरदि वर्ज्यानि",
+          "title_english": null,
+          "text": "तुषारमतितीक्ष्णांशुं क्षारं रौक्ष्यं च वर्जयेत् ।\nदिवास्वप्नं च पूर्वावातं प्राग्वातं च विवर्जयेत् ॥ ४५ ॥"
+        },
+        {
+          "id": "46",
+          "title_sanskrit": "शरदि वर्ज्याहारः",
+          "title_english": null,
+          "text": "वसां तैलमवश्यायमौदकानूपमामिषम् ।\nक्षारं दधि दिवास्वप्नं प्राग्वातं चात्र वर्जयेत् ॥ ४६ ॥"
+        },
+        {
+          "id": "47",
+          "title_sanskrit": "रसानां प्रयोगक्रमः (हेमन्त-शिशिर-वसन्ताः)",
+          "title_english": null,
+          "text": "हेमन्ते शिशिरे चैव स्वाद्वम्ललवणान् रसान् ।\nवसन्ते कटुतिक्तांश्च कषायांश्च भजेन्नरः ॥ ४७ ॥"
+        },
+        {
+          "id": "48",
+          "title_sanskrit": "रसानां प्रयोगक्रमः (ग्रीष्म-वर्षा-शरदः)",
+          "title_english": null,
+          "text": "निदाघे मधुरं स्निग्धं वर्षास्वम्ललवणौ तथा ।\nस्वादुतिक्तकषायांश्च शरदि प्राज्ञ आचरेत् ॥ ४८ ॥"
+        },
+        {
+          "id": "49",
+          "title_sanskrit": "नित्यं सर्वरसाभ्यासः",
+          "title_english": null,
+          "text": "नित्यं सर्वरसाभ्यासः स्वस्वाधिक्यमृतावृतौ ।\nतत्तदृतुविरोधेन यद्यत् पथ्यं तदाचरेत् ॥ ४९ ॥"
+        },
+        {
+          "id": "50",
+          "title_sanskrit": "दोषाणां चय-प्रकोप-प्रशमाः",
+          "title_english": null,
+          "text": "चयप्रकोपप्रशमा वायोर्ग्रीष्मादिषु त्रिषु ।\nवर्षादिषु तु पित्तस्य श्लेष्मणः शिशिरादिषु ॥ ५० ॥"
+        },
+        {
+          "id": "51",
+          "title_sanskrit": "दोषचयादीनां लक्षणम्",
+          "title_english": null,
+          "text": "चयो वृद्धिरुदीरणं प्रकोपो दोषजः स्मृतः ।\nप्रशमो प्रकृतिस्थत्वं तेषां तज्ज्ञैरुदाहृतः ॥ ५१ ॥"
+        },
+        {
+          "id": "52",
+          "title_sanskrit": "ऋतुसात्म्यम्",
+          "title_english": null,
+          "text": "अन्नपानं च सेवेत दोषघ्नं चर्तुसात्म्यजम् ।\nविपरीतमृतोश्चापि चेष्टितं च तथाविधम् ॥ ५२ ॥"
+        },
+        {
+          "id": "53",
+          "title_sanskrit": "ओकासात्म्यम्",
+          "title_english": null,
+          "text": "उपशेते यदुचितं तदोकासात्म्यमुच्यते ।\nविरुद्धमपि तद्युक्त्या सेव्यमानं न बाधते ॥ ५३ ॥"
+        },
+        {
+          "id": "54",
+          "title_sanskrit": "अहितत्यागक्रमः",
+          "title_english": null,
+          "text": "अहितानि शनैर्जह्यात् पथ्यान्यपि शनैः क्रमात् ।\nअसात्म्यजानां रोगाणामनुत्पत्तै विचक्षणः ॥ ५४ ॥"
+        },
+        {
+          "id": "55",
+          "title_sanskrit": "त्यागसेवनयोः पादांशक्रमः",
+          "title_english": null,
+          "text": "एकान्तरं द्व्यन्तरं वा त्र्यन्तरं च तथा क्रमात् ।\nत्यजेदेकं भजेदेकं भागं पादांशतो भिषक् ॥ ५५ ॥"
+        },
+        {
+          "id": "56",
+          "title_sanskrit": "क्रमेण त्यागस्य फलम्",
+          "title_english": null,
+          "text": "क्रमेणापचिता दोषाः क्रमेणोपचिता गुणाः ।\nसन्तो यान्ति न विकृतिं सद्यो वाऽपचिता इव ॥ ५६ ॥"
+        },
+        {
+          "id": "57",
+          "title_sanskrit": "ऋतुसन्धिपरिभाषा",
+          "title_english": null,
+          "text": "ऋत्वोरन्त्यादिसप्ताहावृतुसन्धिरिति स्मृतः ।\nतत्र पूर्वो विधिस्त्याज्यः सेवनीयोऽपरः क्रमात् ॥ ५७ ॥"
+        },
+        {
+          "id": "58",
+          "title_sanskrit": "ऋतुसन्धौ अपथ्यसेवनस्य परिणामः",
+          "title_english": null,
+          "text": "असात्म्यजा हि रोगाः स्युः सहसा त्यागशीलनात् ।\nतस्मात् क्रमेण सेवेत विरुद्धान्यपि मानवः ॥ ५८ ॥"
+        }
+      ]
     },
     {
-        "id": "4_2_3",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "मल रोकने के गंभीर परिणाम",
-        "text": "मुखेन विट्प्रवृत्तिश्च पूर्वोक्ताश्चामयाः स्मृताः ।४।"
-    },
-    {
-        "id": "4_2_4",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "मूत्र (Urine) रोकने के रोग",
-        "text": "अश्मरी बस्तिमेढ्रार्तिवङ्क्षणेषु रुजा भृशम् । मूत्रस्य रोधात् पूर्वे च प्रायो रोगास्तदाश्रयाः ॥५॥"
-    },
-    {
-        "id": "4_2_5",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "उद्गार (Burp) रोकने के रोग",
-        "text": "उद्गारस्येव रोधेन अरुचिः कम्पो विबन्धो हृदयोरसोः ।६।"
-    },
-    {
-        "id": "4_2_6",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "क्षवथु (Sneeze) रोकने के रोग",
-        "text": "क्षवो रोधात् शिरोर्तिरिन्द्रियदौर्बल्यं मन्यास्तम्भार्दितं तथा ।७।"
-    },
-    {
-        "id": "4_2_7",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "तृष्णा (Thirst) रोकने के रोग",
-        "text": "तृष्णायोगात् शोषकाबाधबाधिर्यं सम्भवन्ति हि ।8।"
-    },
-    {
-        "id": "4_2_8",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "क्षुधा (Hunger) रोकने के रोग",
-        "text": "क्षुधो रोधात् अङ्गभङ्गो दौर्बल्यं वैवर्ण्यं च जायते ।९।"
-    },
-    {
-        "id": "4_2_9",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "निद्रा (Sleep) रोकने के रोग",
-        "text": "निद्रायाः रोधात् मोहस्तन्द्रा शिरोगुरुत्वं च ।१०।"
-    },
-    {
-        "id": "4_2_10",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "कास (Cough) रोकने के रोग",
-        "text": "कासस्य रोधात् श्वासो यक्ष्मा हिक्का च जायते ।११।"
-    },
-    {
-        "id": "4_2_11",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "श्रमश्वास (Heavy Breathing) रोकने के रोग",
-        "text": "श्रमश्वासस्य रोधेन गुल्म हृद्रोग सम्भवः ।१२।"
-    },
-    {
-        "id": "4_2_12",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "जृम्भा (Yawn) रोकने के रोग",
-        "text": "जृम्भायाः रोधात् क्षवथुवत् सर्वे रोगाः भवन्ति हि ।१३।"
-    },
-    {
-        "id": "4_2_13",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "अश्रु (Tears) रोकने के रोग",
-        "text": "अश्रुणो रोधात् पीनसाक्षिशिरोहृद्गदाः ।१४।"
-    },
-    {
-        "id": "4_2_14",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "छर्दि (Vomit) रोकने के रोग",
-        "text": "छर्दे रोधात् विसर्पकुष्ठकुष्ठपाण्डुज्वरामयाः ।१५।"
-    },
-    {
-        "id": "4_2_15",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "शुक्र (Semen) रोकने के रोग",
-        "text": "शुक्रस्य रोधात् मेढ्रवृषणशूलं अङ्गभङ्गो ज्वरस्तथा ।१६।"
-    },
-    {
-        "id": "4_2_16",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "शुक्र रोकने की चिकित्सा",
-        "text": "तत्र बस्तिरभ्यङ्गो मैथुनं च शस्यते ।१७।"
-    },
-    {
-        "id": "4_3_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "सभी रोगों का मूल कारण",
-        "text": "रोगाः सर्वेऽपि जायन्ते वेगोदीरणधारणैः ।१८।"
-    },
-    {
-        "id": "4_3_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "सामान्य चिकित्सा सूत्र",
-        "text": "तत्र वातघ्नं अन्नपानं औषधं च प्रयोजयेत् ।१९-२१।"
-    },
-    {
-        "id": "4_3_3",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "वेगों के प्रति सावधानी",
-        "text": "आहारपाके जाते च सम्यक् वेगान् न धारयेत् ।२२।"
-    },
-    {
-        "id": "4_4_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "धारणीय वेग (Mental urges to suppress)",
-        "text": "लोभेष्याद्वेषमात्सर्यरागादीनां च धारयेत् ।२३।"
-    },
-    {
-        "id": "4_4_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "त्यागने योग्य कर्म",
-        "text": "मनोवाक्कायकर्माणि पापानि च विवर्जयेत् ।२४।"
-    },
-    {
-        "id": "4_5_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "संचित दोषों का शोधन",
-        "text": "दोषान् सञ्चितान् काले काले विशोधयेत् ।२५।"
-    },
-    {
-        "id": "4_5_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "ऋतु अनुसार शोधन",
-        "text": "ऋतावृतावनुसारेण शोधनं शस्यते नृणाम् ।२६।"
-    },
-    {
-        "id": "4_5_3",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "पञ्चकर्म का प्रयोग",
-        "text": "वमनं विरेचनं बस्तिं च यथायोग्यं प्रयोजयेत् ।२७-२8।"
-    },
-    {
-        "id": "4_5_4",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "शुद्ध कोष्ठ के लाभ",
-        "text": "एवं विशुद्धकोष्ठस्य कायाग्निर्दीप्यते नृणाम् ।२९।"
-    },
-    {
-        "id": "4_5_5",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "शोधन चिकित्सा की श्रेष्ठता",
-        "text": "दोषाः कदाचित् कुप्यन्ति जिता लङ्घनपाचनैः । ये तु संशोधनैः शुद्धा न तेषां पुनरुद्भवः ॥३०-३१॥"
-    },
-    {
-        "id": "4_6_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "दोषशामक आहार",
-        "text": "लघु स्निग्धं च भोक्तव्यं दोषोपशमनं च यत् ।३२।"
-    },
-    {
-        "id": "4_6_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "रसायन का सेवन",
-        "text": "रसायनानि सिद्धानि वृष्याणि च निषेवयेत् ।३३।"
-    },
-    {
-        "id": "4_6_3",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "सात्म्य आहार विहार",
-        "text": "सात्म्यं चेष्टां च कालक्रमेण एव समाचरेत् ।३४।"
-    },
-    {
-        "id": "4_6_4",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "प्रकृति और ऋतु का विचार",
-        "text": "प्रकृतिं ऋतुकालौ च विचार्यैव चरेत् सदा ।३५।"
-    },
-    {
-        "id": "4_7_1",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "आत्मनिरीक्षण (Self-reflection)",
-        "text": "नक्तंदिनानि मे यान्ति कथंभूतस्य सम्प्रति । दुःखभाक् न भवत्येवम् नित्यं सन्निहितस्मृतिः ॥३६॥"
-    },
-    {
-        "id": "4_7_2",
-        "samhita": "Ashtang Hridayam",
-        "chapter": "सूत्रस्थान (रोगानुत्पादनीय अध्याय)",
-        "heading": "स्वस्थ व्यक्ति के लक्षण",
-        "text": "दाता समः सत्यपरः क्षमावान् आप्तोपसेवी च भवत्यरोगः ॥"
+      "chapter_number": 4,
+      "chapter_name": "Roganutpadaniya Adhyaya",
+      "shlokas": [
+        {
+          "id": "1",
+          "title_sanskrit": "Adharaniya Vega",
+          "title_english": "The Non-Suppressible Urges",
+          "text": "वेगान्न धारयेद्वातविण्मूत्रक्षवतृट्क्षुधाम् ।\nनिद्राकासश्रमश्वासजृम्भाश्रुच्छर्दिरेतसाम् ॥ १ ॥"
+        },
+        {
+          "id": "2",
+          "title_sanskrit": "Adhovata Vegarodha",
+          "title_english": "Suppression of Flatus",
+          "text": "अधोवातस्य रोधेन गुल्मोदावर्तरुक्क्लमाः ।\nवातमूत्रशकृत्सङ्गदृष्ट्यग्निवधहृद्गदाः ॥ २ ॥"
+        },
+        {
+          "id": "3",
+          "title_sanskrit": "Shakrut Vegarodha",
+          "title_english": "Suppression of Feces",
+          "text": "शकृतः पिण्डिकोद्वेष्टप्रतिश्यायशिरोरुजः ।\nऊर्ध्ववायुः परीकर्तो हृदयस्योपरोधनम् ॥ ३ ॥"
+        },
+        {
+          "id": "4",
+          "title_sanskrit": "Shakrut and Mutra Vegarodha",
+          "title_english": "Symptoms of Feces and Urine Suppression",
+          "text": "मुखेन विट्प्रवृत्तिश्च पूर्वोक्ताश्चामयाः स्मृताः ।\nअङ्गभङ्गाश्मरीबस्तिमेढ्रवंक्षणवेदनाः ॥ ४ ॥"
+        },
+        {
+          "id": "5",
+          "title_sanskrit": "Mutra Vegarodha Chikitsa",
+          "title_english": "Treatment for Urine Suppression",
+          "text": "मूत्रस्य रोधात्पूर्वे च प्रायो रोगास्तदौषधम् ।\nवर्त्यभ्यङ्गावगाहाश्च स्वेदनं बस्तिकर्म च ॥ ५ ॥"
+        },
+        {
+          "id": "6",
+          "title_sanskrit": "Shakrut and Mutra Chikitsa",
+          "title_english": "Treatment for Feces and Urine Suppression",
+          "text": "अन्नपानं च विड्भेदि विड्रोधोत्थेषु यक्ष्मसु ।\nमूत्रजेषु तु पाने च प्राग्भक्तं शस्यते घृतम् ॥ ६ ॥"
+        },
+        {
+          "id": "7",
+          "title_sanskrit": "Avapidaka Ghrita",
+          "title_english": "Specific Ghee Administration",
+          "text": "जीर्णान्तिकं चोत्तमया मात्रया योजनाद्वयम् ।\nअवपीडकमेतच्च संज्ञितं धारणात्पुनः ॥ ७ ॥"
+        },
+        {
+          "id": "8",
+          "title_sanskrit": "Udgara Vegarodha",
+          "title_english": "Suppression of Belching",
+          "text": "उद्गारस्यारुचिः कम्पो विबन्धो हृदयोरसोः ।\nआध्मानकासहिध्माश्च हिध्मावत्तत्र भेषजम् ॥ ८ ॥"
+        },
+        {
+          "id": "9",
+          "title_sanskrit": "Kshavathu Vegarodha",
+          "title_english": "Suppression of Sneezing",
+          "text": "शिरोर्तीन्द्रियदौर्बल्यमन्यास्तम्भार्दितं क्षुतेः ।\nतीक्ष्णधूमाञ्जनाघ्राणनावनार्कविलोकनैः ॥ ९ ॥"
+        },
+        {
+          "id": "10",
+          "title_sanskrit": "Kshavathu Chikitsa & Trishna Vegarodha",
+          "title_english": "Treatment for Sneezing & Symptoms of Thirst Suppression",
+          "text": "प्रवर्तयेत्क्षुतिं सक्तां स्नेहस्वेदौ च शीलयेत् ।\nशोषाङ्गसादबाधिर्यसम्मोहभ्रमहृद्गदाः ॥ १० ॥"
+        },
+        {
+          "id": "11",
+          "title_sanskrit": "Trishna Chikitsa & Kshudha Vegarodha",
+          "title_english": "Treatment for Thirst & Symptoms of Hunger Suppression",
+          "text": "तृष्णाया निग्रहात्तत्र शीतः सर्वो विधिर्हितः ।\nअङ्गभङ्गारुचिग्लानिकार्श्यशूलभ्रमाः क्षुधः ॥ ११ ॥"
+        },
+        {
+          "id": "12",
+          "title_sanskrit": "Kshudha Chikitsa & Nidra Vegarodha",
+          "title_english": "Treatment for Hunger & Symptoms of Sleep Suppression",
+          "text": "तत्र योज्यं लघु स्निग्धमुष्णमल्पं च भोजनम् ।\nनिद्राया मोहमूर्धाक्षिगौरवालस्यजृम्भिकाः ॥ १२ ॥"
+        },
+        {
+          "id": "13",
+          "title_sanskrit": "Nidra Chikitsa & Kasa Vegarodha",
+          "title_english": "Treatment for Sleep & Symptoms of Cough Suppression",
+          "text": "अङ्गमर्दश्च तत्रेष्टः स्वप्नः संवाहनानि च ।\nकासस्य रोधात्तद्वृद्धिः श्वासारुचिहृदामयाः ॥ १३ ॥"
+        },
+        {
+          "id": "14",
+          "title_sanskrit": "Kasa Chikitsa & Shrama Shvasa Vegarodha",
+          "title_english": "Treatment for Cough & Symptoms of Heavy Breathing Suppression",
+          "text": "शोषो हिध्मा च कार्योऽत्र कासहा सुतरां विधिः ।\nगुल्महृद्रोगसम्मोहाः श्रमश्वासाद्विधारितात् ॥ १४ ॥"
+        },
+        {
+          "id": "15",
+          "title_sanskrit": "Shrama Shvasa Chikitsa & Jrimbha Vegarodha",
+          "title_english": "Treatment for Heavy Breathing & Symptoms of Yawning Suppression",
+          "text": "हितं विश्रमणं तत्र वातघ्नश्च क्रियाक्रमः ।\nजृम्भायाः क्षववद्रोगाः सर्वश्चानिलजिद्विधिः ॥ १५ ॥"
+        },
+        {
+          "id": "16",
+          "title_sanskrit": "Ashru Vegarodha",
+          "title_english": "Suppression of Tears & Treatment",
+          "text": "पीनसाक्षिशिरोहृद्रुङ्मन्यास्तम्भारुचिभ्रमाः ।\nसगुल्मा बाष्पतस्तत्र स्वप्नो मद्यं प्रियाः कथाः ॥ १६ ॥"
+        },
+        {
+          "id": "17",
+          "title_sanskrit": "Chhardi Vegarodha",
+          "title_english": "Suppression of Vomiting",
+          "text": "विसर्पकोठकुष्ठाक्षिकण्डूपाण्ड्वामयज्वराः ।\nसकासश्वासहृल्लासव्यङ्गश्वयथवो वमेः ॥ १७ ॥"
+        },
+        {
+          "id": "18",
+          "title_sanskrit": "Chhardi Chikitsa (Part 1)",
+          "title_english": "Treatment for Vomiting Suppression - Part 1",
+          "text": "गण्डूषधूमानाहारा रूक्षं भुक्त्वा तदुद्वमः ।\nव्यायामः स्रुतिरस्रस्य शस्तं चात्र विरेचनम् ॥ १८ ॥"
+        },
+        {
+          "id": "19",
+          "title_sanskrit": "Chhardi Chikitsa (Part 2) & Shukra Vegarodha",
+          "title_english": "Treatment for Vomiting (Part 2) & Suppression of Semen",
+          "text": "सक्षारलवणं तैलमभ्यङ्गार्थं च शस्यते ।\nशुक्रात्तत्स्रवणं गुह्यवेदनाश्वयथुज्वराः ॥ १९ ॥"
+        },
+        {
+          "id": "20",
+          "title_sanskrit": "Shukra Vegarodha Symptoms & Chikitsa",
+          "title_english": "Treatment for Semen Suppression - Part 1",
+          "text": "हृद्व्यथामूत्रसङ्गाङ्गभङ्गवृद्ध्यश्मषण्ढताः ।\nताम्रचूडसुराशालिवस्त्यभ्यङ्गावगाहनम् ॥ २० ॥"
+        },
+        {
+          "id": "21",
+          "title_sanskrit": "Shukra Chikitsa & Asadhya Lakshana",
+          "title_english": "Treatment for Semen Suppression (Part 2) & Incurable Symptoms",
+          "text": "बस्तिशुद्धिकरैः सिद्धं भजेत्क्षीरं प्रियाः स्त्रियः ।\nतृट्शूलार्तं त्यजेत् क्षीणं विड्वमं वेगरोधिनम् ॥ २१ ॥"
+        },
+        {
+          "id": "22",
+          "title_sanskrit": "Sarva Roga Karanam",
+          "title_english": "General Cause of All Diseases",
+          "text": "रोगाः सर्वेऽपि जायन्ते वेगोदीरणधारणैः ।\nनिर्दिष्टं साधनं तत्र भूयिष्ठं ये तु तान् प्रति ॥ २२ ॥"
+        },
+        {
+          "id": "23",
+          "title_sanskrit": "Vata Anulomana",
+          "title_english": "Pacification of Vata Dosha",
+          "text": "ततश्चानेकधा प्रायः पवनो यत्प्रकुप्यति ।\nअन्नपानौषधं तस्य युञ्जीतातोऽनुलोमनम् ॥ २३ ॥"
+        },
+        {
+          "id": "24",
+          "title_sanskrit": "Dharaneeya Vega",
+          "title_english": "The Mental Urges That Must Be Suppressed",
+          "text": "धारयेत्तु सदा वेगान् हितैषी प्रेत्य चेह च ।\nलोभेर्ष्याद्वेषमात्सर्यरागादीनां जितेन्द्रियः ॥ २४ ॥"
+        },
+        {
+          "id": "25",
+          "title_sanskrit": "Shodhana Kala",
+          "title_english": "Timely Purification of Doshas",
+          "text": "यतेत च यथाकालं मलानां शोधनं प्रति ।\nअत्यर्थसञ्चितास्ते हि क्रुद्धाः स्युर्जीवितच्छिदः ॥ २५ ॥"
+        },
+        {
+          "id": "26",
+          "title_sanskrit": "Shodhana Mahatva",
+          "title_english": "The Importance of Purification/Panchakarma",
+          "text": "दोषाः कदाचित्कुप्यन्ति जिता लङ्घनपाचनैः ।\nये तु संशोधनैः शुद्धा न तेषां पुनरुद्भवः ॥ २६ ॥"
+        },
+        {
+          "id": "27",
+          "title_sanskrit": "Rasayana and Vajikarana",
+          "title_english": "Rejuvenation and Aphrodisiacs Post-Purification",
+          "text": "यथाक्रमं यथायोगमत ऊर्ध्वं प्रयोजयेत् ।\nरसायनानि सिद्धानि वृष्ययोगांश्च कालवित् ॥ २७ ॥"
+        },
+        {
+          "id": "28",
+          "title_sanskrit": "Samsarjana Krama",
+          "title_english": "Dietary Regimen After Purification",
+          "text": "भेषजक्षपिते पथ्यमाहारैर्बृंहणं क्रमात् ।\nशालिषष्टिकगोधूममुद्गमांसघृतादिभिः ॥ २८ ॥"
+        },
+        {
+          "id": "29",
+          "title_sanskrit": "Hridya Aushadha & Vihara",
+          "title_english": "Pleasant Medicines & Lifestyle Therapies",
+          "text": "हृद्यदीपनभैषज्यसंयोगाद्रुचिपक्तिदैः ।\nसाभ्यङ्गोद्वर्तनस्नाननिरूहस्नेहवस्तिभिः ॥ २९ ॥"
+        },
+        {
+          "id": "30",
+          "title_sanskrit": "Phala Shruti",
+          "title_english": "Benefits of Following the Regimen",
+          "text": "तथा स लभते शर्म सर्वपावकपाटवम् ।\nधीवर्णेन्द्रियवैमल्यं वृषतां दैर्घ्यमायुषः ॥ ३० ॥"
+        },
+        {
+          "id": "31",
+          "title_sanskrit": "Agantuja Roga",
+          "title_english": "Exogenous Diseases",
+          "text": "ये भूतविषवाय्वग्निक्षतभङ्गादिसम्भवाः ।\nरागद्वेषभयाद्याश्च ते स्युरागन्तवो गदाः ॥ ३१ ॥"
+        },
+        {
+          "id": "32",
+          "title_sanskrit": "Agantuja Roga Chikitsa",
+          "title_english": "Prevention of Exogenous Diseases",
+          "text": "त्यागः प्रज्ञापराधानामिन्द्रियोपशमः स्मृतिः ।\nदेशकालविमात्राणां ज्ञानं सद्वृत्तपालनम् ॥ ३२ ॥"
+        },
+        {
+          "id": "33",
+          "title_sanskrit": "Daivavyapashraya Chikitsa",
+          "title_english": "Spiritual Therapies",
+          "text": "अथर्वविहिता शान्तिः प्रतिकूलग्रहार्चनम् ।\nभूताद्युपहतानां च मन्त्राद्याः शस्यते क्रिया ॥ ३३ ॥"
+        },
+        {
+          "id": "34",
+          "title_sanskrit": "Roga Anutpatti Karana",
+          "title_english": "Prevention of Disease Manifestation",
+          "text": "अनुत्पत्तये रोगाणामुत्पन्नानां च शान्तये ।\nयतेत स्वस्थवृत्तस्य पालने प्रतिभाववान् ॥ ३४ ॥"
+        },
+        {
+          "id": "35",
+          "title_sanskrit": "Swastha Vritta Phala",
+          "title_english": "Benefits of Healthy Regimen",
+          "text": "स्वस्थवृत्तं यथोद्दिष्टं यः सम्यगनुतिष्ठति ।\nस समाः शतमव्याधिरायुषा न वियुज्यते ॥ ३५ ॥"
+        },
+        {
+          "id": "36",
+          "title_sanskrit": "Arogya Sadhana",
+          "title_english": "The Secret to a Disease-Free Life",
+          "text": "नित्यं हिताहारविहारसेवी समीक्ष्यकारी विषयेष्वसक्तः ।\nदाता समः सत्यपरः क्षमावानाप्तोपसेवी च भवत्यरोगः ॥ ३६ ॥"
+        }
+      ]
     }
-]
+  ]
+}
