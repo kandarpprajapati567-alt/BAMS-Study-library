@@ -554,10 +554,14 @@
                 initShlokaUI();
             } catch (error) {
                 console.error("Database connection failed:", error);
+                // UPGRADE: Better, actionable error message for the user.
                 document.getElementById('matrix-samhitas').innerHTML = `
-                    <div style="color:#ff3366; font-size: 0.9rem;">
-                        ⚠️ ERROR: Unable to load 'shloka.json'. <br>
-                        <i>Note: Web browsers block loading local JSON files directly for security. Run using a local server.</i>
+                    <div style="background: rgba(255,51,102,0.1); border: 1px solid #ff3366; padding: 15px; border-radius: 12px; width: 100%;">
+                        <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ CORS Policy Blocked Access</h3>
+                        <p style="color:#ccc; font-size: 0.9rem; margin-bottom: 0;">
+                            Web browsers block direct access to local JSON files for security. <br><br>
+                            <b>How to fix this:</b> Open this project folder in VS Code, install the <b>"Live Server"</b> extension, and click <b>"Go Live"</b> at the bottom right.
+                        </p>
                     </div>`;
             }
         }
@@ -611,12 +615,16 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                // Escaping single quotes in strings before passing them to function
-                const safeHeading = shloka.heading.replace(/'/g, "\\'");
-                const safeText = shloka.text.replace(/'/g, "\\'").replace(/\n/g, '\\n');
+                // UPGRADE: Using encodeURIComponent for extreme safety with strings!
+                // This prevents your code from breaking when the JSON has random quotes or special characters.
+                const safeHeading = encodeURIComponent(shloka.heading);
+                const safeText = encodeURIComponent(shloka.text);
 
                 resultsArea.innerHTML += `
-                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s" onclick="openTranslationModal('${safeHeading}', '${safeText}')">
+                    <div class="shloka-glass-card" style="animation-delay: ${index * 0.05}s" 
+                         data-heading="${safeHeading}" 
+                         data-text="${safeText}" 
+                         onclick="openTranslationModal(this)">
                         <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
                         <div class="shloka-heading">${shloka.heading}</div>
                         <div class="shloka-text">${shloka.text}</div>
@@ -625,7 +633,7 @@
             });
         }
 
-        // NEW: Toggle Star logic
+        // Toggle Star logic
         function toggleStar(event, element) {
             event.stopPropagation(); // Prevents the card click (translation modal) from triggering
             if(element.classList.contains('active')) {
@@ -637,8 +645,11 @@
             }
         }
 
-        // NEW: Open Translation Modal
-        function openTranslationModal(heading, text) {
+        // UPGRADE: Open Translation Modal using safer HTML5 Dataset logic
+        function openTranslationModal(element) {
+            const heading = decodeURIComponent(element.getAttribute('data-heading'));
+            const text = decodeURIComponent(element.getAttribute('data-text'));
+            
             document.getElementById('trans-heading').innerText = heading;
             document.getElementById('trans-shloka').innerText = text;
             openModal('translation-modal');
@@ -755,4 +766,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
