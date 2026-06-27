@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMHITA.SYNC | BAMS Master OS</title>
     
-    <script src="[https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2](https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2)"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <style>
-        @import url('[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap)');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap');
 
         /* --- THEMES & VARIABLES --- */
         :root {
@@ -30,7 +30,7 @@
         body {
             margin: 0; padding: 0; 
             background-color: var(--bg-color); 
-            background-image: url('[https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000)');
+            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh; overflow-x: hidden; overflow-y: auto; 
@@ -129,10 +129,10 @@
             background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.2) 80%); z-index: 1; transition: 0.5s;
         }
 
-        #card-notes { background-image: url('[https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800](https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800)'); }
-        #card-shloka { background-image: url('[https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800](https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800)'); }
-        #card-mcq { background-image: url('[https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800)'); }
-        #card-pyq { background-image: url('[https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800](https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800)'); }
+        #card-notes { background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800'); }
+        #card-shloka { background-image: url('https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800'); }
+        #card-mcq { background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800'); }
+        #card-pyq { background-image: url('https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800'); }
 
         .premium-card:hover { transform: translateY(-15px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--primary-glow); }
         .premium-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.05) 90%); }
@@ -521,9 +521,8 @@
         // ==========================================
         // 1. SUPABASE INITIALIZATION
         // ==========================================
-        // REPLACE THESE WITH YOUR ACTUAL SUPABASE URL AND ANON KEY
-        const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
-        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        const SUPABASE_URL = 'https://nfymkqtyyhzituwwedbc.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5meW1rcXR5eWh6aXR1d3dlZGJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NDQ3OTgsImV4cCI6MjA5ODEyMDc5OH0.lbpg5lk09_mU-ypgk8zs3PO1Gv4sn-uZooY-iUrPQno';
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
