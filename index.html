@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAMHITA.SYNC | BAMS Master OS</title>
     
+    <script src="[https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2](https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2)"></script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap');
+        @import url('[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap)');
 
         /* --- THEMES & VARIABLES --- */
         :root {
             --bg-color: #030407;
             --surface-color: rgba(15, 20, 25, 0.65);
-            --primary-color: #00ffcc; /* Tech Cyan/Green for UG */
+            --primary-color: #00ffcc;
             --primary-glow: rgba(0, 255, 204, 0.5);
             --text-main: #ffffff;
             --text-muted: #8a9bb3;
@@ -28,7 +30,7 @@
         body {
             margin: 0; padding: 0; 
             background-color: var(--bg-color); 
-            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000');
+            background-image: url('[https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000)');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh; overflow-x: hidden; overflow-y: auto; 
@@ -127,10 +129,10 @@
             background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.2) 80%); z-index: 1; transition: 0.5s;
         }
 
-        #card-notes { background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800'); }
-        #card-shloka { background-image: url('https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800'); }
-        #card-mcq { background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800'); }
-        #card-pyq { background-image: url('https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800'); }
+        #card-notes { background-image: url('[https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800](https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800)'); }
+        #card-shloka { background-image: url('[https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800](https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=800)'); }
+        #card-mcq { background-image: url('[https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=800)'); }
+        #card-pyq { background-image: url('[https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800](https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=800)'); }
 
         .premium-card:hover { transform: translateY(-15px) scale(1.02); border-color: var(--primary-color); box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px var(--primary-glow); }
         .premium-card:hover::after { background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.05) 90%); }
@@ -228,7 +230,7 @@
         .app-icon:hover .delete-btn { opacity: 1; transform: scale(1); }
         .delete-btn:hover { background: #ff0040; transform: scale(1.2) !important; }
 
-        /* --- SHLOKA MATRIX UI (NEXT-GEN UPGRADE) --- */
+        /* --- SHLOKA MATRIX UI --- */
         .matrix-layout { display: flex; flex-direction: column; height: 100%; gap: 20px; }
         
         .modern-tabs { 
@@ -516,17 +518,60 @@
     </div>
 
     <script>
-        // --- BOOT SEQUENCE ---
+        // ==========================================
+        // 1. SUPABASE INITIALIZATION
+        // ==========================================
+        // REPLACE THESE WITH YOUR ACTUAL SUPABASE URL AND ANON KEY
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+        // ==========================================
+        // 2. AUTHENTICATION FUNCTIONS
+        // ==========================================
+        async function signUpUser(email, password) {
+            const { data, error } = await supabase.auth.signUp({ email, password });
+            if (error) console.error("Sign Up Error:", error.message);
+            else console.log("Sign Up Success:", data);
+            return { data, error };
+        }
+
+        async function signInUser(email, password) {
+            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) console.error("Sign In Error:", error.message);
+            else console.log("Sign In Success:", data);
+            return { data, error };
+        }
+
+        async function checkSession() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                console.log("User is logged in as:", session.user.email);
+            } else {
+                console.log("No active session.");
+            }
+            return session;
+        }
+
+
+        // ==========================================
+        // 3. UI & BOOT SEQUENCE
+        // ==========================================
         window.onload = () => {
             const savedBg = localStorage.getItem('samhita_bg');
             if(savedBg) document.body.style.backgroundImage = `url('${savedBg}')`;
             
+            // Start checking session instantly on load
+            checkSession();
+
             setTimeout(() => {
                 const boot = document.getElementById('boot-screen');
                 boot.style.transform = 'scale(1.2)'; boot.style.opacity = '0';
                 setTimeout(() => { boot.style.display = 'none'; document.getElementById('main-dashboard').style.opacity = '1'; }, 1000);
             }, 1800); 
 
+            // Kick off the database fetch
             fetchShlokaData();
         };
 
@@ -534,29 +579,38 @@
             if(title && id === 'dummy-modal') document.getElementById('dummy-title').innerText = title;
             const m = document.getElementById(id); m.style.display = 'flex'; setTimeout(()=> m.style.opacity = '1', 10);
         }
+        
         function closeModal(id) {
             const m = document.getElementById(id); m.style.opacity = '0'; setTimeout(()=> m.style.display = 'none', 400);
         }
 
-        // --- NEW JSON-POWERED SHLOKA MATRIX LOGIC ---
+        // ==========================================
+        // 4. SUPABASE DATABASE FETCHING
+        // ==========================================
         let globalShlokaData = {}; 
         let currentSamhita = null;
 
         async function fetchShlokaData() {
             try {
-                const response = await fetch('shloka.json');
-                if (!response.ok) throw new Error("File not found or blocked by CORS.");
-                const rawArray = await response.json();
-                processShlokaData(rawArray);
+                // Fetch directly from the "shlokas" table
+                const { data, error } = await supabase.from('shlokas').select('*');
+
+                if (error) throw error;
+                if (!data || data.length === 0) {
+                    console.warn("Table is empty or missing data.");
+                    return;
+                }
+
+                processShlokaData(data);
                 initShlokaUI();
             } catch (error) {
-                console.error("Database connection failed:", error);
+                console.error("Database connection failed:", error.message);
                 document.getElementById('matrix-samhitas').innerHTML = `
                     <div style="background: rgba(255,51,102,0.1); border: 1px solid #ff3366; padding: 15px; border-radius: 12px; width: 100%;">
-                        <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ CORS Policy Blocked Access</h3>
+                        <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ Database Access Failed</h3>
                         <p style="color:#ccc; font-size: 0.9rem; margin-bottom: 0;">
-                            Web browsers block direct access to local JSON files for security. <br><br>
-                            <b>How to fix this:</b> Open this project folder in VS Code, install the <b>"Live Server"</b> extension, and click <b>"Go Live"</b> at the bottom right.
+                            Ensure you have added your Supabase URL and Anon Key at the top of the script.<br><br>
+                            Error Details: ${error.message}
                         </p>
                     </div>`;
             }
@@ -565,29 +619,22 @@
         function processShlokaData(data) {
             globalShlokaData = {};
             
-            // 1. JSON ऑब्जेक्ट से संहिता (Samhita) और अध्याय (Chapter) का नाम निकालें
-            const samhitaName = data.text_source || "Unknown Samhita";
-            const chapterName = (data.chapter && data.chapter.name_english) 
-                                ? `${data.chapter.number}. ${data.chapter.name_english}` 
-                                : "Chapter 1";
+            // Loop through the flat array of database rows
+            data.forEach(row => {
+                const samhitaName = row.samhita_name || "Unknown Samhita";
+                const chapterName = row.chapter_name || "Unknown Chapter";
 
-            // 2. स्ट्रक्चर तैयार करें
-            if (!globalShlokaData[samhitaName]) globalShlokaData[samhitaName] = {};
-            if (!globalShlokaData[samhitaName][chapterName]) globalShlokaData[samhitaName][chapterName] = [];
+                // Build the nested structure the UI expects
+                if (!globalShlokaData[samhitaName]) globalShlokaData[samhitaName] = {};
+                if (!globalShlokaData[samhitaName][chapterName]) globalShlokaData[samhitaName][chapterName] = [];
 
-            // 3. data.verses (जो कि एक array है) पर लूप चलाएं और UI के हिसाब से डेटा सेट करें
-            if (data.verses && Array.isArray(data.verses)) {
-                data.verses.forEach(item => {
-                    globalShlokaData[samhitaName][chapterName].push({
-                        samhita: samhitaName,
-                        chapter: chapterName,
-                        // संस्कृत और अंग्रेजी हेडिंग को मिलाकर दिखाएं
-                        heading: item.heading_sanskrit + " | " + item.heading_english, 
-                        // श्लोक का टेक्स्ट सेट करें
-                        text: item.shloka 
-                    });
+                globalShlokaData[samhitaName][chapterName].push({
+                    samhita: samhitaName,
+                    chapter: chapterName,
+                    heading: row.heading || "Shloka Detail", 
+                    text: row.text 
                 });
-            }
+            });
         }
 
         function openShlokaMatrix() { openModal('shloka-modal'); }
@@ -630,8 +677,7 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                // FIXED: Agar json me heading nahi hai, to automatically "Shloka Detail" dikhayega
-                const safeHeading = encodeURIComponent(shloka.heading || "Shloka Detail");
+                const safeHeading = encodeURIComponent(shloka.heading);
                 const safeText = encodeURIComponent(shloka.text);
 
                 resultsArea.innerHTML += `
@@ -640,7 +686,7 @@
                          data-text="${safeText}" 
                          onclick="openTranslationModal(this)">
                         <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
-                        <div class="shloka-heading">${shloka.heading || "Shloka"}</div>
+                        <div class="shloka-heading">${shloka.heading}</div>
                         <div class="shloka-text">${shloka.text}</div>
                     </div>
                 `;
@@ -658,7 +704,9 @@
             }
         }
 
-        // --- UPDATED TRANSLATION MODAL LOGIC (NOW CALLS API) ---
+        // ==========================================
+        // 5. GEMINI AI INTEGRATION (VIA VERCEL API)
+        // ==========================================
         async function openTranslationModal(element) {
             const heading = decodeURIComponent(element.getAttribute('data-heading'));
             const text = decodeURIComponent(element.getAttribute('data-text'));
@@ -666,13 +714,14 @@
             document.getElementById('trans-heading').innerText = heading;
             document.getElementById('trans-shloka').innerText = text;
             
-            // Set Loading state beautifully so it doesn't break the UI
+            // Set beautiful Loading states
             document.getElementById('trans-translation').innerHTML = "<i style='color: var(--primary-color);'>✨ Gemini AI is analyzing translation...</i>";
             document.getElementById('trans-explanation').innerHTML = "<i style='color: var(--primary-color);'>✨ Generating contextual explanation...</i>";
             
             openModal('translation-modal');
 
             try {
+                // Call the new Serverless function
                 const response = await fetch('/api/gemini', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -682,7 +731,7 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Inject AI response into UI
+                    // Inject AI response into UI safely
                     document.getElementById('trans-translation').innerText = data.translation;
                     document.getElementById('trans-explanation').innerText = data.explanation;
                 } else {
@@ -690,13 +739,14 @@
                 }
             } catch (error) {
                 console.error("AI Error:", error);
-                // FIXED: Ab direct screen par exact error dikhega
                 document.getElementById('trans-translation').innerText = "⚠️ SYSTEM ERROR: " + error.message;
-                document.getElementById('trans-explanation').innerText = "Upar likhe error ko check karein. Vercel logs aur API key verify karein.";
+                document.getElementById('trans-explanation').innerText = "Please check your Vercel logs and ensure your GEMINI_API_KEY environment variable is set.";
             }
         }
 
-        // --- SMART FILE MANAGER LOGIC ---
+        // ==========================================
+        // 6. SMART FILE MANAGER & SETTINGS
+        // ==========================================
         let driveFiles = JSON.parse(localStorage.getItem('ayurhub_drive_files')) || [];
         let localFiles = []; 
 
@@ -758,9 +808,7 @@
             const url = prompt("Paste Google Drive Link:");
             if(!url) return;
 
-            driveFiles.unshift({
-                id: Date.now(), name: name, type: 'drive', url: url
-            });
+            driveFiles.unshift({ id: Date.now(), name: name, type: 'drive', url: url });
             localStorage.setItem('ayurhub_drive_files', JSON.stringify(driveFiles));
             renderFiles();
         }
@@ -780,7 +828,6 @@
             }
         }
 
-        // --- ROLE & SETTINGS LOGIC ---
         function uploadWallpaper(event) {
             const file = event.target.files[0];
             if (file && file.size < 4000000) { 
