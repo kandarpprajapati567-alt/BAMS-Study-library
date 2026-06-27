@@ -611,7 +611,8 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                const safeHeading = encodeURIComponent(shloka.heading);
+                // FIXED: Agar json me heading nahi hai, to automatically "Shloka Detail" dikhayega
+                const safeHeading = encodeURIComponent(shloka.heading || "Shloka Detail");
                 const safeText = encodeURIComponent(shloka.text);
 
                 resultsArea.innerHTML += `
@@ -620,7 +621,7 @@
                          data-text="${safeText}" 
                          onclick="openTranslationModal(this)">
                         <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
-                        <div class="shloka-heading">${shloka.heading}</div>
+                        <div class="shloka-heading">${shloka.heading || "Shloka"}</div>
                         <div class="shloka-text">${shloka.text}</div>
                     </div>
                 `;
@@ -653,7 +654,6 @@
             openModal('translation-modal');
 
             try {
-                // We will build this /api/gemini route in the next step
                 const response = await fetch('/api/gemini', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -671,8 +671,9 @@
                 }
             } catch (error) {
                 console.error("AI Error:", error);
-                document.getElementById('trans-translation').innerText = "⚠️ Network anomaly detected. Could not connect to Gemini API.";
-                document.getElementById('trans-explanation').innerText = "Please check your backend setup or connection and try again.";
+                // FIXED: Ab direct screen par exact error dikhega
+                document.getElementById('trans-translation').innerText = "⚠️ SYSTEM ERROR: " + error.message;
+                document.getElementById('trans-explanation').innerText = "Upar likhe error ko check karein. Vercel logs aur API key verify karein.";
             }
         }
 
