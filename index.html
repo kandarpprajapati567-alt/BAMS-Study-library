@@ -564,11 +564,30 @@
 
         function processShlokaData(data) {
             globalShlokaData = {};
-            data.forEach(shloka => {
-                if (!globalShlokaData[shloka.samhita]) globalShlokaData[shloka.samhita] = {};
-                if (!globalShlokaData[shloka.samhita][shloka.chapter]) globalShlokaData[shloka.samhita][shloka.chapter] = [];
-                globalShlokaData[shloka.samhita][shloka.chapter].push(shloka);
-            });
+            
+            // 1. JSON ऑब्जेक्ट से संहिता (Samhita) और अध्याय (Chapter) का नाम निकालें
+            const samhitaName = data.text_source || "Unknown Samhita";
+            const chapterName = (data.chapter && data.chapter.name_english) 
+                                ? `${data.chapter.number}. ${data.chapter.name_english}` 
+                                : "Chapter 1";
+
+            // 2. स्ट्रक्चर तैयार करें
+            if (!globalShlokaData[samhitaName]) globalShlokaData[samhitaName] = {};
+            if (!globalShlokaData[samhitaName][chapterName]) globalShlokaData[samhitaName][chapterName] = [];
+
+            // 3. data.verses (जो कि एक array है) पर लूप चलाएं और UI के हिसाब से डेटा सेट करें
+            if (data.verses && Array.isArray(data.verses)) {
+                data.verses.forEach(item => {
+                    globalShlokaData[samhitaName][chapterName].push({
+                        samhita: samhitaName,
+                        chapter: chapterName,
+                        // संस्कृत और अंग्रेजी हेडिंग को मिलाकर दिखाएं
+                        heading: item.heading_sanskrit + " | " + item.heading_english, 
+                        // श्लोक का टेक्स्ट सेट करें
+                        text: item.shloka 
+                    });
+                });
+            }
         }
 
         function openShlokaMatrix() { openModal('shloka-modal'); }
