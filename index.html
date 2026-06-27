@@ -263,7 +263,6 @@
         .chapter-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
         .chapter-btn.active { background: rgba(0,255,204,0.1); color: var(--primary-color); border-color: rgba(0,255,204,0.3); }
 
-        /* FIXED & UPGRADED: 100% Width to ensure pure vertical stacking */
         .shloka-display-area {
             flex: 1; background: rgba(0,0,0,0.4); border: 1px solid var(--border-glass); 
             border-radius: 16px; padding: 25px; overflow-y: auto; 
@@ -273,9 +272,8 @@
         .shloka-display-area::-webkit-scrollbar { width: 8px; }
         .shloka-display-area::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 10px; }
 
-        /* NEW GEN UI CARD */
         .shloka-glass-card {
-            width: 100%; /* Force full width, making them stack exactly one below another */
+            width: 100%; 
             flex-shrink: 0; 
             background: linear-gradient(135deg, rgba(20, 25, 30, 0.8) 0%, rgba(5, 10, 15, 0.9) 100%); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
@@ -285,7 +283,7 @@
             display: flex; flex-direction: column; gap: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
             backdrop-filter: blur(15px);
-            cursor: pointer; /* Indication it can be clicked for translation */
+            cursor: pointer; 
         }
         
         .shloka-glass-card:hover { 
@@ -295,7 +293,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0,255,204,0.1); 
         }
 
-        /* NEW: STAR BUTTON FOR Ratta/Memorization */
         .star-btn {
             position: absolute; top: 20px; right: 25px;
             background: transparent; border: none; color: var(--text-muted);
@@ -315,7 +312,7 @@
             font-size: 1.4rem; color: #ffffff; font-weight: 600; line-height: 1.8; 
             font-family: serif; letter-spacing: 0.5px;
             white-space: pre-line; word-wrap: break-word; margin: 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.8); padding-right: 40px; /* Space for the star */
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8); padding-right: 40px; 
         }
 
         /* --- RESPONSIVE FIXES --- */
@@ -474,12 +471,12 @@
             <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 25px 0;">
             
             <h3 style="color: var(--primary-color); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Translation</h3>
-            <p style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
+            <p id="trans-translation" style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
                 (Detailed translation file will be linked here in upcoming patches.)
             </p>
 
             <h3 style="color: var(--primary-color); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; margin-top: 25px;">Short Explanation</h3>
-            <p style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
+            <p id="trans-explanation" style="color: #ccc; line-height: 1.7; font-size: 1rem; margin-top: 0;">
                 (Short contextual explanation of the shloka will appear here.)
             </p>
         </div>
@@ -554,7 +551,6 @@
                 initShlokaUI();
             } catch (error) {
                 console.error("Database connection failed:", error);
-                // UPGRADE: Better, actionable error message for the user.
                 document.getElementById('matrix-samhitas').innerHTML = `
                     <div style="background: rgba(255,51,102,0.1); border: 1px solid #ff3366; padding: 15px; border-radius: 12px; width: 100%;">
                         <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ CORS Policy Blocked Access</h3>
@@ -615,8 +611,6 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                // UPGRADE: Using encodeURIComponent for extreme safety with strings!
-                // This prevents your code from breaking when the JSON has random quotes or special characters.
                 const safeHeading = encodeURIComponent(shloka.heading);
                 const safeText = encodeURIComponent(shloka.text);
 
@@ -633,9 +627,8 @@
             });
         }
 
-        // Toggle Star logic
         function toggleStar(event, element) {
-            event.stopPropagation(); // Prevents the card click (translation modal) from triggering
+            event.stopPropagation(); 
             if(element.classList.contains('active')) {
                 element.classList.remove('active');
                 element.innerHTML = '☆';
@@ -645,14 +638,42 @@
             }
         }
 
-        // UPGRADE: Open Translation Modal using safer HTML5 Dataset logic
-        function openTranslationModal(element) {
+        // --- UPDATED TRANSLATION MODAL LOGIC (NOW CALLS API) ---
+        async function openTranslationModal(element) {
             const heading = decodeURIComponent(element.getAttribute('data-heading'));
             const text = decodeURIComponent(element.getAttribute('data-text'));
             
             document.getElementById('trans-heading').innerText = heading;
             document.getElementById('trans-shloka').innerText = text;
+            
+            // Set Loading state beautifully so it doesn't break the UI
+            document.getElementById('trans-translation').innerHTML = "<i style='color: var(--primary-color);'>✨ Gemini AI is analyzing translation...</i>";
+            document.getElementById('trans-explanation').innerHTML = "<i style='color: var(--primary-color);'>✨ Generating contextual explanation...</i>";
+            
             openModal('translation-modal');
+
+            try {
+                // We will build this /api/gemini route in the next step
+                const response = await fetch('/api/gemini', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ shloka: text })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Inject AI response into UI
+                    document.getElementById('trans-translation').innerText = data.translation;
+                    document.getElementById('trans-explanation').innerText = data.explanation;
+                } else {
+                    throw new Error(data.error || "Failed to fetch from API");
+                }
+            } catch (error) {
+                console.error("AI Error:", error);
+                document.getElementById('trans-translation').innerText = "⚠️ Network anomaly detected. Could not connect to Gemini API.";
+                document.getElementById('trans-explanation').innerText = "Please check your backend setup or connection and try again.";
+            }
         }
 
         // --- SMART FILE MANAGER LOGIC ---
