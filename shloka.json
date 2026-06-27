@@ -1,304 +1,509 @@
 {
   "text_source": "Ashtanga Hridaya",
-  "chapter": {
-    "number": 1,
-    "name_sanskrit": "आयुष्कामीयाध्यायः",
-    "name_english": "Ayushkamiya Adhyaya"
-  },
-  "verses": [
+  "chapters": [
     {
-      "verse_number": "1",
-      "heading_sanskrit": "मङ्गलाचरणम्",
-      "heading_english": "Mangalacharana",
-      "shloka": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् ।\nऔत्सुक्यमोहारतिदान्जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥ १ ॥"
+      "chapter": {
+        "number": 1,
+        "name_sanskrit": "आयुष्कामीयाध्यायः",
+        "name_english": "Ayushkamiya Adhyaya"
+      },
+      "verses": [
+        {
+          "verse_number": "1",
+          "heading_sanskrit": "मङ्गलाचरणम्",
+          "heading_english": "Mangalacharana",
+          "shloka": "रागादिरोगान् सततानुषक्तानशेषकायप्रसृतानशेषान् ।\nऔत्सुक्यमोहारतिदान्जघान योऽपूर्ववैद्याय नमोऽस्तु तस्मै ॥ १ ॥"
+        },
+        {
+          "verse_number": "2",
+          "heading_sanskrit": "आयुर्वेदप्रयोजनम्",
+          "heading_english": "Purpose of Ayurveda",
+          "shloka": "आयुः कामयमानेन धर्मार्थसुखसाधनम् ।\nआयुर्वेदोपदेशेषु विधेयः परमादरः ॥ २ ॥"
+        },
+        {
+          "verse_number": "3",
+          "heading_sanskrit": "आयुर्वेदावतरणम्",
+          "heading_english": "Origin of Ayurveda",
+          "shloka": "ब्रह्मा स्मृत्वाऽऽयुषो वेदं प्रजापतिमजिग्रहत् ।\nसोऽश्विनौ तौ सहस्राक्षं सोऽत्रिपुत्रादिकान्मुनीन् ॥ ३ ॥"
+        },
+        {
+          "verse_number": "4",
+          "heading_sanskrit": "तन्त्रनिर्मातारः",
+          "heading_english": "The Authors of the Treatises",
+          "shloka": "तेऽग्निवेशादिकांस्ते तु पृथक् तन्त्राणि तेनिरे ।\nतेभ्योऽतिविप्रकीर्णेभ्यः प्रायः सारतरोच्चयः ॥ ४ ॥"
+        },
+        {
+          "verse_number": "5",
+          "heading_sanskrit": "अष्टाङ्गहृदयस्य उत्पत्तिः",
+          "heading_english": "Creation of Ashtanga Hridaya",
+          "shloka": "क्रियतेऽष्टाङ्गहृदयं नातिसङ्क्षेपविस्तरम् ।\nकायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ॥ ५ ॥"
+        },
+        {
+          "verse_number": "6",
+          "heading_sanskrit": "अष्टाङ्गानि",
+          "heading_english": "The Eight Branches of Ayurveda",
+          "shloka": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ।\nवायुः पित्तं कफश्चेति त्रयो दोषाः समासतः ॥ ६ ॥"
+        },
+        {
+          "verse_number": "7",
+          "heading_sanskrit": "त्रिदोषव्याप्तिः",
+          "heading_english": "Pervasion of the Tridoshas",
+          "shloka": "विकृताऽविकृता देहं घ्नन्ति ते वर्तयन्ति च ।\nते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ॥ ७ ॥"
+        },
+        {
+          "verse_number": "8",
+          "heading_sanskrit": "दोषकालः अग्निप्रकृतयश्च",
+          "heading_english": "Dosha Timings and Digestive Fire",
+          "shloka": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।\nतैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ॥ ८ ॥"
+        },
+        {
+          "verse_number": "9",
+          "heading_sanskrit": "कोष्ठप्रकृतयः",
+          "heading_english": "Types of Bowel/Digestive Tract",
+          "shloka": "कोष्ठः क्रूरो मृदुर्मध्यो मध्यः स्यात्तैः समैरपि ।\nशुक्रार्तवस्थैर्जन्मादौ विषेणेव विषक्रिमेः ॥ ९ ॥"
+        },
+        {
+          "verse_number": "10",
+          "heading_sanskrit": "देहप्रकृतयः",
+          "heading_english": "Body Constitutions",
+          "shloka": "तैश्च तिस्रः प्रकृतयो हीनमध्योत्तमाः पृथक् ।\nसमधातुः समस्तासु श्रेष्ठा निन्द्या द्विदोषजाः ॥ १० ॥"
+        },
+        {
+          "verse_number": "11",
+          "heading_sanskrit": "वातपित्तगुणः",
+          "heading_english": "Qualities of Vata and Pitta",
+          "shloka": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।\nपित्तं scaleसस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ॥ ११ ॥"
+        },
+        {
+          "verse_number": "12",
+          "heading_sanskrit": "कफगुणः सन्निपातश्च",
+          "heading_english": "Qualities of Kapha and Dosha Combinations",
+          "shloka": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ।\nसंसर्गः सन्निपातश्च तद्वित्रिक्षयकोपतः ॥ १२ ॥"
+        },
+        {
+          "verse_number": "13",
+          "heading_sanskrit": "धातु-मल-परिचयः",
+          "heading_english": "Tissues and Wastes",
+          "shloka": "रसासृङ्मांसमेदोऽस्थिमज्जाशुक्राणि धातवः ।\nसप्त दूष्याः मला मूत्रशकृत्स्वेदादयोऽपि च ॥ १३ ॥"
+        },
+        {
+          "verse_number": "14",
+          "heading_sanskrit": "वृद्धि-क्षय-कारणम् षड्रसाश्च",
+          "heading_english": "Cause of Increase/Decrease and Six Tastes",
+          "shloka": "वृद्धिः समानैः सर्वेषां विपरीतैर्विपर्ययः ।\nरसाः स्वाद्वम्ललवणतिक्तोषणकषायकाः ॥ १४ ॥"
+        },
+        {
+          "verse_number": "15",
+          "heading_sanskrit": "रसानां बलम्",
+          "heading_english": "Strength of the Tastes",
+          "shloka": "षड् द्रव्यमाश्रितास्ते च यथापूर्वं बलावहाः ।\nतत्राद्या मारुतं घ्नन्ति त्रयस्तिक्तादयः कफम् ॥ १५ ॥"
+        },
+        {
+          "verse_number": "16",
+          "heading_sanskrit": "दोषाणां रसानां च सम्बन्धः द्रव्याणि च",
+          "heading_english": "Relation of Tastes to Doshas and Types of Substances",
+          "shloka": "कषायतिक्तमधुराः पित्तमन्ये तु कुर्वते ।\nशमनं कोपनं स्वस्थहितं द्रव्यमिति त्रिधा ॥ १६ ॥"
+        },
+        {
+          "verse_number": "17",
+          "heading_sanskrit": "वीर्यं विपाकश्च",
+          "heading_english": "Potency and Post-Digestive Effect",
+          "shloka": "उष्णशीतगुणोत्कर्षात्तत्र वीर्यं द्विधा स्मृतम् ।\nत्रिधा विपाको द्रव्यस्य स्वाद्वम्लकटुकात्मकः ॥ १७ ॥"
+        },
+        {
+          "verse_number": "18",
+          "heading_sanskrit": "विंशति गुणाः",
+          "heading_english": "The Twenty Qualities",
+          "shloka": "गुरुमन्दहिमस्निग्धश्लक्ष्णसान्द्रमृदुस्थिराः ।\nगुणाः ससूक्ष्मविशदा विंशतिः सविपर्ययाः ॥ १८ ॥"
+        },
+        {
+          "verse_number": "19",
+          "heading_sanskrit": "रोगारोग्यकारणम्",
+          "heading_english": "Causes of Disease and Health",
+          "shloka": "कालार्थकर्मणां योगो हीनमिथ्यातिमात्रकः ।\nसम्यग्योगश्च विज्ञेयो रोगारोग्यैककारणम् ॥ १९ ॥"
+        },
+        {
+          "verse_number": "20",
+          "heading_sanskrit": "रोगभेदः",
+          "heading_english": "Definition and Types of Disease",
+          "shloka": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।\nनिजागन्तुविभागेन तत्र रोगा द्विधा स्मृताः ॥ २० ॥"
+        },
+        {
+          "verse_number": "21",
+          "heading_sanskrit": "रोगाधिष्ठानम्",
+          "heading_english": "Sites of Disease",
+          "shloka": "तेषां कायमनोभेदादधिष्ठानमपि द्विधा ।\nरजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ॥ २१ ॥"
+        },
+        {
+          "verse_number": "22",
+          "heading_sanskrit": "रोग-रोगि-परीक्षा",
+          "heading_english": "Examination of Disease and Patient",
+          "shloka": "दर्शनस्पर्शनप्रश्नैः परीक्षेत च रोगिणम् ।\nरोगं निदानप्राग्रूपलक्षणोपशयाप्तिभिः ॥ २२ ॥"
+        },
+        {
+          "verse_number": "23",
+          "heading_sanskrit": "देशभेदः",
+          "heading_english": "Types of Habitat/Land",
+          "shloka": "भूमिदेहप्रभेदेन देशमाहुरिह द्विधा ।\nजाङ्गलं वातभूयिष्ठमनूपं तु कफोल्बणम् ॥ २३ ॥"
+        },
+        {
+          "verse_number": "24",
+          "heading_sanskrit": "साधारणदेशः कालश्च",
+          "heading_english": "Normal Habitat and Time",
+          "shloka": "साधारणं सममलं त्रिधा भूदेशमादिशेत् ।\nक्षणादिर्व्याध्यवस्था च कालो भेषजयोगकृत् ॥ २४ ॥"
+        },
+        {
+          "verse_number": "25",
+          "heading_sanskrit": "औषधभेदः",
+          "heading_english": "Types of Therapy",
+          "shloka": "शोधनं शमनं चेति समासाद्दौषधं द्विधा ।\nशरीरजानां दोषाणां क्रमेण परमौषधम् ॥ २५ ॥"
+        },
+        {
+          "verse_number": "26",
+          "heading_sanskrit": "श्रेष्ठौषधानि",
+          "heading_english": "Supreme Medicines for Doshas",
+          "shloka": "बस्तिर्विरेको वमनं तथा तैलघृतं मधु ।\nधीधैर्यात्मादिविज्ञानं मनोदोषौषधं परम् ॥ २६ ॥"
+        },
+        {
+          "verse_number": "27",
+          "heading_sanskrit": "चिकित्साचतुष्पादः",
+          "heading_english": "Four Limbs of Treatment",
+          "shloka": "भिषग्द्रव्यान्युपस्थाता रोगी पादचतुष्टयम् ।\nचिकित्सितस्य निर्दिष्टं प्रत्येकं तच्चतुर्गुणम् ॥ २७ ॥"
+        },
+        {
+          "verse_number": "28",
+          "heading_sanskrit": "वैद्य-औषध-गुणाः",
+          "heading_english": "Qualities of Physician and Medicine",
+          "shloka": "दक्षस्तीर्थात्तशास्त्रार्थो दृष्टकर्मा शुचिर्भिषक् ।\nबहुकल्पं बहुगुणं सम्पन्नं योग्यमौषधम् ॥ २८ ॥"
+        },
+        {
+          "verse_number": "29",
+          "heading_sanskrit": "परिचारक-रोगि-गुणाः",
+          "heading_english": "Qualities of Attendant and Patient",
+          "shloka": "अनुरक्तः शुचिर्दक्षो बुद्धिमान् परिचारकः ।\nआढ्यो रोगी भिषग्वश्यो ज्ञापकः सत्त्ववानपि ॥ २९ ॥"
+        },
+        {
+          "verse_number": "30",
+          "heading_sanskrit": "रोगसाध्यासाध्यता",
+          "heading_english": "Prognosis Classification",
+          "shloka": "साध्योऽसाध्य इति व्याधिर्द्विधा तौ तु पुनर्द्विधा ।\nसुसाध्यः कृच्छ्रसाध्यश्च याप्यो यश्चानुक्रमः ॥ ३0 ॥"
+        },
+        {
+          "verse_number": "31",
+          "heading_sanskrit": "सुसाध्यलक्षणम् - १",
+          "heading_english": "Features of Easily Curable Disease - 1",
+          "shloka": "सर्वौषधक्षमे देहे यूनाः पुंसो जितात्मनः ।\nअमर्मगोऽल्पहेत्वग्ररूपरूपोऽनुपद्रवः ॥ ३१ ॥"
+        },
+        {
+          "verse_number": "32",
+          "heading_sanskrit": "सुसाध्यलक्षणम् - २",
+          "heading_english": "Features of Easily Curable Disease - 2",
+          "shloka": "अतुल्यदूष्यदेशर्तुप्रकृतिः पादसम्पदि ।\nग्रहेष्वनुगुणेष्वेकदोषमार्गो नवः सुखः ॥ ३२ ॥"
+        },
+        {
+          "verse_number": "33",
+          "heading_sanskrit": "कृच्छ्रसाध्य-याप्य-लक्षणम्",
+          "heading_english": "Features of Difficult and Palliable Disease",
+          "shloka": "शस्त्रादिसाधनः कृच्छ्रः सङ्करे तत्र चोदितैः ।\nशेषत्वेनायुषो याप्यः पथ्याभ्यासेन याप्यते ॥ ३३ ॥"
+        },
+        {
+          "verse_number": "34",
+          "heading_sanskrit": "असाध्यलक्षणम्",
+          "heading_english": "Features of Incurable Disease",
+          "shloka": "अनुपक्रम एव स्यात् स्थितोऽत्यन्तविपर्यये ।\nऔत्सुक्यमोहारतिकृद् दृष्टरिष्टोऽक्षनाशनः ॥ ३४ ॥"
+        },
+        {
+          "verse_number": "35",
+          "heading_sanskrit": "वर्ज्य-रोगी - १",
+          "heading_english": "Patients to be Rejected - 1",
+          "shloka": "त्यजेदार्तं भिषग्भूपैर्द्विष्टं तेषां द्विषं तथा ।\nहीनोपकरणं व्यग्रमविधेयं गतायुषम् ॥ ३५ ॥"
+        },
+        {
+          "verse_number": "36",
+          "heading_sanskrit": "वर्ज्य-रोगी - २ तथा ग्रन्थविस्तारः",
+          "heading_english": "Patients to be Rejected - 2 & Text Scope",
+          "shloka": "चण्डं शोकातुरं भीरुं कृतघ्नं वैद्यमानिनम् ।\nतस्येदमध्यायशतं विंशतिश्चानुपूर्वशः ॥ ३६ ॥"
+        },
+        {
+          "verse_number": "37",
+          "heading_sanskrit": "सूत्रस्थानाध्यायाः - १",
+          "heading_english": "Chapters of Sutrasthana - 1",
+          "shloka": "स्थानेषु षट्सु रचितं सूत्रस्थानं तदादिमम् ।\nआयुष्कामीयदिनर्तुरोगानुत्पादनीयकाः ॥ ३७ ॥"
+        },
+        {
+          "verse_number": "38",
+          "heading_sanskrit": "सूत्रस्थानाध्यायाः - २",
+          "heading_english": "Chapters of Sutrasthana - 2",
+          "shloka": "द्रवद्रव्यविज्ञानीयमन्नस्वरूपमेव च ।\nअन्नरक्षामात्रशितीयावुपकल्पनीयकः ॥ ३८ ॥"
+        },
+        {
+          "verse_number": "39",
+          "heading_sanskrit": "सूत्रस्थानाध्यायाः - ३",
+          "heading_english": "Chapters of Sutrasthana - 3",
+          "shloka": "शोधनादिगणः स्नेहः स्वेदो वमनरेचनम् ।\nबस्तिर्विधिर्नस्यविधिर्धूमपानविधिस्तथा ॥ ३९ ॥"
+        },
+        {
+          "verse_number": "40",
+          "heading_sanskrit": "सूत्रस्थानाध्यायाः - ४",
+          "heading_english": "Chapters of Sutrasthana - 4",
+          "shloka": "गण्डूषाश्च्योतनं तद्वन्नेत्रतर्पणमेव च ।\nयन्त्रशस्त्रविधिकश्च सिराव्यधस्तथैव च ॥ ४० ॥"
+        },
+        {
+          "verse_number": "41",
+          "heading_sanskrit": "सूत्रस्थानाध्यायाः - ५",
+          "heading_english": "Chapters of Sutrasthana - 5",
+          "shloka": "शल्यस्य हरणं तद्वच्छस्त्रकर्मविधिक्रमः ।\nक्षारकर्मविधिकश्चेत्यध्यायास्त्रिंशदीरिताः ॥ ४१ ॥"
+        },
+        {
+          "verse_number": "42",
+          "heading_sanskrit": "शारीरस्थानम्",
+          "heading_english": "Sharira Sthana",
+          "shloka": "शारीरं षडध्यायं स्याद्गर्भावक्रान्तिरेव च ।\nगर्भव्याकरणं तद्वन्मर्मविभाग एव च ॥ ४२ ॥"
+        },
+        {
+          "verse_number": "43",
+          "heading_sanskrit": "निदानस्थानम्",
+          "heading_english": "Nidana Sthana",
+          "shloka": "निदानं षोडशाध्यायं ज्वरादीनां प्रकीर्तितम् ।\nसर्वव्याधिसमुत्थानलक्षणोत्पत्तिसूचकम् ॥ ४३ ॥"
+        },
+        {
+          "verse_number": "44",
+          "heading_sanskrit": "चिकित्सास्थानम् - १",
+          "heading_english": "Chikitsa Sthana - 1",
+          "shloka": "चिकित्सितं द्वाविंशतिर्विभागेनोपदेक्ष्यते ।\nज्वररक्तपित्तकासश्वासयक्ष्मादिकान्तिकम् ॥ ४४ ॥"
+        },
+        {
+          "verse_number": "45",
+          "heading_sanskrit": "चिकित्सास्थानम् - २",
+          "heading_english": "Chikitsa Sthana - 2",
+          "shloka": "छर्दिमदात्ययार्शांसि ग्रहणीमूत्राघातकम् ।\nप्रमेहो विद्रधिश्चैव गुल्मोदरभगन्दरम् ॥ ४५ ॥"
+        },
+        {
+          "verse_number": "46",
+          "heading_sanskrit": "कल्पस्थानम्",
+          "heading_english": "Kalpa Sthana",
+          "shloka": "कल्पं षडध्यायं तत्र वमनादिविधिक्रमः ।\nभेषजानां विकल्पाश्च संशोधनसंशमनम् ॥ ४६ ॥"
+        },
+        {
+          "verse_number": "47",
+          "heading_sanskrit": "उत्तरस्थानम्",
+          "heading_english": "Uttara Sthana",
+          "shloka": "उत्तरं चत्वारिंशत्स्याद्बालग्रहोर्ध्वजत्रुजम् ।\nशल्यदंष्ट्राजरावृषान् रोगांस्तत्रोपदेक्ष्यते ॥ ४७ ॥"
+        },
+        {
+          "verse_number": "48",
+          "heading_sanskrit": "तन्त्रसमापनम्",
+          "heading_english": "Conclusion of the Treatise",
+          "shloka": "इत्यध्यायशतं विंशं षट्स्थानेषु प्रकीर्तितम् ।\nअष्टाङ्गहृदयं नाम तन्त्रमेतत्प्रयुज्यते ॥ ४८ ॥"
+        },
+        {
+          "verse_number": "48.5",
+          "heading_sanskrit": "उपसंहारः",
+          "heading_english": "Final Half Verse",
+          "shloka": "एतत्पठन् विचार्यैव भिषक् सिद्धिमवाप्नुयात् ॥ ४८ ½ ॥"
+        }
+      ]
     },
     {
-      "verse_number": "2",
-      "heading_sanskrit": "आयुर्वेदप्रयोजनम्",
-      "heading_english": "Purpose of Ayurveda",
-      "shloka": "आयुः कामयमानेन धर्मार्थसुखसाधनम् ।\nआयुर्वेदोपदेशेषु विधेयः परमादरः ॥ २ ॥"
-    },
-    {
-      "verse_number": "3",
-      "heading_sanskrit": "आयुर्वेदावतरणम्",
-      "heading_english": "Origin of Ayurveda",
-      "shloka": "ब्रह्मा स्मृत्वाऽऽयुषो वेदं प्रजापतिमजिग्रहत् ।\nसोऽश्विनौ तौ सहस्राक्षं सोऽत्रिपुत्रादिकान्मुनीन् ॥ ३ ॥"
-    },
-    {
-      "verse_number": "4",
-      "heading_sanskrit": "तन्त्रनिर्मातारः",
-      "heading_english": "The Authors of the Treatises",
-      "shloka": "तेऽग्निवेशादिकांस्ते तु पृथक् तन्त्राणि तेनिरे ।\nतेभ्योऽतिविप्रकीर्णेभ्यः प्रायः सारतरोच्चयः ॥ ४ ॥"
-    },
-    {
-      "verse_number": "5",
-      "heading_sanskrit": "अष्टाङ्गहृदयस्य उत्पत्तिः",
-      "heading_english": "Creation of Ashtanga Hridaya",
-      "shloka": "क्रियतेऽष्टाङ्गहृदयं नातिसङ्क्षेपविस्तरम् ।\nकायबालग्रहोर्ध्वाङ्गशल्यदंष्ट्राजरावृषान् ॥ ५ ॥"
-    },
-    {
-      "verse_number": "6",
-      "heading_sanskrit": "अष्टाङ्गानि",
-      "heading_english": "The Eight Branches of Ayurveda",
-      "shloka": "अष्टावङ्गानि तस्याहुश्चिकित्सा येषु संश्रिता ।\nवायुः पित्तं कफश्चेति त्रयो दोषाः समासतः ॥ ६ ॥"
-    },
-    {
-      "verse_number": "7",
-      "heading_sanskrit": "त्रिदोषव्याप्तिः",
-      "heading_english": "Pervasion of the Tridoshas",
-      "shloka": "विकृताऽविकृता देहं घ्नन्ति ते वर्तयन्ति च ।\nते व्यापिनोऽपि हृन्नाभ्योरधोमध्योर्ध्वसंश्रयाः ॥ ७ ॥"
-    },
-    {
-      "verse_number": "8",
-      "heading_sanskrit": "दोषकालः अग्निप्रकृतयश्च",
-      "heading_english": "Dosha Timings and Digestive Fire",
-      "shloka": "वयोऽहोरात्रिभुक्तानां तेऽन्तमध्यादिगाः क्रमात् ।\nतैर्भवेद्विषमस्तीक्ष्णो मन्दश्चाग्निः समैः समः ॥ ८ ॥"
-    },
-    {
-      "verse_number": "9",
-      "heading_sanskrit": "कोष्ठप्रकृतयः",
-      "heading_english": "Types of Bowel/Digestive Tract",
-      "shloka": "कोष्ठः क्रूरो मृदुर्मध्यो मध्यः स्यात्तैः समैरपि ।\nशुक्रार्तवस्थैर्जन्मादौ विषेणेव विषक्रिमेः ॥ ९ ॥"
-    },
-    {
-      "verse_number": "10",
-      "heading_sanskrit": "देहप्रकृतयः",
-      "heading_english": "Body Constitutions",
-      "shloka": "तैश्च तिस्रः प्रकृतयो हीनमध्योत्तमाः पृथक् ।\nसमधातुः समस्तासु श्रेष्ठा निन्द्या द्विदोषजाः ॥ १० ॥"
-    },
-    {
-      "verse_number": "11",
-      "heading_sanskrit": "वातपित्तगुणः",
-      "heading_english": "Qualities of Vata and Pitta",
-      "shloka": "तत्र रूक्षो लघुः शीतः खरः सूक्ष्मश्चलोऽनिलः ।\nपित्तं सस्नेहतीक्ष्णोष्णं लघु विस्रं सरं द्रवम् ॥ ११ ॥"
-    },
-    {
-      "verse_number": "12",
-      "heading_sanskrit": "कफगुणः सन्निपातश्च",
-      "heading_english": "Qualities of Kapha and Dosha Combinations",
-      "shloka": "स्निग्धः शीतो गुरुर्मन्दः श्लक्ष्णो मृत्स्नः स्थिरः कफः ।\nसंसर्गः सन्निपातश्च तद्वित्रिक्षयकोपतः ॥ १२ ॥"
-    },
-    {
-      "verse_number": "13",
-      "heading_sanskrit": "धातु-मल-परिचयः",
-      "heading_english": "Tissues and Wastes",
-      "shloka": "रसासृङ्मांसमेदोऽस्थिमज्जाशुक्राणि धातवः ।\nसप्त दूष्याः मला मूत्रशकृत्स्वेदादयोऽपि च ॥ १३ ॥"
-    },
-    {
-      "verse_number": "14",
-      "heading_sanskrit": "वृद्धि-क्षय-कारणम् षड्रसाश्च",
-      "heading_english": "Cause of Increase/Decrease and Six Tastes",
-      "shloka": "वृद्धिः समानैः सर्वेषां विपरीतैर्विपर्ययः ।\nरसाः स्वाद्वम्ललवणतिक्तोषणकषायकाः ॥ १४ ॥"
-    },
-    {
-      "verse_number": "15",
-      "heading_sanskrit": "रसानां बलम्",
-      "heading_english": "Strength of the Tastes",
-      "shloka": "षड् द्रव्यमाश्रितास्ते च यथापूर्वं बलावहाः ।\nतत्राद्या मारुतं घ्नन्ति त्रयस्तिक्तादयः कफम् ॥ १५ ॥"
-    },
-    {
-      "verse_number": "16",
-      "heading_sanskrit": "दोषाणां रसानां च सम्बन्धः द्रव्याणि च",
-      "heading_english": "Relation of Tastes to Doshas and Types of Substances",
-      "shloka": "कषायतिक्तमधुराः पित्तमन्ये तु कुर्वते ।\nशमनं कोपनं स्वस्थहितं द्रव्यमिति त्रिधा ॥ १६ ॥"
-    },
-    {
-      "verse_number": "17",
-      "heading_sanskrit": "वीर्यं विपाकश्च",
-      "heading_english": "Potency and Post-Digestive Effect",
-      "shloka": "उष्णशीतगुणोत्कर्षात्तत्र वीर्यं द्विधा स्मृतम् ।\nत्रिधा विपाको द्रव्यस्य स्वाद्वम्लकटुकात्मकः ॥ १७ ॥"
-    },
-    {
-      "verse_number": "18",
-      "heading_sanskrit": "विंशति गुणाः",
-      "heading_english": "The Twenty Qualities",
-      "shloka": "गुरुमन्दहिमस्निग्धश्लक्ष्णसान्द्रमृदुस्थिराः ।\nगुणाः ससूक्ष्मविशदा विंशतिः सविपर्ययाः ॥ १८ ॥"
-    },
-    {
-      "verse_number": "19",
-      "heading_sanskrit": "रोगारोग्यकारणम्",
-      "heading_english": "Causes of Disease and Health",
-      "shloka": "कालार्थकर्मणां योगो हीनमिथ्यातिमात्रकः ।\nसम्यग्योगश्च विज्ञेयो रोगारोग्यैककारणम् ॥ १९ ॥"
-    },
-    {
-      "verse_number": "20",
-      "heading_sanskrit": "रोगभेदः",
-      "heading_english": "Definition and Types of Disease",
-      "shloka": "रोगस्तु दोषवैषम्यं दोषसाम्यमरोगता ।\nनिजागन्तुविभागेन तत्र रोगा द्विधा स्मृताः ॥ २० ॥"
-    },
-    {
-      "verse_number": "21",
-      "heading_sanskrit": "रोगाधिष्ठानम्",
-      "heading_english": "Sites of Disease",
-      "shloka": "तेषां कायमनोभेदादधिष्ठानमपि द्विधा ।\nरजस्तमश्च मनसो द्वौ च दोषावुदाहृतौ ॥ २१ ॥"
-    },
-    {
-      "verse_number": "22",
-      "heading_sanskrit": "रोग-रोगि-परीक्षा",
-      "heading_english": "Examination of Disease and Patient",
-      "shloka": "दर्शनस्पर्शनप्रश्नैः परीक्षेत च रोगिणम् ।\nरोगं निदानप्राग्रूपलक्षणोपशयाप्तिभिः ॥ २२ ॥"
-    },
-    {
-      "verse_number": "23",
-      "heading_sanskrit": "देशभेदः",
-      "heading_english": "Types of Habitat/Land",
-      "shloka": "भूमिदेहप्रभेदेन देशमाहुरिह द्विधा ।\nजाङ्गलं वातभूयिष्ठमनूपं तु कफोल्बणम् ॥ २३ ॥"
-    },
-    {
-      "verse_number": "24",
-      "heading_sanskrit": "साधारणदेशः कालश्च",
-      "heading_english": "Normal Habitat and Time",
-      "shloka": "साधारणं सममलं त्रिधा भूदेशमादिशेत् ।\nक्षणादिर्व्याध्यवस्था च कालो भेषजयोगकृत् ॥ २४ ॥"
-    },
-    {
-      "verse_number": "25",
-      "heading_sanskrit": "औषधभेदः",
-      "heading_english": "Types of Therapy",
-      "shloka": "शोधनं शमनं चेति समासाद्दौषधं द्विधा ।\nशरीरजानां दोषाणां क्रमेण परमौषधम् ॥ २५ ॥"
-    },
-    {
-      "verse_number": "26",
-      "heading_sanskrit": "श्रेष्ठौषधानि",
-      "heading_english": "Supreme Medicines for Doshas",
-      "shloka": "बस्तिर्विरेको वमनं तथा तैलघृतं मधु ।\nधीधैर्यात्मादिविज्ञानं मनोदोषौषधं परम् ॥ २६ ॥"
-    },
-    {
-      "verse_number": "27",
-      "heading_sanskrit": "चिकित्साचतुष्पादः",
-      "heading_english": "Four Limbs of Treatment",
-      "shloka": "भिषग्द्रव्यान्युपस्थाता रोगी पादचतुष्टयम् ।\nचिकित्सितस्य निर्दिष्टं प्रत्येकं तच्चतुर्गुणम् ॥ २७ ॥"
-    },
-    {
-      "verse_number": "28",
-      "heading_sanskrit": "वैद्य-औषध-गुणाः",
-      "heading_english": "Qualities of Physician and Medicine",
-      "shloka": "दक्षस्तीर्थात्तशास्त्रार्थो दृष्टकर्मा शुचिर्भिषक् ।\nबहुकल्पं बहुगुणं सम्पन्नं योग्यमौषधम् ॥ २८ ॥"
-    },
-    {
-      "verse_number": "29",
-      "heading_sanskrit": "परिचारक-रोगि-गुणाः",
-      "heading_english": "Qualities of Attendant and Patient",
-      "shloka": "अनुरक्तः शुचिर्दक्षो बुद्धिमान् परिचारकः ।\nआढ्यो रोगी भिषग्वश्यो ज्ञापकः सत्त्ववानपि ॥ २९ ॥"
-    },
-    {
-      "verse_number": "30",
-      "heading_sanskrit": "रोगसाध्यासाध्यता",
-      "heading_english": "Prognosis Classification",
-      "shloka": "साध्योऽसाध्य इति व्याधिर्द्विधा तौ तु पुनर्द्विधा ।\nसुसाध्यः कृच्छ्रसाध्यश्च याप्यो यश्चानुक्रमः ॥ ३० ॥"
-    },
-    {
-      "verse_number": "31",
-      "heading_sanskrit": "सुसाध्यलक्षणम् - १",
-      "heading_english": "Features of Easily Curable Disease - 1",
-      "shloka": "सर्वौषधक्षमे देहे यूनाः पुंसो जितात्मनः ।\nअमर्मगोऽल्पहेत्वग्ररूपरूपोऽनुपद्रवः ॥ ३१ ॥"
-    },
-    {
-      "verse_number": "32",
-      "heading_sanskrit": "सुसाध्यलक्षणम् - २",
-      "heading_english": "Features of Easily Curable Disease - 2",
-      "shloka": "अतुल्यदूष्यदेशर्तुप्रकृतिः पादसम्पदि ।\nग्रहेष्वनुगुणेष्वेकदोषमार्गो नवः सुखः ॥ ३२ ॥"
-    },
-    {
-      "verse_number": "33",
-      "heading_sanskrit": "कृच्छ्रसाध्य-याप्य-लक्षणम्",
-      "heading_english": "Features of Difficult and Palliable Disease",
-      "shloka": "शस्त्रादिसाधनः कृच्छ्रः सङ्करे तत्र चोदितैः ।\nशेषत्वेनायुषो याप्यः पथ्याभ्यासेन याप्यते ॥ ३३ ॥"
-    },
-    {
-      "verse_number": "34",
-      "heading_sanskrit": "असाध्यलक्षणम्",
-      "heading_english": "Features of Incurable Disease",
-      "shloka": "अनुपक्रम एव स्यात् स्थितोऽत्यन्तविपर्यये ।\nऔत्सुक्यमोहारतिकृद् दृष्टरिष्टोऽक्षनाशनः ॥ ३४ ॥"
-    },
-    {
-      "verse_number": "35",
-      "heading_sanskrit": "वर्ज्य-रोगी - १",
-      "heading_english": "Patients to be Rejected - 1",
-      "shloka": "त्यजेदार्तं भिषग्भूपैर्द्विष्टं तेषां द्विषं तथा ।\nहीनोपकरणं व्यग्रमविधेयं गतायुषम् ॥ ३५ ॥"
-    },
-    {
-      "verse_number": "36",
-      "heading_sanskrit": "वर्ज्य-रोगी - २ तथा ग्रन्थविस्तारः",
-      "heading_english": "Patients to be Rejected - 2 & Text Scope",
-      "shloka": "चण्डं शोकातुरं भीरुं कृतघ्नं वैद्यमानिनम् ।\nतस्येदमध्यायशतं विंशतिश्चानुपूर्वशः ॥ ३६ ॥"
-    },
-    {
-      "verse_number": "37",
-      "heading_sanskrit": "सूत्रस्थानाध्यायाः - १",
-      "heading_english": "Chapters of Sutrasthana - 1",
-      "shloka": "स्थानेषु षट्सु रचितं सूत्रस्थानं तदादिमम् ।\nआयुष्कामीयदिनर्तुरोगानुत्पादनीयकाः ॥ ३७ ॥"
-    },
-    {
-      "verse_number": "38",
-      "heading_sanskrit": "सूत्रस्थानाध्यायाः - २",
-      "heading_english": "Chapters of Sutrasthana - 2",
-      "shloka": "द्रवद्रव्यविज्ञानीयमन्नस्वरूपमेव च ।\nअन्नरक्षामात्रशितीयावुपकल्पनीयकः ॥ ३८ ॥"
-    },
-    {
-      "verse_number": "39",
-      "heading_sanskrit": "सूत्रस्थानाध्यायाः - ३",
-      "heading_english": "Chapters of Sutrasthana - 3",
-      "shloka": "शोधनादिगणः स्नेहः स्वेदो वमनरेचनम् ।\nबस्तिर्विधिर्नस्यविधिर्धूमपानविधिस्तथा ॥ ३९ ॥"
-    },
-    {
-      "verse_number": "40",
-      "heading_sanskrit": "सूत्रस्थानाध्यायाः - ४",
-      "heading_english": "Chapters of Sutrasthana - 4",
-      "shloka": "गण्डूषाश्च्योतनं तद्वन्नेत्रतर्पणमेव च ।\nयन्त्रशस्त्रविधिकश्च सिराव्यधस्तथैव च ॥ ४० ॥"
-    },
-    {
-      "verse_number": "41",
-      "heading_sanskrit": "सूत्रस्थानाध्यायाः - ५",
-      "heading_english": "Chapters of Sutrasthana - 5",
-      "shloka": "शल्यस्य हरणं तद्वच्छस्त्रकर्मविधिक्रमः ।\nक्षारकर्मविधिकश्चेत्यध्यायास्त्रिंशदीरिताः ॥ ४१ ॥"
-    },
-    {
-      "verse_number": "42",
-      "heading_sanskrit": "शारीरस्थानम्",
-      "heading_english": "Sharira Sthana",
-      "shloka": "शारीरं षडध्यायं स्याद्गर्भावक्रान्तिरेव च ।\nगर्भव्याकरणं तद्वन्मर्मविभाग एव च ॥ ४२ ॥"
-    },
-    {
-      "verse_number": "43",
-      "heading_sanskrit": "निदानस्थानम्",
-      "heading_english": "Nidana Sthana",
-      "shloka": "निदानं षोडशाध्यायं ज्वरादीनां प्रकीर्तितम् ।\nसर्वव्याधिसमुत्थानलक्षणोत्पत्तिसूचकम् ॥ ४३ ॥"
-    },
-    {
-      "verse_number": "44",
-      "heading_sanskrit": "चिकित्सास्थानम् - १",
-      "heading_english": "Chikitsa Sthana - 1",
-      "shloka": "चिकित्सितं द्वाविंशतिर्विभागेनोपदेक्ष्यते ।\nज्वररक्तपित्तकासश्वासयक्ष्मादिकान्तिकम् ॥ ४४ ॥"
-    },
-    {
-      "verse_number": "45",
-      "heading_sanskrit": "चिकित्सास्थानम् - २",
-      "heading_english": "Chikitsa Sthana - 2",
-      "shloka": "छर्दिमदात्ययार्शांसि ग्रहणीमूत्राघातकम् ।\nप्रमेहो विद्रधिश्चैव गुल्मोदरभगन्दरम् ॥ ४५ ॥"
-    },
-    {
-      "verse_number": "46",
-      "heading_sanskrit": "कल्पस्थानम्",
-      "heading_english": "Kalpa Sthana",
-      "shloka": "कल्पं षडध्यायं तत्र वमनादिविधिक्रमः ।\nभेषजानां विकल्पाश्च संशोधनसंशमनम् ॥ ४६ ॥"
-    },
-    {
-      "verse_number": "47",
-      "heading_sanskrit": "उत्तरस्थानम्",
-      "heading_english": "Uttara Sthana",
-      "shloka": "उत्तरं चत्वारिंशत्स्याद्बालग्रहोर्ध्वजत्रुजम् ।\nशल्यदंष्ट्राजरावृषान् रोगांस्तत्रोपदेक्ष्यते ॥ ४७ ॥"
-    },
-    {
-      "verse_number": "48",
-      "heading_sanskrit": "तन्त्रसमापनम्",
-      "heading_english": "Conclusion of the Treatise",
-      "shloka": "इत्यध्यायशतं विंशं षट्स्थानेषु प्रकीर्तितम् ।\nअष्टाङ्गहृदयं नाम तन्त्रमेतत्प्रयुज्यते ॥ ४८ ॥"
-    },
-    {
-      "verse_number": "48.5",
-      "heading_sanskrit": "उपसंहारः",
-      "heading_english": "Final Half Verse",
-      "shloka": "एतत्पठन् विचार्यैव भिषक् सिद्धिमवाप्नुयात् ॥ ४८ ½ ॥"
+      "chapter": {
+        "number": 2,
+        "name_sanskrit": "दिनचर्याध्यायः",
+        "name_english": "Dinacharya Adhyaya"
+      },
+      "verses": [
+        {
+          "verse_number": "1",
+          "heading_sanskrit": "जागरण काल",
+          "heading_english": "Waking Up Time",
+          "shloka": "ब्राह्मे मुहूर्ते उत्तिष्ठेत्स्वस्थो रक्षार्थमायुषः ।\nशरीरचिन्तां निर्वर्त्य कृतशौचविधिस्ततः ॥ १ ॥"
+        },
+        {
+          "verse_number": "2-3",
+          "heading_sanskrit": "दन्तधावन",
+          "heading_english": "Brushing the Teeth",
+          "shloka": "अर्कन्यग्रोधखदिरकरञ्जककुभादिजम् ।\nप्रातर्भुक्त्वा च मृद्वग्रं कषायकटुतिक्तकम् ॥ २ ॥\nभक्षयेद्दन्तपवनं दन्तमांसान्यबाधयन् ।\nनिहन्ति गन्धवैरस्यं जिह्वादन्तास्यजं मलम् ॥ ३ ॥"
+        },
+        {
+          "verse_number": "4-5a",
+          "heading_sanskrit": "दन्तधावन के लाभ एवं निषेध",
+          "heading_english": "Benefits & Contraindications for Brushing",
+          "shloka": "निष्कृष्य रुचिमाधत्ते सद्यो दन्तविशोधनम् ।\nनाद्यादजीर्णवमथुश्वासकासज्वरार्दितः ॥ ४ ॥\nतृष्णास्यपाकहृन्नेत्रशिरःकर्णामयी च तत् ।"
+        },
+        {
+          "verse_number": "5b-6",
+          "heading_sanskrit": "अञ्जन",
+          "heading_english": "Collyrium / Eye Care",
+          "shloka": "सौवीरमञ्जनं नित्यं हितमक्ष्णोस्ततो भजेत् ॥ ५ ॥\nचक्षुस्तेजोमयं तस्य विशेषाच्छ्लेष्मतो भयम् ।\nयोजयेत्सप्तरात्रेऽस्मात्स्रावणार्थं रसाञ्जनम् ॥ ६ ॥"
+        },
+        {
+          "verse_number": "7-8a",
+          "heading_sanskrit": "नावन, गण्डूष, धूम, ताम्बूल",
+          "heading_english": "Nasal Drops, Gargling, Inhalation, Betel Leaf",
+          "shloka": "ततो नावनगण्डूषधूमताम्बूलभाग्भवेत् ।\nताम्बूलं क्षतपित्तास्ररूक्षोत्कुपितचक्षुषाम् ॥ ७ ॥\nविषमूर्च्छामदार्तानां पथ्यं न शोषिणामपि ।"
+        },
+        {
+          "verse_number": "8b-9",
+          "heading_sanskrit": "अभ्यङ्ग",
+          "heading_english": "Daily Oil Massage",
+          "shloka": "अभ्यङ्गमाचरेन्नित्यं स जराश्रमवातहा ॥ ८ ॥\nदृष्टिप्रसादपुष्ट्यायुःस्वप्नसुत्वक्त्वदार्ढ्यकृत् ।\nशिरःश्रवणपादेषु तं विशेषेण शीलयेत् ॥ ९ ॥"
+        },
+        {
+          "verse_number": "10",
+          "heading_sanskrit": "अभ्यङ्ग निषेध तथा व्यायाम",
+          "heading_english": "Contraindications for Massage & Exercise",
+          "shloka": "वर्ज्योऽभ्यङ्गः कफग्रस्तकृतसंशुद्ध्यजीर्णिभिः ।\nलाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ॥ १० ॥"
+        },
+        {
+          "verse_number": "11",
+          "heading_sanskrit": "व्यायाम के लाभ तथा निषेध",
+          "heading_english": "Benefits & Contraindications of Exercise - continued",
+          "shloka": "लाघवं कर्मसामर्थ्यं दीप्तोऽग्निर्मेदसः क्षयः ।\nविभक्तघनगात्रत्वं व्यायामादुपजायते ॥ ११ ॥\nवातपित्तामयी बालो वृद्धोऽजीर्णी च तं त्यजेत् ।"
+        },
+        {
+          "verse_number": "12-13",
+          "heading_sanskrit": "व्यायाम की मात्रा",
+          "heading_english": "Proper Amount of Exercise",
+          "shloka": "अर्धशक्त्या निषेव्यस्तु बलिभिः स्निग्धभोजिभिः ॥ १२ ॥\nशीतकाले वसन्ते च मन्दमेव ततोऽन्यदा ।\nतं कृत्वाऽनुसुखं देहं मर्दयेच्च समन्ततः ॥ १३ ॥"
+        },
+        {
+          "verse_number": "14",
+          "heading_sanskrit": "अतिव्यायाम के उपद्रव",
+          "heading_english": "Complications of Excessive Exercise",
+          "shloka": "तृष्णा क्षयः प्रतमको रक्तपित्तं श्रमः क्लमः ।\nअतिव्यायामतः कासो ज्वरश्छर्दिश्च जायते ॥ १४ ॥"
+        },
+        {
+          "verse_number": "15",
+          "heading_sanskrit": "अति-साहसिक कार्यों का निषेध",
+          "heading_english": "Avoidance of Overexertion",
+          "shloka": "व्यायामजागराध्वस्त्रीहास्यभाष्यादि साहसम् ।\nगजं सिंह इवाकर्षन् भजन्नति विनश्यति ॥ १५ ॥"
+        },
+        {
+          "verse_number": "16",
+          "heading_sanskrit": "उद्वर्तन",
+          "heading_english": "Dry Powder Massage",
+          "shloka": "उद्वर्तनं कफहरं मेदसः प्रविलापनम् ।\nस्थिरीकरणमङ्गानां त्वक्प्रसादकरं परम् ॥ १६ ॥"
+        },
+        {
+          "verse_number": "17-18",
+          "heading_sanskrit": "स्नान के लाभ",
+          "heading_english": "Benefits of Bathing",
+          "shloka": "दीपनं वृष्यमायुष्यं स्नानमूर्जाबलप्रदम् ।\nकण्डूमलश्रमस्वेदतन्द्रातृड्दाहपाप्मजित् ॥ १७ ॥\nउष्णाम्बुनाऽधःकायस्य परिषेको बलावहः ।\nतेनैव तूत्तमाङ्गस्य बलहृत्केशचक्षुषाम् ॥ १८ ॥"
+        },
+        {
+          "verse_number": "19",
+          "heading_sanskrit": "स्नान निषेध",
+          "heading_english": "Contraindications for Bathing",
+          "shloka": "स्नानमर्दितनेत्रास्यकर्णरोगातिसारिषु ।\nआध्मानपीनसाजीर्णभुक्तवत्सु च गर्हितम् ॥ १९ ॥"
+        },
+        {
+          "verse_number": "20",
+          "heading_sanskrit": "भोजन का नियम",
+          "heading_english": "Rule for Eating",
+          "shloka": "जीर्णे हितं मितं चाद्यान्न वेगानीरयेद्बलात् ।\nन वेगितोऽन्यकार्यः स्यान्नाजित्वा साध्यमामयम् ॥ २० ॥"
+        },
+        {
+          "verse_number": "21",
+          "heading_sanskrit": "सद्वृत्त का महत्त्व",
+          "heading_english": "Importance of Good Conduct / Dharma",
+          "shloka": "सुखार्थाः सर्वभूतानां मताः सर्वाः प्रवृत्तयः ।\nसुखं च न विना धर्मात्तस्माद्धर्मपरो भवेत् ॥ २१ ॥"
+        },
+        {
+          "verse_number": "22-23",
+          "heading_sanskrit": "दश पाप कर्मों का त्याग",
+          "heading_english": "Abandoning the Ten Sins of Body, Speech, and Mind",
+          "shloka": "भक्त्या कल्याणमित्रेषु नीचेषु च विपर्ययः ।\nहिंसास्तेयान्यथाकामं पैशून्यं परुषानृते ॥ २२ ॥\nसम्भिन्नालापव्यापादमभिध्यां दृग्विपर्ययम् ।\nपापं कर्मेति दशधा कायवाङ्मानसैस्त्यजेत् ॥ २३ ॥"
+        },
+        {
+          "verse_number": "24",
+          "heading_sanskrit": "समभाव और दया",
+          "heading_english": "Compassion and Empathy",
+          "shloka": "अवृत्तिव्याधिशोकार्ताननुवर्तेत शक्तितः ।\nआत्मवत्सततं पश्येदपि कीटपिपीलिकम् ॥ २४ ॥"
+        },
+        {
+          "verse_number": "25",
+          "heading_sanskrit": "सम्मान और दान",
+          "heading_english": "Respect and Charity",
+          "shloka": "अर्चयेद्देवगोविप्रवृद्धवैद्यनृपातिथीन् ।\nविमुखान् नार्थिनः कुर्यान्नावमन्येत नाक्षिपेत् ॥ २५ ॥"
+        },
+        {
+          "verse_number": "26",
+          "heading_sanskrit": "उपकार और समतोलन",
+          "heading_english": "Benevolence and Equanimity",
+          "shloka": "उपकारप्रधानः स्यादपकारपरेऽप्यरौ ।\nसम्पद्विपत्स्वेकमना हेतावीर्ष्येत् फले न तु ॥ २६ ॥"
+        },
+        {
+          "verse_number": "27",
+          "heading_sanskrit": "मधुर वाणी और सुशीलता",
+          "heading_english": "Pleasant Speech and Good Character",
+          "shloka": "काले हितं मितं ब्रूयादविसंवादि पेशलम् ।\nपूर्वाभिभाषी सुमुखः सुशीलः करुणार्द्रधीः ॥ २७ ॥"
+        },
+        {
+          "verse_number": "28",
+          "heading_sanskrit": "अजातशत्रुता",
+          "heading_english": "Social Trust and Having No Enemies",
+          "shloka": "नैकः सुखी न सर्वत्र विश्रब्धो न च शङ्कितः ।\nन कञ्चिदात्मनः शत्रुं नात्मानं कस्यचिद्रिपुम् ॥ २८ ॥"
+        },
+        {
+          "verse_number": "29-30",
+          "heading_sanskrit": "व्यवहार कुशलता तथा इन्द्रिय संयम",
+          "heading_english": "Worldly Wisdom and Sensory Control",
+          "shloka": "प्रकाशयेन्नापमानं न च निःस्नेहतां प्रभोः ।\nजनस्याशयमालक्ष्य यो यथा परितुष्यति ॥ २९ ॥\nतं तथैवानुवर्तेत पराराधनपण्डितः ।\nन पीडयेदिन्द्रियाणि न चैतान्यतिलालयेत् ॥ ३० ॥"
+        },
+        {
+          "verse_number": "31-32",
+          "heading_sanskrit": "वेशभूषा और आभूषण",
+          "heading_english": "Attire and Adornments",
+          "shloka": "नीचरोमनखश्मश्रुर्निर्मलाम्बरधारणः ।\nस्नानशीलः सुसुरभिः सुवेषोऽनुल्बणोज्ज्वलः ॥ ३१ ॥\nधारयेत् सततं रत्नसिद्धमन्त्रमहौषधीः ।\nसातपत्रपदत्राणो विचरेद्युगमात्रदृक् ॥ ३२ ॥"
+        },
+        {
+          "verse_number": "33-34",
+          "heading_sanskrit": "रात्रिकालीन व्यवहार एवं निषेध",
+          "heading_english": "Night Travel and Cautions",
+          "shloka": "निशि चात्ययिके कार्ये दण्डी मौली सहायवान् ।\nचैत्यपूज्यध्वजाशस्तच्छायाभस्मतुषाशुचीन् ॥ ३३ ॥\nनाक्रामेच्छर्करालोष्टबलिस्नानभुवोऽपि च ।\nनदीं तरेन्न बाहुभ्यां नाग्निस्कन्धमभिव्रजेत् ॥ ३४ ॥"
+        },
+        {
+          "verse_number": "35-36",
+          "heading_sanskrit": "शारीरिक चेष्टाओं के नियम",
+          "heading_english": "Rules for Physical Actions",
+          "shloka": "सन्दिग्धनावं वृक्षं च नारोहेद्दुष्टयानवत् ।\nनासंवृतमुखः कुर्यात् क्षुतिहास्यविजृम्भणम् ॥ ३५ ॥\nनासिकां न विकुष्णीयान्नाकस्माद्विलिखेद्भुवम् ।\nनाचेष्टेत विगुणं नासीतोत्कटकस्थितः ॥ ३६ ॥"
+        },
+        {
+          "verse_number": "37-38",
+          "heading_sanskrit": "वर्जित स्थान और कर्म",
+          "heading_english": "Prohibited Places and Actions",
+          "shloka": "देहवाक्चेतसां चेष्टाः प्राक् श्रमाद्विनिवर्तयेत् ।\nनोर्ध्वजानुश्चिरं तिष्ठेन्नक्तं सेवेत न द्रुमान् ॥ ३७ ॥\nतथा चत्वरचैत्यान्तचतुष्पथसुरालयान् ।\nसूनाटवीशून्यगृहश्मशानानि दिवापि च ॥ ३८ ॥"
+        },
+        {
+          "verse_number": "39-40",
+          "heading_sanskrit": "दृष्टि एवं व्यापार निषेध",
+          "heading_english": "Restrictions on Sight and Trade",
+          "shloka": "सर्वथेक्षेत नादित्यं न भारं शिरसा वहेत् ।\nनेक्षेत प्रततं सूक्ष्मं दीप्तामेध्याप्रियाणि च ॥ ३९ ॥\nमद्यविक्रयसन्धानदानादानानि नाचरेत् ।\nपुरोवातातपरजस्तुषारपरुषानिलान् ॥ ४० ॥"
+        },
+        {
+          "verse_number": "41-42",
+          "heading_sanskrit": "आसन और संगति निषेध",
+          "heading_english": "Prohibited Associations and Postures",
+          "shloka": "अनृजुः क्षवथुद्गारकासस्वप्नान्नमैथुनम् ।\nकूलच्छायां नृपद्विष्टं व्यालदंष्ट्रिविषाणिनः ॥ ४१ ॥\nहीनानार्यातिनिपुणसेवां विग्रहमुत्तमैः ।\nसन्ध्यास्वभ्यवहारस्त्रीस्वप्नाध्ययनचिन्तनम् ॥ ४२ ॥"
+        },
+        {
+          "verse_number": "43-44",
+          "heading_sanskrit": "त्याज्य व्यवहार",
+          "heading_english": "Behaviors to Abandon",
+          "shloka": "शत्रुसत्रगणाकीर्णगणिकापणिकाशनम् ।\nगात्रवक्त्रनखैर्वाद्यं हस्तकेशावधूननम् ॥ ४३ ॥\nतोयाग्निपूज्यमध्येन यानं धूमं शवाश्रयम् ।\nमद्यातिसक्तिं विश्रम्भस्वातन्त्र्ये स्त्रीषु च त्यजेत् ॥ ४४ ॥"
+        },
+        {
+          "verse_number": "45-46",
+          "heading_sanskrit": "लोकव्यवहार एवं सद्व्रत",
+          "heading_english": "Worldly Conduct and the Ultimate Vow",
+          "shloka": "आचार्यः सर्वचेष्टासु लोक एव हि धीमतः ।\nअनुकुर्यात्तमेवातो लौकिकेऽर्थे परीक्षकः ॥ ४५ ॥\nआर्द्रसन्तानता त्यागः कायवाक्चेतसां दमः ।\nस्वार्थबुद्धिः परार्थेषु पर्याप्तमिति सद्व्रतम् ॥ ४६ ॥"
+        },
+        {
+          "verse_number": "47-48",
+          "heading_sanskrit": "आत्मचिन्तन एवं सद्वृत्त का फल",
+          "heading_english": "Self-Reflection and Fruits of Good Conduct",
+          "shloka": "नक्तंदिनानि मे यान्ति कथम्भूतस्य सम्प्रति ।\nदुःखभाङ्न भवत्येवं नित्यं सन्निहितस्मृतिः ॥ ४७ ॥\nइत्याचारः समासेन यं प्राप्नोति समाचरन् ।\nआयुरारोग्यमैश्वर्यं यशो लोकांश्च शाश्वतान् ॥ ४८ ॥"
+        }
+      ]
     }
   ]
 }
