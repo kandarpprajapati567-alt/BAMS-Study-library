@@ -519,59 +519,65 @@
 
     <script>
         // ==========================================
-        // 1. SUPABASE INITIALIZATION
+        // 1. SUPABASE INITIALIZATION (WITH ERROR HANDLING)
         // ==========================================
         const SUPABASE_URL = 'https://nfymkqtyyhzituwwedbc.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5meW1rcXR5eWh6aXR1d3dlZGJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NDQ3OTgsImV4cCI6MjA5ODEyMDc5OH0.lbpg5lk09_mU-ypgk8zs3PO1Gv4sn-uZooY-iUrPQno';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+        
+        let supabase = null;
+        if (typeof window.supabase !== 'undefined') {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        } else {
+            console.error("⚠️ Supabase library failed to load from CDN.");
+        }
 
         // ==========================================
         // 2. AUTHENTICATION FUNCTIONS
         // ==========================================
-        async function signUpUser(email, password) {
-            const { data, error } = await supabase.auth.signUp({ email, password });
-            if (error) console.error("Sign Up Error:", error.message);
-            else console.log("Sign Up Success:", data);
-            return { data, error };
-        }
-
-        async function signInUser(email, password) {
-            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-            if (error) console.error("Sign In Error:", error.message);
-            else console.log("Sign In Success:", data);
-            return { data, error };
-        }
-
         async function checkSession() {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                console.log("User is logged in as:", session.user.email);
-            } else {
-                console.log("No active session.");
+            if (!supabase) return;
+            try {
+                // Safely fetch session without assuming 'data' exists
+                const { data, error } = await supabase.auth.getSession();
+                if (error) throw error;
+                if (data && data.session) {
+                    console.log("User is logged in as:", data.session.user.email);
+                } else {
+                    console.log("No active session.");
+                }
+            } catch (error) {
+                console.warn("Session check failed, but app will continue running:", error.message);
             }
-            return session;
         }
-
 
         // ==========================================
-        // 3. UI & BOOT SEQUENCE
+        // 3. UI & BOOT SEQUENCE (CRASH-PROOF)
         // ==========================================
         window.onload = () => {
+            // 1. Load Background
             const savedBg = localStorage.getItem('samhita_bg');
             if(savedBg) document.body.style.backgroundImage = `url('${savedBg}')`;
             
-            // Start checking session instantly on load
-            checkSession();
-
+            // 2. Ensure Boot Screen closes NO MATTER WHAT happens with the DB
             setTimeout(() => {
                 const boot = document.getElementById('boot-screen');
-                boot.style.transform = 'scale(1.2)'; boot.style.opacity = '0';
-                setTimeout(() => { boot.style.display = 'none'; document.getElementById('main-dashboard').style.opacity = '1'; }, 1000);
+                if (boot) {
+                    boot.style.transform = 'scale(1.2)'; 
+                    boot.style.opacity = '0';
+                    setTimeout(() => { 
+                        boot.style.display = 'none'; 
+                        document.getElementById('main-dashboard').style.opacity = '1'; 
+                    }, 1000);
+                }
             }, 1800); 
 
-            // Kick off the database fetch
-            fetchShlokaData();
+            // 3. Run Database Tasks safely
+            try {
+                checkSession();
+                fetchShlokaData();
+            } catch (error) {
+                console.error("Startup error:", error);
+            }
         };
 
         function openModal(id, title = null) {
@@ -590,13 +596,18 @@
         let currentSamhita = null;
 
         async function fetchShlokaData() {
+            if (!supabase) {
+                showDbError("Supabase not initialized. Check your internet or CDN connection.");
+                return;
+            }
+
             try {
-                // Fetch directly from the "shlokas" table
                 const { data, error } = await supabase.from('shlokas').select('*');
 
                 if (error) throw error;
+                
                 if (!data || data.length === 0) {
-                    console.warn("Table is empty or missing data.");
+                    showDbError("Table connected, but it is empty. Add data to Supabase!");
                     return;
                 }
 
@@ -604,26 +615,27 @@
                 initShlokaUI();
             } catch (error) {
                 console.error("Database connection failed:", error.message);
-                document.getElementById('matrix-samhitas').innerHTML = `
-                    <div style="background: rgba(255,51,102,0.1); border: 1px solid #ff3366; padding: 15px; border-radius: 12px; width: 100%;">
-                        <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ Database Access Failed</h3>
-                        <p style="color:#ccc; font-size: 0.9rem; margin-bottom: 0;">
-                            Ensure you have added your Supabase URL and Anon Key at the top of the script.<br><br>
-                            Error Details: ${error.message}
-                        </p>
-                    </div>`;
+                showDbError(error.message);
             }
+        }
+
+        function showDbError(message) {
+            document.getElementById('matrix-samhitas').innerHTML = `
+                <div style="background: rgba(255,51,102,0.1); border: 1px solid #ff3366; padding: 15px; border-radius: 12px; width: 100%;">
+                    <h3 style="color:#ff3366; margin-top: 0; font-family: 'Orbitron'; font-size: 1.1rem;">⚠️ Database Access Failed</h3>
+                    <p style="color:#ccc; font-size: 0.9rem; margin-bottom: 0;">
+                        Error Details: ${message}<br><br>
+                        Make sure your Supabase table 'shlokas' exists and RLS policies allow public SELECT.
+                    </p>
+                </div>`;
         }
 
         function processShlokaData(data) {
             globalShlokaData = {};
-            
-            // Loop through the flat array of database rows
             data.forEach(row => {
                 const samhitaName = row.samhita_name || "Unknown Samhita";
                 const chapterName = row.chapter_name || "Unknown Chapter";
 
-                // Build the nested structure the UI expects
                 if (!globalShlokaData[samhitaName]) globalShlokaData[samhitaName] = {};
                 if (!globalShlokaData[samhitaName][chapterName]) globalShlokaData[samhitaName][chapterName] = [];
 
@@ -704,7 +716,7 @@
         }
 
         // ==========================================
-        // 5. GEMINI AI INTEGRATION (VIA VERCEL API)
+        // 5. GEMINI AI INTEGRATION
         // ==========================================
         async function openTranslationModal(element) {
             const heading = decodeURIComponent(element.getAttribute('data-heading'));
@@ -712,15 +724,12 @@
             
             document.getElementById('trans-heading').innerText = heading;
             document.getElementById('trans-shloka').innerText = text;
-            
-            // Set beautiful Loading states
             document.getElementById('trans-translation').innerHTML = "<i style='color: var(--primary-color);'>✨ Gemini AI is analyzing translation...</i>";
             document.getElementById('trans-explanation').innerHTML = "<i style='color: var(--primary-color);'>✨ Generating contextual explanation...</i>";
             
             openModal('translation-modal');
 
             try {
-                // Call the new Serverless function
                 const response = await fetch('/api/gemini', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -730,7 +739,6 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Inject AI response into UI safely
                     document.getElementById('trans-translation').innerText = data.translation;
                     document.getElementById('trans-explanation').innerText = data.explanation;
                 } else {
@@ -739,7 +747,7 @@
             } catch (error) {
                 console.error("AI Error:", error);
                 document.getElementById('trans-translation').innerText = "⚠️ SYSTEM ERROR: " + error.message;
-                document.getElementById('trans-explanation').innerText = "Please check your Vercel logs and ensure your GEMINI_API_KEY environment variable is set.";
+                document.getElementById('trans-explanation').innerText = "Make sure your backend API is running.";
             }
         }
 
@@ -786,8 +794,6 @@
                 `;
             });
         }
-
-        function filterFiles(val) { renderFiles(val); }
 
         function handleLocalUpload(event) {
             const file = event.target.files[0];
@@ -853,4 +859,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
