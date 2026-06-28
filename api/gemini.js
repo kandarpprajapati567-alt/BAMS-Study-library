@@ -6,30 +6,29 @@ export default async function handler(req, res) {
 
     const { shloka } = req.body;
     
-    // 2. API Key fetch
+    // 2. Fetch API Key
     const apiKey = process.env.Gemini_api_key; 
 
-    // STRICT CHECK: Agar Vercel se key nahi aayi, toh yahi error dega
     if (!apiKey || apiKey === 'undefined' || apiKey.trim() === '') {
-        return res.status(500).json({ error: 'API Key is missing! Vercel me Environment Variable check karein aur project REDEPLOY karein.' });
+        return res.status(500).json({ error: 'API Key is missing in Vercel settings.' });
     }
 
-    // 3. Prompts
+    // 3. Prompts for Dual Processing
     const promptTranslation = `You are an expert Ayurvedic scholar. Translate the following Sanskrit shloka to English. Provide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here"}. Shloka: "${shloka}"`;
     
     const promptExplanation = `You are an expert Ayurvedic scholar. Provide a brief, deep explanation and understanding of this Sanskrit shloka. Provide the response strictly in a raw JSON format exactly like this: {"explanation": "your brief explanation here"}. Shloka: "${shloka}"`;
 
-    // 4. Model URLs (Without API key in URL, we will send it safely in headers)
-    const urlFlash = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent`;
-    const urlPro = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro:generateContent`;
+    // 4. OFFICIAL GOOGLE API MODEL STRINGS (This fixes the "not found" error)
+    // Adding "-latest" ensures it always finds the active version in your region.
+    const urlFlash = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`;
+    const urlPro = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent`;
 
-    // Helper function
+    // 5. Secure Fetch Function
     const fetchGemini = async (url, promptText) => {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                // SAFEST WAY TO PASS API KEY:
                 'x-goog-api-key': apiKey 
             },
             body: JSON.stringify({
@@ -48,18 +47,18 @@ export default async function handler(req, res) {
     };
 
     try {
-        // 5. Calling both models at the same time (Fast execution)
+        // 6. Fast ⏩ Execution: Calling Flash for Translation & Pro for Explanation
         const [flashData, proData] = await Promise.all([
             fetchGemini(urlFlash, promptTranslation),
             fetchGemini(urlPro, promptExplanation)
         ]);
 
         return res.status(200).json({
-            translation: flashData.translation || "Translation error.",
-            explanation: proData.explanation || "Explanation error."
+            translation: flashData.translation || "Translation could not be processed.",
+            explanation: proData.explanation || "Explanation could not be processed."
         });
 
     } catch (error) {
-        return res.status(500).json({ error: `API Error: ${error.message}` });
+        return res.status(500).json({ error: `System Error: ${error.message}` });
     }
 }
