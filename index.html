@@ -565,27 +565,54 @@
         function processShlokaData(data) {
             globalShlokaData = {};
             
-            // 1. JSON ऑब्जेक्ट से संहिता (Samhita) और अध्याय (Chapter) का नाम निकालें
+            // Safety check: is data valid?
+            if (!data) return;
+
+            // 1. JSON ऑब्जेक्ट से संहिता (Samhita) का नाम निकालें, fallback के साथ
             const samhitaName = data.text_source || "Unknown Samhita";
-            const chapterName = (data.chapter && data.chapter.name_english) 
-                                ? `${data.chapter.number}. ${data.chapter.name_english}` 
-                                : "Chapter 1";
+            
+            if (!globalShlokaData[samhitaName]) {
+                globalShlokaData[samhitaName] = {};
+            }
 
-            // 2. स्ट्रक्चर तैयार करें
-            if (!globalShlokaData[samhitaName]) globalShlokaData[samhitaName] = {};
-            if (!globalShlokaData[samhitaName][chapterName]) globalShlokaData[samhitaName][chapterName] = [];
+            // 2. चेक करें कि chapters का array मौजूद है और valid है
+            if (data.chapters && Array.isArray(data.chapters)) {
+                
+                // हर chapter के लिए लूप चलाएं
+                data.chapters.forEach(chapterItem => {
+                    
+                    // अध्याय का नाम सेट करें
+                    const chapInfo = chapterItem.chapter;
+                    const chapterName = (chapInfo && chapInfo.name_english) 
+                                        ? `${chapInfo.number || '?'}. ${chapInfo.name_english}` 
+                                        : "Unknown Chapter";
+                                        
+                    if (!globalShlokaData[samhitaName][chapterName]) {
+                        globalShlokaData[samhitaName][chapterName] = [];
+                    }
 
-            // 3. data.verses (जो कि एक array है) पर लूप चलाएं और UI के हिसाब से डेटा सेट करें
-            if (data.verses && Array.isArray(data.verses)) {
-                data.verses.forEach(item => {
-                    globalShlokaData[samhitaName][chapterName].push({
-                        samhita: samhitaName,
-                        chapter: chapterName,
-                        // संस्कृत और अंग्रेजी हेडिंग को मिलाकर दिखाएं
-                        heading: item.heading_sanskrit + " | " + item.heading_english, 
-                        // श्लोक का टेक्स्ट सेट करें
-                        text: item.shloka 
-                    });
+                    // 3. इस chapter के verses पर लूप चलाएं (safe check के साथ)
+                    if (chapterItem.verses && Array.isArray(chapterItem.verses)) {
+                        chapterItem.verses.forEach(item => {
+                            // Extract headings safely (handling missing English or Sanskrit titles)
+                            const hSanskrit = item.heading_sanskrit || "";
+                            const hEnglish = item.heading_english || "";
+                            let combinedHeading = "Shloka Detail";
+                            
+                            if (hSanskrit && hEnglish) {
+                                combinedHeading = `${hSanskrit} | ${hEnglish}`;
+                            } else if (hSanskrit || hEnglish) {
+                                combinedHeading = hSanskrit || hEnglish;
+                            }
+
+                            globalShlokaData[samhitaName][chapterName].push({
+                                samhita: samhitaName,
+                                chapter: chapterName,
+                                heading: combinedHeading, 
+                                text: item.shloka || "Shloka text is missing from database."
+                            });
+                        });
+                    }
                 });
             }
         }
@@ -630,8 +657,7 @@
 
             resultsArea.innerHTML = ''; 
             shlokas.forEach((shloka, index) => {
-                // FIXED: Agar json me heading nahi hai, to automatically "Shloka Detail" dikhayega
-                const safeHeading = encodeURIComponent(shloka.heading || "Shloka Detail");
+                const safeHeading = encodeURIComponent(shloka.heading);
                 const safeText = encodeURIComponent(shloka.text);
 
                 resultsArea.innerHTML += `
@@ -640,7 +666,7 @@
                          data-text="${safeText}" 
                          onclick="openTranslationModal(this)">
                         <button class="star-btn" onclick="toggleStar(event, this)" title="Mark for Memorization">☆</button>
-                        <div class="shloka-heading">${shloka.heading || "Shloka"}</div>
+                        <div class="shloka-heading">${shloka.heading}</div>
                         <div class="shloka-text">${shloka.text}</div>
                     </div>
                 `;
@@ -690,7 +716,6 @@
                 }
             } catch (error) {
                 console.error("AI Error:", error);
-                // FIXED: Ab direct screen par exact error dikhega
                 document.getElementById('trans-translation').innerText = "⚠️ SYSTEM ERROR: " + error.message;
                 document.getElementById('trans-explanation').innerText = "Upar likhe error ko check karein. Vercel logs aur API key verify karein.";
             }
