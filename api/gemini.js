@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-    // 1. Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -7,18 +6,16 @@ export default async function handler(req, res) {
     const { shloka } = req.body;
     const apiKey = process.env.Gemini_API_Key; 
 
-    // 2. Check if API key exists
     if (!apiKey) {
         console.error("SYSTEM ERROR: API Key missing in Vercel Environment Variables."); 
         return res.status(500).json({ error: 'API key Vercel environment mein nahi mili. Vercel Settings check karein.' });
     }
 
-    // 3. Construct the prompt
     const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}. Do NOT use markdown like \`\`\`json.`;
 
     try {
-        // FIXED: Updated the model name to 'gemini-1.5-flash-latest' to ensure compatibility with v1beta
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+        // FIXED: Updated the model name to the active 'gemini-3.5-flash'
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -28,13 +25,11 @@ export default async function handler(req, res) {
 
         const apiData = await response.json();
         
-        // 4. Handle Google API Errors
         if (!response.ok || apiData.error) {
             console.error("GOOGLE API ERROR:", JSON.stringify(apiData.error)); 
             return res.status(500).json({ error: `Gemini API Error: ${apiData.error?.message || 'Unknown Error'}` });
         }
 
-        // 5. Clean and parse the AI response
         let aiText = apiData.candidates[0].content.parts[0].text;
         aiText = aiText.replace(/```json/gi, '').replace(/```/g, '').trim();
 
