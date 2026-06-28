@@ -9,10 +9,17 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Shloka text is required' });
     }
 
+    // FIX 1 & 3: Check for BOTH naming conventions and validate the key exists!
+    const apiKey = process.env.GEMINI_API_KEY || process.env.Gemini_api_key;
+    
+    if (!apiKey || apiKey.trim() === '') {
+        console.error('API Key is missing from Environment Variables.');
+        return res.status(500).json({ error: 'API Key is missing or invalid. Please check Vercel settings.' });
+    }
+
     try {
-        // Access your secure environment variable
-        const apiKey = process.env.GEMINI_API_KEY;
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+        // FIX 2: Corrected the model name to gemini-1.5-flash
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         // Instruct the AI to respond STRICTLY in JSON format
         const prompt = `
@@ -34,14 +41,15 @@ export default async function handler(req, res) {
 
         const data = await response.json();
         
-        if (!response.ok) {
+        // FIX 4: Stronger error handling (Checks response.ok AND for data.error)
+        if (!response.ok || data.error) {
            throw new Error(data.error?.message || 'Failed to fetch from Gemini');
         }
 
         // Extract AI response text
         let aiText = data.candidates[0].content.parts[0].text;
         
-        // Safety step: Clean up Markdown code block wrappers (like ```json) if the AI includes them
+        // Safety step: Clean up Markdown code block wrappers
         aiText = aiText.replace(/```json/g, '').replace(/```/g, '').trim();
         
         // Parse the string into a real JSON object
@@ -52,6 +60,9 @@ export default async function handler(req, res) {
         
     } catch (error) {
         console.error('Gemini API Error:', error);
-        return res.status(500).json({ error: 'Failed to process shloka translation.', details: error.message });
+        return res.status(500).json({ 
+            error: 'Failed to process shloka translation.', 
+            details: error.message 
+        });
     }
 }
