@@ -5,8 +5,6 @@ export default async function handler(req, res) {
     }
 
     const { shloka } = req.body;
-    
-    // Ensure this matches your Vercel Environment Variables exactly!
     const apiKey = process.env.Gemini_API_Key; 
 
     // 2. Strict API Key Validation
@@ -17,8 +15,8 @@ export default async function handler(req, res) {
     // 3. Prompt Construction
     const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}.`;
 
-    // 4. Corrected API URL: Using v1beta and gemini-1.5-flash
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    // 4. THE FIX: Upgraded to 'gemini-2.5-flash' for 2026 compatibility
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     try {
         const response = await fetch(url, {
@@ -26,7 +24,7 @@ export default async function handler(req, res) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
-                // This forces Gemini to output pure JSON, preventing formatting errors
+                // Ensures the AI outputs pure JSON, preventing formatting errors
                 generationConfig: {
                     responseMimeType: "application/json"
                 }
