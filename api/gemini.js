@@ -7,14 +7,16 @@ export default async function handler(req, res) {
     const apiKey = process.env.Gemini_API_Key; 
 
     if (!apiKey) {
+        // Log this to Vercel dashboard
+        console.error("SYSTEM ERROR: API Key missing in Vercel Environment Variables."); 
         return res.status(500).json({ error: 'API key Vercel environment mein nahi mili. Vercel Settings check karein.' });
     }
 
     const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}. Do NOT use markdown like \`\`\`json.`;
 
     try {
-        // FIXED: Changed model to 'gemini-pro' which is universally supported
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+        // FIXED: Upgraded model to 'gemini-1.5-flash' (The correct, active model)
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -25,6 +27,8 @@ export default async function handler(req, res) {
         const apiData = await response.json();
         
         if (!response.ok || apiData.error) {
+            // Log exact Google API errors to Vercel
+            console.error("GOOGLE API ERROR:", JSON.stringify(apiData.error)); 
             return res.status(500).json({ error: `Gemini API Error: ${apiData.error?.message || 'Unknown Error'}` });
         }
 
@@ -43,10 +47,14 @@ export default async function handler(req, res) {
                 throw new Error("No JSON format found.");
             }
         } catch (parseError) {
+            // Log parsing failures to Vercel
+            console.error("AI PARSING ERROR. Raw AI Response was:", aiText); 
             return res.status(500).json({ error: `Failed to parse AI response. Raw Text from AI: ${aiText}` });
         }
 
     } catch (error) {
+        // Log overall server errors to Vercel
+        console.error("VERCEL SERVER ERROR:", error.message); 
         return res.status(500).json({ error: `Internal Server Error: ${error.message}` });
     }
 }
