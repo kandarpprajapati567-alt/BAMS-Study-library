@@ -5,6 +5,8 @@ export default async function handler(req, res) {
     }
 
     const { shloka } = req.body;
+    
+    // Ensure this matches your Vercel Environment Variables exactly!
     const apiKey = process.env.Gemini_API_Key; 
 
     // 2. Strict API Key Validation
@@ -13,17 +15,21 @@ export default async function handler(req, res) {
     }
 
     // 3. Prompt Construction
-    const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}. Do NOT use markdown like \`\`\`json.`;
+    const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}.`;
 
-    // 4. THE BYPASS: Using 'gemini-1.5-pro' to completely avoid the 'flash' architecture issues
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`;
+    // 4. Corrected API URL: Using v1beta and gemini-1.5-flash
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }]
+                contents: [{ parts: [{ text: prompt }] }],
+                // This forces Gemini to output pure JSON, preventing formatting errors
+                generationConfig: {
+                    responseMimeType: "application/json"
+                }
             })
         });
 
@@ -35,20 +41,10 @@ export default async function handler(req, res) {
         }
 
         // 6. Safe Parsing of AI Text
-        let aiText = apiData.candidates[0].content.parts[0].text;
+        const aiText = apiData.candidates[0].content.parts[0].text;
         
-        // Clean markdown formatting if AI still adds it
-        aiText = aiText.replace(/```json/gi, '').replace(/```/g, '').trim();
-
-        const jsonStart = aiText.indexOf('{');
-        const jsonEnd = aiText.lastIndexOf('}') + 1;
-        
-        if (jsonStart !== -1 && jsonEnd !== -1) {
-            const cleanJson = aiText.slice(jsonStart, jsonEnd);
-            return res.status(200).json(JSON.parse(cleanJson));
-        } else {
-            return res.status(500).json({ error: "AI response was not in proper JSON format." });
-        }
+        // Because we forced responseMimeType, we can parse it directly
+        return res.status(200).json(JSON.parse(aiText));
 
     } catch (error) {
         return res.status(500).json({ error: `Server Crash: ${error.message}` });
