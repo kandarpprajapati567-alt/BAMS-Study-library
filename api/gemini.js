@@ -1,30 +1,20 @@
 export default async function handler(req, res) {
-    // Only allow POST requests for security
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method Not Allowed' });
+        return res.status(405).json({ error: 'Method not allowed' });
     }
 
     const { shloka } = req.body;
-    if (!shloka) {
-        return res.status(400).json({ error: 'Shloka text is required' });
+    const apiKey = process.env.Gemini_API_Key; 
+
+    if (!apiKey) {
+        return res.status(500).json({ error: 'API key Vercel environment mein nahi mili. Vercel Settings check karein.' });
     }
 
+    const prompt = `You are an expert Ayurvedic scholar. Translate and explain the following Sanskrit shloka:\n\n"${shloka}"\n\nProvide the response strictly in a raw JSON format exactly like this: {"translation": "your english translation here", "explanation": "your brief explanation here"}. Do NOT use markdown like \`\`\`json.`;
+
     try {
-        // Access your secure environment variable
-        const apiKey = process.env.GEMINI_API_KEY;
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-
-        // Instruct the AI to respond STRICTLY in JSON format
-        const prompt = `
-            Analyze the following Sanskrit shloka:
-            "${shloka}"
-            
-            Provide a translation and a brief contextual explanation.
-            Respond ONLY with a valid JSON object in the exact following format, without any markdown formatting or extra text:
-            {"translation": "...", "explanation": "..."}
-        `;
-
-        const response = await fetch(apiUrl, {
+        // FIXED: Changed model to 'gemini-pro' which is universally supported
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -32,26 +22,31 @@ export default async function handler(req, res) {
             })
         });
 
-        const data = await response.json();
+        const apiData = await response.json();
         
-        if (!response.ok) {
-           throw new Error(data.error?.message || 'Failed to fetch from Gemini');
+        if (!response.ok || apiData.error) {
+            return res.status(500).json({ error: `Gemini API Error: ${apiData.error?.message || 'Unknown Error'}` });
         }
 
-        // Extract AI response text
-        let aiText = data.candidates[0].content.parts[0].text;
-        
-        // Safety step: Clean up Markdown code block wrappers (like ```json) if the AI includes them
-        aiText = aiText.replace(/```json/g, '').replace(/```/g, '').trim();
-        
-        // Parse the string into a real JSON object
-        const parsedData = JSON.parse(aiText);
+        let aiText = apiData.candidates[0].content.parts[0].text;
+        aiText = aiText.replace(/```json/gi, '').replace(/```/g, '').trim();
 
-        // Send the clean data back to your frontend
-        return res.status(200).json(parsedData);
-        
+        try {
+            const jsonStart = aiText.indexOf('{');
+            const jsonEnd = aiText.lastIndexOf('}') + 1;
+            
+            if (jsonStart !== -1 && jsonEnd !== -1) {
+                const cleanJson = aiText.slice(jsonStart, jsonEnd);
+                const parsedData = JSON.parse(cleanJson);
+                return res.status(200).json(parsedData);
+            } else {
+                throw new Error("No JSON format found.");
+            }
+        } catch (parseError) {
+            return res.status(500).json({ error: `Failed to parse AI response. Raw Text from AI: ${aiText}` });
+        }
+
     } catch (error) {
-        console.error('Gemini API Error:', error);
-        return res.status(500).json({ error: 'Failed to process shloka translation.', details: error.message });
+        return res.status(500).json({ error: `Internal Server Error: ${error.message}` });
     }
 }
