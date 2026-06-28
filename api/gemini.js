@@ -5,12 +5,11 @@ export default async function handler(req, res) {
     }
 
     const { shloka } = req.body;
-    
-    // 2. Fetch API Key
     const apiKey = process.env.Gemini_api_key; 
 
+    // 2. Strict Check for Vercel Environment Variable
     if (!apiKey || apiKey === 'undefined' || apiKey.trim() === '') {
-        return res.status(500).json({ error: 'API Key is missing in Vercel settings.' });
+        return res.status(500).json({ error: 'API Key is missing! Vercel me Environment Variable check karein aur project REDEPLOY karein.' });
     }
 
     // 3. Prompts for Dual Processing
@@ -18,18 +17,18 @@ export default async function handler(req, res) {
     
     const promptExplanation = `You are an expert Ayurvedic scholar. Provide a brief, deep explanation and understanding of this Sanskrit shloka. Provide the response strictly in a raw JSON format exactly like this: {"explanation": "your brief explanation here"}. Shloka: "${shloka}"`;
 
-    // 4. OFFICIAL GOOGLE API MODEL STRINGS (This fixes the "not found" error)
-    // Adding "-latest" ensures it always finds the active version in your region.
-    const urlFlash = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`;
-    const urlPro = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent`;
+    // 4. FIX: Adding ?key=${apiKey} directly in the URL! 
+    // This is exactly what Google requires for this specific API.
+    const urlFlash = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    const urlPro = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${apiKey}`;
 
-    // 5. Secure Fetch Function
+    // Helper function for API calls
     const fetchGemini = async (url, promptText) => {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 
-                'Content-Type': 'application/json',
-                'x-goog-api-key': apiKey 
+                'Content-Type': 'application/json' 
+                // Header se API key hata di hai kyunki URL mein daal di hai
             },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: promptText }] }],
@@ -47,18 +46,18 @@ export default async function handler(req, res) {
     };
 
     try {
-        // 6. Fast ⏩ Execution: Calling Flash for Translation & Pro for Explanation
+        // 5. Calling both models concurrently
         const [flashData, proData] = await Promise.all([
             fetchGemini(urlFlash, promptTranslation),
             fetchGemini(urlPro, promptExplanation)
         ]);
 
         return res.status(200).json({
-            translation: flashData.translation || "Translation could not be processed.",
-            explanation: proData.explanation || "Explanation could not be processed."
+            translation: flashData.translation || "Translation error.",
+            explanation: proData.explanation || "Explanation error."
         });
 
     } catch (error) {
-        return res.status(500).json({ error: `System Error: ${error.message}` });
+        return res.status(500).json({ error: `API Error: ${error.message}` });
     }
 }
